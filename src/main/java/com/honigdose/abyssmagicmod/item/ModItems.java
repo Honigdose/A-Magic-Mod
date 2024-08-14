@@ -70,13 +70,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MAGESSENZ_AIRTYP = ITEMS.register("magessenz_airtyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAGESSENZ_WATERTYP = ITEMS.register("magessenz_water",
+    public static final RegistryObject<Item> MAGESSENZ_WATERTYP = ITEMS.register("magessenz_watertyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAGESSENZ_NATURTYP = ITEMS.register("magessenz_natur",
+    public static final RegistryObject<Item> MAGESSENZ_NATURTYP = ITEMS.register("magessenz_naturtyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAGESSENZ_LUNARTYP = ITEMS.register("magessenz_lunar",
+    public static final RegistryObject<Item> MAGESSENZ_LUNARTYP = ITEMS.register("magessenz_lunartyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAGESSENZ_SOLARTYP = ITEMS.register("magessenz_solar",
+    public static final RegistryObject<Item> MAGESSENZ_SOLARTYP = ITEMS.register("magessenz_solartyp",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> RAW_MAGESSENZ = ITEMS.register("raw_magessenz",
@@ -85,13 +85,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_MAGESSENZ_AIRTYP = ITEMS.register("raw_magessenz_airtyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_MAGESSENZ_WATERTYP = ITEMS.register("raw_magessenz_water",
+    public static final RegistryObject<Item> RAW_MAGESSENZ_WATERTYP = ITEMS.register("raw_magessenz_watertyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_MAGESSENZ_NATURTYP = ITEMS.register("raw_magessenz_natur",
+    public static final RegistryObject<Item> RAW_MAGESSENZ_NATURTYP = ITEMS.register("raw_magessenz_naturtyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_MAGESSENZ_LUNARTYP = ITEMS.register("raw_magessenz_lunar",
+    public static final RegistryObject<Item> RAW_MAGESSENZ_LUNARTYP = ITEMS.register("raw_magessenz_lunartyp",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_MAGESSENZ_SOLARTYP = ITEMS.register("raw_magessenz_solar",
+    public static final RegistryObject<Item> RAW_MAGESSENZ_SOLARTYP = ITEMS.register("raw_magessenz_solartyp",
             () -> new Item(new Item.Properties()));
 
 

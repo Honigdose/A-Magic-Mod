@@ -45,5 +45,13 @@
   "item.abyssmagicmod.raw_magessenz_naturtyp": "Raw Mageessenz Natur",
   "item.abyssmagicmod.raw_magessenz_watertyp": "Raw Mageessenz Water",
   "item.abyssmagicmod.raw_magessenz_solartyp": "Raw Mageessenz Solar",
-  "item.abyssmagicmod.raw_magessenz_lunartyp": "Raw Mageessenz Lunar"
+  "item.abyssmagicmod.raw_magessenz_lunartyp": "Raw Mageessenz Lunar",
+
+  "block.abyssmagicmod.abysssteel_ore": "Abysssteel Ore",
+  "block.abyssmagicmod.fireryte_ore": "Fireryte Ore",
+  "block.abyssmagicmod.solarium_ore": "Solarium Ore",
+  "block.abyssmagicmod.lunarium_ore": "Lunarium Ore",
+  "block.abyssmagicmod.florasteel_ore": "Florasteel Ore",
+  "block.abyssmagicmod.suiryte_ore": "Suiryte Ore",
+  "block.abyssmagicmod.sylphthyl_ore": "Sylphthyl Ore"
 }

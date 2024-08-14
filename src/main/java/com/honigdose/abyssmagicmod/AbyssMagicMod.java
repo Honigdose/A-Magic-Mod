@@ -1,5 +1,6 @@
 package com.honigdose.abyssmagicmod;
 
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,6 +36,7 @@ public class AbyssMagicMod
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -95,6 +97,18 @@ public class AbyssMagicMod
             event.accept(ModItems.RAW_MAGESSENZ_NATURTYP);
             event.accept(ModItems.RAW_MAGESSENZ_LUNARTYP);
             event.accept(ModItems.RAW_MAGESSENZ_SOLARTYP);
+
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+
+            event.accept(ModBlocks.ABYSSSTEEL_ORE);
+            event.accept(ModBlocks.FIRERYTE_ORE);
+            event.accept(ModBlocks.FLORASTEEL_ORE);
+            event.accept(ModBlocks.SOLARIUM_ORE);
+            event.accept(ModBlocks.LUNARIUM_ORE);
+            event.accept(ModBlocks.SUIRYTE_ORE);
+            event.accept(ModBlocks.SYLPHTHYL_ORE);
 
         }
     }
