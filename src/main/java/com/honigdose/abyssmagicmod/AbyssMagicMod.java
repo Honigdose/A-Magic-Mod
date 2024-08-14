@@ -74,6 +74,28 @@ public class AbyssMagicMod
 
             event.accept(ModItems.SYLPHTHYL);
             event.accept(ModItems.RAW_SYLPHTHYL);
+
+            event.accept(ModItems.MYRINIUM);
+            event.accept(ModItems.RAW_MYRINIUM);
+
+            event.accept(ModItems.MANATHYL);
+
+            event.accept(ModItems.MAGESSENZ);
+            event.accept(ModItems.MAGESSENZ_WATERTYP);
+            event.accept(ModItems.MAGESSENZ_FIRETYP);
+            event.accept(ModItems.MAGESSENZ_AIRTYP);
+            event.accept(ModItems.MAGESSENZ_NATURTYP);
+            event.accept(ModItems.MAGESSENZ_LUNARTYP);
+            event.accept(ModItems.MAGESSENZ_SOLARTYP);
+
+            event.accept(ModItems.RAW_MAGESSENZ);
+            event.accept(ModItems.RAW_MAGESSENZ_WATERTYP);
+            event.accept(ModItems.RAW_MAGESSENZ_FIRETYP);
+            event.accept(ModItems.RAW_MAGESSENZ_AIRTYP);
+            event.accept(ModItems.RAW_MAGESSENZ_NATURTYP);
+            event.accept(ModItems.RAW_MAGESSENZ_LUNARTYP);
+            event.accept(ModItems.RAW_MAGESSENZ_SOLARTYP);
+
         }
     }
 

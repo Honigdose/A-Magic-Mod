@@ -24,5 +24,26 @@
   "item.abyssmagicmod.raw_suiryte": "Raw Suiryte",
 
   "item.abyssmagicmod.sylphthyl": "Sylphthyl Ingot",
-  "item.abyssmagicmod.raw_sylphthyl": "Raw Sylphthyl"
+  "item.abyssmagicmod.raw_sylphthyl": "Raw Sylphthyl",
+
+  "item.abyssmagicmod.myrinium": "Myrinium Ingot",
+  "item.abyssmagicmod.raw_myrinium": "Raw Myrinium",
+
+  "item.abyssmagicmod.manathyl": "Manathyl",
+
+  "item.abyssmagicmod.magessenz": "Mageessenz Ingot",
+  "item.abyssmagicmod.magessenz_airtyp": "Mageessenz Air Ingot",
+  "item.abyssmagicmod.magessenz_firetyp": "Mageessenz Fire Ingot",
+  "item.abyssmagicmod.magessenz_naturtyp": "Mageessenz Natur Ingot",
+  "item.abyssmagicmod.magessenz_watertyp": "Mageessenz Water Ingot",
+  "item.abyssmagicmod.magessenz_solartyp": "Mageessenz Solar Ingot",
+  "item.abyssmagicmod.magessenz_lunartyp": "Mageessenz Lunar Ingot",
+
+  "item.abyssmagicmod.raw_magessenz": "Raw Mageessenz",
+  "item.abyssmagicmod.raw_magessenz_airtyp": "Raw Mageessenz Air",
+  "item.abyssmagicmod.raw_magessenz_firetyp": "Raw Mageessenz Fire",
+  "item.abyssmagicmod.raw_magessenz_naturtyp": "Raw Mageessenz Natur",
+  "item.abyssmagicmod.raw_magessenz_watertyp": "Raw Mageessenz Water",
+  "item.abyssmagicmod.raw_magessenz_solartyp": "Raw Mageessenz Solar",
+  "item.abyssmagicmod.raw_magessenz_lunartyp": "Raw Mageessenz Lunar"
 }
