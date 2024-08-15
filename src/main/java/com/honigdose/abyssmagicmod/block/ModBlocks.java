@@ -40,6 +40,57 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE = registerBlock("magessenz_ore_deepslate",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_FIRETYP = registerBlock("magessenz_ore_deepslate_firetyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_SOLARTYP = registerBlock("magessenz_ore_deepslate_solartyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_LUNARIUM = registerBlock("magessenz_ore_deepslate_lunartyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_WATERTYP = registerBlock("magessenz_ore_deepslate_watertyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_NATURTYP = registerBlock("magessenz_ore_deepslate_naturtyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_AIRTYP = registerBlock("magessenz_ore_deepslate_airtyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE = registerBlock("magessenz_ore_stone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_FIRETYP = registerBlock("magessenz_ore_stone_firetyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_SOLARTYP = registerBlock("magessenz_ore_stone_solartyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_LUNARIUM = registerBlock("magessenz_ore_stone_lunartyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_WATERTYP = registerBlock("magessenz_ore_stone_watertyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_NATURTYP = registerBlock("magessenz_ore_stone_naturtyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_AIRTYP = registerBlock("magessenz_ore_stone_airtyp",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> MYRINIUM_ORE_DEEPSLATE = registerBlock("myrinium_ore_deepslate",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> MYRINIUM_ORE_STONE = registerBlock("myrinium_ore_stone",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

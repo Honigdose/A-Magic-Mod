@@ -110,6 +110,25 @@ public class AbyssMagicMod
             event.accept(ModBlocks.SUIRYTE_ORE);
             event.accept(ModBlocks.SYLPHTHYL_ORE);
 
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP);
+
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP);
+            event.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP);
+
+            event.accept(ModBlocks.MYRINIUM_ORE_DEEPSLATE);
+            event.accept(ModBlocks.MYRINIUM_ORE_STONE);
+
         }
     }
 

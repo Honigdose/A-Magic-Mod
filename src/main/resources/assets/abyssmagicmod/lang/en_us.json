@@ -53,5 +53,24 @@
   "block.abyssmagicmod.lunarium_ore": "Lunarium Ore",
   "block.abyssmagicmod.florasteel_ore": "Florasteel Ore",
   "block.abyssmagicmod.suiryte_ore": "Suiryte Ore",
-  "block.abyssmagicmod.sylphthyl_ore": "Sylphthyl Ore"
+  "block.abyssmagicmod.sylphthyl_ore": "Sylphthyl Ore",
+
+  "block.abyssmagicmod.magessenz_ore_deepslate": "Magessenz Ore",
+  "block.abyssmagicmod.magessenz_ore_deepslate_firetyp": "Magessenz Ore Firetyp",
+  "block.abyssmagicmod.magessenz_ore_deepslate_airtyp": "Magessenz Ore Airtyp",
+  "block.abyssmagicmod.magessenz_ore_deepslate_watertyp": "Magessenz Ore Watertyp",
+  "block.abyssmagicmod.magessenz_ore_deepslate_naturtyp": "Magessenz Ore Naturtyp",
+  "block.abyssmagicmod.magessenz_ore_deepslate_solartyp": "Magessenz Ore Solartyp",
+  "block.abyssmagicmod.magessenz_ore_deepslate_lunartyp": "Magessenz Ore Lunartyp",
+
+  "block.abyssmagicmod.magessenz_ore_stone": "Magessenz Ore",
+  "block.abyssmagicmod.magessenz_ore_stone_firetyp": "Magessenz Ore Firetyp",
+  "block.abyssmagicmod.magessenz_ore_stone_airtyp": "Magessenz Ore Airtyp",
+  "block.abyssmagicmod.magessenz_ore_stone_watertyp": "Magessenz Ore Watertyp",
+  "block.abyssmagicmod.magessenz_ore_stone_naturtyp": "Magessenz Ore Naturtyp",
+  "block.abyssmagicmod.magessenz_ore_stone_solartyp": "Magessenz Ore Solartyp",
+  "block.abyssmagicmod.magessenz_ore_stone_lunartyp": "Magessenz Ore Lunartyp",
+
+  "block.abyssmagicmod.myrinium_ore_deepslate": "Myrinium Ore",
+  "block.abyssmagicmod.myrinium_ore_stone": "Myrinium Ore"
 }
