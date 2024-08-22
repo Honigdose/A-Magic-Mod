@@ -4,7 +4,7 @@ import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,7 +26,7 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SOLARIUM_ORE = registerBlock("solarium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops()));
+                    .strength(4f).requiresCorrectToolForDrops().lightLevel(value -> 8)));
     public static final RegistryObject<Block> LUNARIUM_ORE = registerBlock("lunarium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
@@ -90,6 +90,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> MYRINIUM_ORE_STONE = registerBlock("myrinium_ore_stone",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel( value -> 10)));
+
 
 
 

@@ -1,4 +1,6 @@
 {
+  "creativetab.abyssmagicmod.abyssmagic_items": "Abyss Magic Mod Tab",
+
   "item.abyssmagicmod.abysssteel": "Abysssteel Ingot",
   "item.abyssmagicmod.raw_abysssteel": "Raw Abysssteel",
 
@@ -72,5 +74,7 @@
   "block.abyssmagicmod.magessenz_ore_stone_lunartyp": "Magessenz Ore Lunartyp",
 
   "block.abyssmagicmod.myrinium_ore_deepslate": "Myrinium Ore",
-  "block.abyssmagicmod.myrinium_ore_stone": "Myrinium Ore"
+  "block.abyssmagicmod.myrinium_ore_stone": "Myrinium Ore",
+
+  "block.abyssmagicmod.fire_crystal_block": "Fire Crystal Block"
 }
