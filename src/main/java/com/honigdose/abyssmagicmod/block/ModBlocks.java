@@ -2,10 +2,13 @@ package com.honigdose.abyssmagicmod.block;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.item.ModItems;
+import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +22,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> ABYSSSTEEL_ORE = registerBlock("abysssteel_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new DropExperienceBlock(UniformInt.of(1,2), BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> FIRERYTE_ORE = registerBlock("fireryte_ore",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -37,6 +40,17 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SYLPHTHYL_ORE = registerBlock("sylphthyl_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> FIRERYTE_RAW_BLOCK = registerBlock("fireryte_raw_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> FIRERYTE_BLOCK = registerBlock("fireryte_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SUIRYTE_BLOCK = registerBlock("suiryte_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
 
@@ -92,9 +106,76 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()));
 
 
-    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block",
+
+    public static final RegistryObject<Block> FIRE_CRYSTAL = registerBlock("fire_crystal",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel( value -> 10)));
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> AIR_CRYSTAL = registerBlock("air_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerBlock("air_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> NATUR_CRYSTAL = registerBlock("natur_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerBlock("natur_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> WATER_CRYSTAL = registerBlock("water_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerBlock("water_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> SOLAR_CRYSTAL = registerBlock("solar_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerBlock("solar_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> LUNAR_CRYSTAL = registerBlock("lunar_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerBlock("lunar_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> VOID_CRYSTAL = registerBlock("void_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerBlock("void_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> DEMONIC_CRYSTAL = registerBlock("demonic_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerBlock("demonic_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> CELESTIAL_CRYSTAL = registerBlock("celestial_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerBlock("celestial_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+
+    public static final RegistryObject<Block> ARCANA_CRYSTAL = registerBlock("arcana_crystal",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+    public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerBlock("arcana_crystal_block",
+            () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
 
 
 

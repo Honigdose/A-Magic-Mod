@@ -41,6 +41,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MAGESSENZ_NATURTYP.get());
                         output.accept(ModItems.MAGESSENZ_NATURTYP.get());
 
+                        output.accept(ModBlocks.FIRERYTE_BLOCK.get());
+                        output.accept(ModBlocks.SUIRYTE_BLOCK.get());
+
                         output.accept(ModItems.RAW_ABYSSSTEEL.get());
                         output.accept(ModItems.RAW_BLOODGOLD.get());
                         output.accept(ModItems.RAW_CELESTIUM.get());
@@ -58,6 +61,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_MAGESSENZ_WATERTYP.get());
                         output.accept(ModItems.RAW_MAGESSENZ_NATURTYP.get());
                         output.accept(ModItems.RAW_MAGESSENZ_SOLARTYP.get());
+
+                        output.accept(ModBlocks.FIRERYTE_RAW_BLOCK.get());
 
 
                         output.accept(ModBlocks.ABYSSSTEEL_ORE.get());
@@ -84,7 +89,26 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get());
 
+                        output.accept(ModBlocks.FIRE_CRYSTAL.get());
                         output.accept(ModBlocks.FIRE_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.AIR_CRYSTAL.get());
+                        output.accept(ModBlocks.AIR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.NATUR_CRYSTAL.get());
+                        output.accept(ModBlocks.NATUR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.WATER_CRYSTAL.get());
+                        output.accept(ModBlocks.WATER_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.SOLAR_CRYSTAL.get());
+                        output.accept(ModBlocks.SOLAR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.LUNAR_CRYSTAL.get());
+                        output.accept(ModBlocks.LUNAR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.VOID_CRYSTAL.get());
+                        output.accept(ModBlocks.VOID_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.DEMONIC_CRYSTAL.get());
+                        output.accept(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.CELESTIAL_CRYSTAL.get());
+                        output.accept(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.ARCANA_CRYSTAL.get());
+                        output.accept(ModBlocks.ARCANA_CRYSTAL_BLOCK.get());
 
 
                     }).build());

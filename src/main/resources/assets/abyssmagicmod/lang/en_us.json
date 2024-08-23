@@ -76,5 +76,30 @@
   "block.abyssmagicmod.myrinium_ore_deepslate": "Myrinium Ore",
   "block.abyssmagicmod.myrinium_ore_stone": "Myrinium Ore",
 
-  "block.abyssmagicmod.fire_crystal_block": "Fire Crystal Block"
+  "block.abyssmagicmod.fireryte_raw_block": "Raw Fireryte Block",
+
+  "block.abyssmagicmod.fireryte_block": "Fireryte Block",
+  "block.abyssmagicmod.suiryte_block": "Suiryte Block",
+
+  "block.abyssmagicmod.fire_crystal": "Fire Crystal",
+  "block.abyssmagicmod.fire_crystal_block": "Fire Crystal Block",
+  "block.abyssmagicmod.air_crystal": "Air Crystal",
+  "block.abyssmagicmod.air_crystal_block": "Air Crystal Block",
+  "block.abyssmagicmod.natur_crystal": "Natur Crystal",
+  "block.abyssmagicmod.natur_crystal_block": "Natur Crystal Block",
+  "block.abyssmagicmod.water_crystal": "Water Crystal",
+  "block.abyssmagicmod.water_crystal_block": "Water Crystal Block",
+  "block.abyssmagicmod.solar_crystal": "Solar Crystal",
+  "block.abyssmagicmod.solar_crystal_block": "Solar Crystal Block",
+  "block.abyssmagicmod.lunar_crystal": "Lunar Crystal",
+  "block.abyssmagicmod.lunar_crystal_block": "Lunar Crystal Block",
+  "block.abyssmagicmod.celestial_crystal": "Celestial Crystal",
+  "block.abyssmagicmod.celestial_crystal_block": "Celestial Crystal Block",
+  "block.abyssmagicmod.demonic_crystal": "Demonic Crystal",
+  "block.abyssmagicmod.demonic_crystal_block": "Demonic Crystal Block",
+  "block.abyssmagicmod.void_crystal": "Void Crystal",
+  "block.abyssmagicmod.void_crystal_block": "Void Crystal Block",
+  "block.abyssmagicmod.arcana_crystal": "Arcana Crystal",
+  "block.abyssmagicmod.arcana_crystal_block": "Arcana Crystal Block"
+
 }
