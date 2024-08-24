@@ -108,74 +108,74 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> FIRE_CRYSTAL = registerBlock("fire_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> AIR_CRYSTAL = registerBlock("air_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerBlock("air_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> NATUR_CRYSTAL = registerBlock("natur_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerBlock("natur_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> WATER_CRYSTAL = registerBlock("water_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerBlock("water_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> SOLAR_CRYSTAL = registerBlock("solar_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerBlock("solar_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> LUNAR_CRYSTAL = registerBlock("lunar_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerBlock("lunar_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> VOID_CRYSTAL = registerBlock("void_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerBlock("void_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> DEMONIC_CRYSTAL = registerBlock("demonic_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerBlock("demonic_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> CELESTIAL_CRYSTAL = registerBlock("celestial_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerBlock("celestial_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
     public static final RegistryObject<Block> ARCANA_CRYSTAL = registerBlock("arcana_crystal",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
     public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerBlock("arcana_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(4f).sound(SoundType.AMETHYST).lightLevel(value -> 8).noOcclusion()));
 
 
 

@@ -1,18 +1,29 @@
 package com.honigdose.abyssmagicmod.item;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, AbyssMagicMod.MOD_ID);
 
     public static final RegistryObject<Item> ABYSSSTEEL = ITEMS.register("abysssteel",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()){
+                @Override
+                public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.abyssmagicmod.abysssteel.tooltip.1"));
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                }
+            });
     public static final RegistryObject<Item> RAW_ABYSSSTEEL = ITEMS.register("raw_abysssteel",
             () -> new Item(new Item.Properties()));
 
@@ -93,6 +104,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_MAGESSENZ_SOLARTYP = ITEMS.register("raw_magessenz_solartyp",
             () -> new Item(new Item.Properties()));
+
+
+
 
 
     public static void register(IEventBus eventBus){
