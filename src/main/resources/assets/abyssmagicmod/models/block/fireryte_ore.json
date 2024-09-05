@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "abyssmagicmod:block/fireryte_ore"
-  }
-}

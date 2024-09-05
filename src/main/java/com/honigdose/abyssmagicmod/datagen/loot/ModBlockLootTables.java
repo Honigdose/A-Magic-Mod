@@ -32,6 +32,51 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.FIRERYTE_BLOCK.get());
         dropSelf(ModBlocks.SUIRYTE_BLOCK.get());
 
+        dropSelf(ModBlocks.FIRERYTE_RAW_BLOCK.get());
+
+        this.add(ModBlocks.FIRE_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.FIRE_CRYSTAL_BLOCK.get(), ModItems.FIRE_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.WATER_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.WATER_CRYSTAL_BLOCK.get(), ModItems.WATER_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.AIR_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.AIR_CRYSTAL_BLOCK.get(), ModItems.AIR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.NATUR_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.NATUR_CRYSTAL_BLOCK.get(), ModItems.NATUR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.SOLAR_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.SOLAR_CRYSTAL_BLOCK.get(), ModItems.SOLAR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.LUNAR_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.LUNAR_CRYSTAL_BLOCK.get(), ModItems.LUNAR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.VOID_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.VOID_CRYSTAL_BLOCK.get(), ModItems.VOID_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get(), ModItems.CELESTIAL_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get(), ModItems.DEMONIC_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.ARCANA_CRYSTAL_BLOCK.get(),
+                block -> createOreDrop(ModBlocks.ARCANA_CRYSTAL_BLOCK.get(), ModItems.ARCANA_CRYSTAL_SHARD.get()));
+
+        this.add(ModBlocks.FIRE_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.FIRE_CRYSTAL.get(), ModItems.FIRE_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.WATER_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.AIR_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.NATUR_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.SOLAR_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.LUNAR_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.LUNAR_CRYSTAL.get(), ModItems.LUNAR_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.VOID_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.VOID_CRYSTAL.get(), ModItems.VOID_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.CELESTIAL_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.CELESTIAL_CRYSTAL.get(), ModItems.CELESTIAL_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.DEMONIC_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.DEMONIC_CRYSTAL.get(), ModItems.DEMONIC_CRYSTAL_SHARD.get()));
+        this.add(ModBlocks.ARCANA_CRYSTAL.get(),
+                block -> createOreDrop(ModBlocks.ARCANA_CRYSTAL.get(), ModItems.ARCANA_CRYSTAL_SHARD.get()));
+
+
         this.add(ModBlocks.ABYSSSTEEL_ORE.get(),
                 block -> createOreDrop(ModBlocks.ABYSSSTEEL_ORE.get(), ModItems.RAW_ABYSSSTEEL.get()));
         this.add(ModBlocks.FIRERYTE_ORE.get(),
@@ -76,6 +121,35 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get(), ModItems.RAW_MAGESSENZ_NATURTYP.get(), 1,5));
         this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get(),
                 block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get(), ModItems.RAW_MAGESSENZ_WATERTYP.get(), 1,5));
+
+        this.add(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get(),
+                block -> createMultipleOreDrops(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get(), ModItems.RAW_MYRINIUM.get(), 1,5));
+        this.add(ModBlocks.MYRINIUM_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.MYRINIUM_ORE_STONE.get(), ModItems.RAW_MYRINIUM.get(), 1,5));
+
+        // WOOD
+        // Scarlet Tree
+        this.dropSelf(ModBlocks.SCARLET_TREE_LOG.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_SAPLING.get());
+        this.dropSelf(ModBlocks.STRIPPED_SCARLET_TREE_LOG.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get());
+        this.add(ModBlocks.SCARLET_TREE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.SCARLET_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(ModBlocks.SCARLET_TREE_PLANKS.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_STAIR.get());
+        this.add(ModBlocks.SCARLET_TREE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SCARLET_TREE_SLAB.get()));
+        this.dropSelf(ModBlocks.SCARLET_TREE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_BUTTON.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_FENCE.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_WALL.get());
+        this.dropSelf(ModBlocks.SCARLET_TREE_TRAPDOOR.get());
+        this.add(ModBlocks.SCARLET_TREE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.SCARLET_TREE_DOOR.get()));
+
+
 
 
 

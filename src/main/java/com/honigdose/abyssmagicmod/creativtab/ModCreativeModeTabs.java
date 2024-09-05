@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.abyssmagicmod.abyssmagic_items"))
                     .displayItems((itemDisplayParameters, output) -> {
 
+                    // ORE/INGOTS/RAW ORE
                         output.accept(ModItems.ABYSSSTEEL.get());
                         output.accept(ModItems.BLOODGOLD.get());
                         output.accept(ModItems.CELESTIUM.get());
@@ -39,7 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MAGESSENZ_LUNARTYP.get());
                         output.accept(ModItems.MAGESSENZ_WATERTYP.get());
                         output.accept(ModItems.MAGESSENZ_NATURTYP.get());
-                        output.accept(ModItems.MAGESSENZ_NATURTYP.get());
+                        output.accept(ModItems.MAGESSENZ_SOLARTYP.get());
 
                         output.accept(ModBlocks.FIRERYTE_BLOCK.get());
                         output.accept(ModBlocks.SUIRYTE_BLOCK.get());
@@ -89,26 +90,61 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get());
 
+
+                    // CRYSTALS
                         output.accept(ModBlocks.FIRE_CRYSTAL.get());
-                        output.accept(ModBlocks.FIRE_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.AIR_CRYSTAL.get());
-                        output.accept(ModBlocks.AIR_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.NATUR_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.WATER_CRYSTAL.get());
-                        output.accept(ModBlocks.WATER_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.SOLAR_CRYSTAL.get());
-                        output.accept(ModBlocks.SOLAR_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.LUNAR_CRYSTAL.get());
-                        output.accept(ModBlocks.LUNAR_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.VOID_CRYSTAL.get());
-                        output.accept(ModBlocks.VOID_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.DEMONIC_CRYSTAL.get());
-                        output.accept(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.CELESTIAL_CRYSTAL.get());
-                        output.accept(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.ARCANA_CRYSTAL.get());
+
+                        output.accept(ModBlocks.FIRE_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.AIR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.NATUR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.WATER_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.SOLAR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.LUNAR_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.VOID_CRYSTAL_BLOCK.get());
+                        output.accept(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get());
                         output.accept(ModBlocks.ARCANA_CRYSTAL_BLOCK.get());
+
+                        output.accept(ModItems.AIR_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.NATUR_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.WATER_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.FIRE_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.SOLAR_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.LUNAR_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.VOID_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.DEMONIC_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.CELESTIAL_CRYSTAL_SHARD.get());
+                        output.accept(ModItems.ARCANA_CRYSTAL_SHARD.get());
+
+                    // WOOD
+                    // Scarlet Tree
+                        output.accept(ModBlocks.SCARLET_TREE_SAPLING.get());
+                        output.accept(ModBlocks.SCARLET_TREE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_SCARLET_TREE_LOG.get());
+                        output.accept(ModBlocks.SCARLET_TREE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get());
+                        output.accept(ModBlocks.SCARLET_TREE_LEAVES.get());
+                        output.accept(ModBlocks.SCARLET_TREE_PLANKS.get());
+                        output.accept(ModBlocks.SCARLET_TREE_STAIR.get());
+                        output.accept(ModBlocks.SCARLET_TREE_SLAB.get());
+                        output.accept(ModBlocks.SCARLET_TREE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SCARLET_TREE_BUTTON.get());
+                        output.accept(ModBlocks.SCARLET_TREE_FENCE.get());
+                        output.accept(ModBlocks.SCARLET_TREE_FENCE_GATE.get());
+                        output.accept(ModBlocks.SCARLET_TREE_WALL.get());
+                        output.accept(ModBlocks.SCARLET_TREE_DOOR.get());
+                        output.accept(ModBlocks.SCARLET_TREE_TRAPDOOR.get());
+
+
 
 
                     }).build());

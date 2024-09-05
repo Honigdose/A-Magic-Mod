@@ -10,12 +10,13 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks{
+
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, name));
         }
     }
     public static class Items{
-        public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        public static final TagKey<Item> MOD_WOOD = createTag("mod_wood");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, name));

@@ -101,6 +101,34 @@
   "block.abyssmagicmod.void_crystal": "Void Crystal",
   "block.abyssmagicmod.void_crystal_block": "Void Crystal Block",
   "block.abyssmagicmod.arcana_crystal": "Arcana Crystal",
-  "block.abyssmagicmod.arcana_crystal_block": "Arcana Crystal Block"
+  "block.abyssmagicmod.arcana_crystal_block": "Arcana Crystal Block",
 
+  "item.abyssmagicmod.air_crystal_shard": "Air Crystal Shard",
+  "item.abyssmagicmod.fire_crystal_shard": "Fire Crystal Shard",
+  "item.abyssmagicmod.natur_crystal_shard": "Natur Crystal Shard",
+  "item.abyssmagicmod.water_crystal_shard": "Water Crystal Shard",
+  "item.abyssmagicmod.solar_crystal_shard": "Solar Crystal Shard",
+  "item.abyssmagicmod.lunar_crystal_shard": "Lunar Crystal Shard",
+  "item.abyssmagicmod.void_crystal_shard": "Void Crystal Shard",
+  "item.abyssmagicmod.celestial_crystal_shard": "Celestial Crystal Shard",
+  "item.abyssmagicmod.demonic_crystal_shard": "Demonic Crystal Shard",
+  "item.abyssmagicmod.arcana_crystal_shard": "Arcana Crystal Shard",
+
+
+  "block.abyssmagicmod.scarlet_tree_log": "Scarlet Tree Log",
+  "block.abyssmagicmod.stripped_scarlet_tree_log": "Stripped Scarlet Tree Log",
+  "block.abyssmagicmod.scarlet_tree_wood": "Scarlet Tree Wood",
+  "block.abyssmagicmod.stripped_scarlet_tree_wood": "Stripped Scarlet Tree Wood",
+  "block.abyssmagicmod.scarlet_tree_leaves": "Scarlet Tree Leaves",
+  "block.abyssmagicmod.scarlet_tree_sapling": "Scarlet Tree Sapling",
+  "block.abyssmagicmod.scarlet_tree_planks": "Scarlet Tree Planks",
+  "block.abyssmagicmod.scarlet_tree_stair": "Scarlet Tree Stairs",
+  "block.abyssmagicmod.scarlet_tree_slab": "Scarlet Tree Slab",
+  "block.abyssmagicmod.scarlet_tree_button": "Scarlet Tree Button",
+  "block.abyssmagicmod.scarlet_tree_pressure_plate": "Scarlet Tree Pressure Plate",
+  "block.abyssmagicmod.scarlet_tree_fence": "Scarlet TreeFence",
+  "block.abyssmagicmod.scarlet_tree_fence_gate": "Scarlet Tree Fence Gate",
+  "block.abyssmagicmod.scarlet_tree_wall": "Scarlet Tree Wall",
+  "block.abyssmagicmod.scarlet_tree_door": "Scarlet Tree Door",
+  "block.abyssmagicmod.scarlet_tree_trapdoor": "Scarlet Tree Trapdoor"
 }
