@@ -3,6 +3,7 @@ package com.honigdose.abyssmagicmod.block;
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
+import com.honigdose.abyssmagicmod.block.custom.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -191,33 +192,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCARLET_TREE_LOG = registerBlock("scarlet_tree_log",
              () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> SCARLET_TREE_WOOD = registerBlock("scarlet_tree_wood",
-            () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
     public static final RegistryObject<Block> STRIPPED_SCARLET_TREE_LOG = registerBlock("stripped_scarlet_tree_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<Block> STRIPPED_SCARLET_TREE_WOOD = registerBlock("stripped_scarlet_tree_wood",
-            () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> SCARLET_TREE_LEAVES = registerBlock("scarlet_tree_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)){
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
+            () -> new ScarletLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SCARLET_TREE_SAPLING = registerBlock("scarlet_tree_sapling",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> SCARLET_TREE_PLANKS = registerBlock("scarlet_tree_planks",
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+        () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> SCARLET_TREE_SLAB = registerBlock("scarlet_tree_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
     public static final RegistryObject<Block> SCARLET_TREE_STAIR = registerBlock("scarlet_tree_stair",

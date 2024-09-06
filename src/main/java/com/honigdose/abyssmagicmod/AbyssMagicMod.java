@@ -3,6 +3,7 @@ package com.honigdose.abyssmagicmod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.creativtab.ModCreativeModeTabs;
 import com.honigdose.abyssmagicmod.item.ModItems;
+import com.honigdose.abyssmagicmod.particle.ModParticles;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -40,6 +41,7 @@ public class AbyssMagicMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModParticles.register(modEventBus);
 
 
         // Register the item to a creative tab
