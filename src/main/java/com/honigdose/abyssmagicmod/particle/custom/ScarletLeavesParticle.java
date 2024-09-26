@@ -7,48 +7,49 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ScarletLeavesParticle extends TextureSheetParticle {
+    private static final double WIND_STRENGTH = 0.001;
+    private static final double WIND_VARIANCE = 0.0002;
+    private final float rotationSpeed;
+
     protected ScarletLeavesParticle(ClientLevel level, double xCoord, double yCoord, double zCoord,
                                     SpriteSet spriteSet, double xd, double yd, double zd) {
         super(level, xCoord, yCoord, zCoord, xd, yd, zd);
-
-        this.xd *= 0.1F;
-        this.yd *= 0.1F;
-        this.zd *= 0.1F;
+        this.xd *= 0.0008;
+        this.yd *= -0.0001;
+        this.zd *= 0;
 
         this.gravity = 0.05F;
-
-        this.friction = 0.98F;
-        this.quadSize *= 1.2F;
-        this.lifetime = 40 + level.random.nextInt(20);
+        this.quadSize = 0.3F;
+        this.lifetime = 120;
         this.setSpriteFromAge(spriteSet);
 
         this.rCol = 1.0f;
         this.gCol = 1.0f;
         this.bCol = 1.0f;
         this.alpha = 1.0F;
+
+        this.roll = random.nextFloat() * (float) Math.PI * 2.0F;
+        this.rotationSpeed = (random.nextFloat() - 0.5F) * 0.2F;
     }
+
 
     @Override
     public void tick() {
         super.tick();
 
-        if (this.age > this.lifetime * 0.5) {
-            fadeOut();
-        }
+        double windX = WIND_STRENGTH + (random.nextDouble() * WIND_VARIANCE * 2 - WIND_VARIANCE);
 
-        if (this.onGround) {
-            this.xd *= 0.7F;
-            this.zd *= 0.7F;
-        }
-    }
 
-    private void fadeOut() {
-        this.alpha = 1.0F - ((float) this.age / (float) this.lifetime);
+        this.xd += windX;
+
+        this.oRoll = this.roll;
+        this.roll += this.rotationSpeed;
+
     }
 
     @Override
     public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -60,10 +61,11 @@ public class ScarletLeavesParticle extends TextureSheetParticle {
         }
 
         @Override
-        public Particle createParticle(SimpleParticleType particleType, ClientLevel level,
+        public Particle createParticle(SimpleParticleType type, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
             return new ScarletLeavesParticle(level, x, y, z, this.sprites, dx, dy, dz);
         }
     }
 }
+

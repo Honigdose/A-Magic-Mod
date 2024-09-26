@@ -61,7 +61,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SCARLET_TREE_LOG.get())
                 .add(ModBlocks.STRIPPED_SCARLET_TREE_LOG.get())
                 .add(ModBlocks.SCARLET_TREE_WOOD.get())
-                .add(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get());
+                .add(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get())
+
+                .add(ModBlocks.LIFE_TREE_LOG.get())
+                .add(ModBlocks.STRIPPED_LIFE_TREE_LOG.get())
+                .add(ModBlocks.LIFE_TREE_WOOD.get())
+                .add(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
 
         this.tag(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.SCARLET_TREE_FENCE.get());
@@ -71,6 +76,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
         this.tag(BlockTags.WALLS)
                 .add(ModBlocks.SCARLET_TREE_WALL.get());
+
+        this.tag(BlockTags.LEAVES)
+                .add(ModBlocks.SCARLET_TREE_LEAVES.get())
+                .add(ModBlocks.LIFE_TREE_LEAVES.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.ABYSSSTEEL_ORE.get())

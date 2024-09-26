@@ -75,20 +75,30 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SYLPHTHYL_ORE.get());
                         output.accept(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get());
                         output.accept(ModBlocks.MYRINIUM_ORE_STONE.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE.get());
+
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get());
+
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get());
                         output.accept(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get());
+
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get());
+                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get());
 
 
                     // CRYSTALS
@@ -143,6 +153,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SCARLET_TREE_WALL.get());
                         output.accept(ModBlocks.SCARLET_TREE_DOOR.get());
                         output.accept(ModBlocks.SCARLET_TREE_TRAPDOOR.get());
+
+                    // Life Tree
+                        output.accept(ModBlocks.LIFE_TREE_SAPLING.get());
+                        output.accept(ModBlocks.LIFE_TREE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_LIFE_TREE_LOG.get());
+                        output.accept(ModBlocks.LIFE_TREE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
+                        output.accept(ModBlocks.LIFE_TREE_LEAVES.get());
+                        output.accept(ModBlocks.LIFE_TREE_PLANKS.get());
+
+
+                    //Tools
+                    //Stage 1
+                        output.accept(ModItems.FIRERYTE_PICKAXE_STAGE1.get());
 
 
 

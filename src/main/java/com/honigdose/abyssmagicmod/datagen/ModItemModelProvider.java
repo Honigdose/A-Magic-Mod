@@ -5,6 +5,7 @@ import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -39,6 +40,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_FLORASTEEl.get());
         basicItem(ModItems.RAW_LUNARIUM.get());
         basicItem(ModItems.RAW_SOLARIUM.get());
+        basicItem(ModItems.RAW_CELESTIUM.get());
+        basicItem(ModItems.RAW_BLOODGOLD.get());
         basicItem(ModItems.RAW_MYRINIUM.get());
 
         basicItem(ModItems.MAGESSENZ.get());
@@ -87,6 +90,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.SCARLET_TREE_DOOR);
         saplingItem(ModBlocks.SCARLET_TREE_SAPLING);
 
+        // Life Tree
+        saplingItem(ModBlocks.LIFE_TREE_SAPLING);
+        //Tools
+        //Stage 1
+        handheldItem(ModItems.FIRERYTE_PICKAXE_STAGE1);
+
 
 
     }
@@ -97,6 +106,11 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID,"block/" + item.getId().getPath()));
 
+    }
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID,"item/" + item.getId().getPath()));
     }
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

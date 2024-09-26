@@ -2,7 +2,7 @@
   "creativetab.abyssmagicmod.abyssmagic_items": "Abyss Magic Mod Tab",
 
   "item.abyssmagicmod.abysssteel": "Abysssteel Ingot",
-  "tooltip.abyssmagicmod.abysssteel.tooltip.1": "Ingot with Voidmagic",
+  "tooltip.abyssmagicmod.abysssteel.tooltip.1": "§Ingot with Voidmagic",
   "item.abyssmagicmod.raw_abysssteel": "Raw Abysssteel",
 
   "item.abyssmagicmod.bloodgold": "Bloodgold Ingot",
@@ -33,6 +33,17 @@
   "item.abyssmagicmod.raw_myrinium": "Raw Myrinium",
 
   "item.abyssmagicmod.manathyl": "Manathyl",
+
+
+  "item.abyssmagicmod.fireryte_pickaxe_stage1": "Fireryte Pickaxe",
+
+  "block.abyssmagicmod.magessenz_block": "Mageessenz Block",
+  "block.abyssmagicmod.magessenz_block_watertyp": "Mageessenz Water Block",
+  "block.abyssmagicmod.magessenz_block_firetyp": "Mageessenz Fire Block",
+  "block.abyssmagicmod.magessenz_block_airtyp": "Mageessenz Air Block",
+  "block.abyssmagicmod.magessenz_block_naturtyp": "Mageessenz Natur Block",
+  "block.abyssmagicmod.magessenz_block_lunartyp": "Mageessenz Lunar Block",
+  "block.abyssmagicmod.magessenz_block_solartyp": "Mageessenz Solar Block",
 
   "item.abyssmagicmod.magessenz": "Mageessenz Ingot",
   "item.abyssmagicmod.magessenz_airtyp": "Mageessenz Air Ingot",
@@ -130,5 +141,13 @@
   "block.abyssmagicmod.scarlet_tree_fence_gate": "Scarlet Tree Fence Gate",
   "block.abyssmagicmod.scarlet_tree_wall": "Scarlet Tree Wall",
   "block.abyssmagicmod.scarlet_tree_door": "Scarlet Tree Door",
-  "block.abyssmagicmod.scarlet_tree_trapdoor": "Scarlet Tree Trapdoor"
+  "block.abyssmagicmod.scarlet_tree_trapdoor": "Scarlet Tree Trapdoor",
+
+  "block.abyssmagicmod.life_tree_log": "Life Tree Log",
+  "block.abyssmagicmod.stripped_life_tree_log": "Stripped Life Tree Log",
+  "block.abyssmagicmod.life_tree_wood": "Life Tree Wood",
+  "block.abyssmagicmod.stripped_life_tree_wood": "Stripped Life Tree Wood",
+  "block.abyssmagicmod.life_tree_leaves": "Life Tree Leaves",
+  "block.abyssmagicmod.life_tree_sapling": "Life Tree Sapling",
+  "block.abyssmagicmod.life_tree_planks": "Life Tree Planks"
 }

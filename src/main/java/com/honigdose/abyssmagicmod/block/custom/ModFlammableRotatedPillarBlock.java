@@ -3,6 +3,8 @@ package com.honigdose.abyssmagicmod.block.custom;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
@@ -36,12 +38,19 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
+
             if(state.is(ModBlocks.SCARLET_TREE_LOG.get())) {
                 return ModBlocks.STRIPPED_SCARLET_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
-
             if(state.is(ModBlocks.SCARLET_TREE_WOOD.get())) {
                 return ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+
+            if(state.is(ModBlocks.LIFE_TREE_LOG.get())) {
+                return ModBlocks.STRIPPED_LIFE_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if(state.is(ModBlocks.LIFE_TREE_WOOD.get())) {
+                return ModBlocks.STRIPPED_LIFE_TREE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 

@@ -5,10 +5,14 @@ import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
 import com.honigdose.abyssmagicmod.block.custom.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
+import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,6 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -60,6 +65,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> SUIRYTE_BLOCK = registerBlock("suiryte_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK = registerBlock("magessenz_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_WATERTYP = registerBlock("magessenz_block_watertyp",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_FIRETYPE = registerBlock("magessenz_block_firetype",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_AIRTYP = registerBlock("magessenz_block_airtyp",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_NATURTYP = registerBlock("magessenz_block_naturtyp",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_LUNARTYP = registerBlock("magessenz_block_lunartyp",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MAGESSENZ_BLOCK_SOLARTYP = registerBlock("magessenz_block_solartyp",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE = registerBlock("magessenz_ore_deepslate",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -117,74 +137,73 @@ public class ModBlocks {
 
 // CRYSTALS
     public static final RegistryObject<Block> FIRE_CRYSTAL = registerBlock("fire_crystal",
-            () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+            () -> new AmethystClusterBlock(6,4,(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).lightLevel(value -> 12).noOcclusion())));
     public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> AIR_CRYSTAL = registerBlock("air_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerBlock("air_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> NATUR_CRYSTAL = registerBlock("natur_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerBlock("natur_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> WATER_CRYSTAL = registerBlock("water_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerBlock("water_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> SOLAR_CRYSTAL = registerBlock("solar_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerBlock("solar_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> LUNAR_CRYSTAL = registerBlock("lunar_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 6).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerBlock("lunar_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> VOID_CRYSTAL = registerBlock("void_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerBlock("void_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 15).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> DEMONIC_CRYSTAL = registerBlock("demonic_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerBlock("demonic_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 15).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> CELESTIAL_CRYSTAL = registerBlock("celestial_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerBlock("celestial_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 15).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
     public static final RegistryObject<Block> ARCANA_CRYSTAL = registerBlock("arcana_crystal",
             () -> new AmethystClusterBlock(6,4,BlockBehaviour.Properties.of()
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 10).noOcclusion()));
+                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
     public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerBlock("arcana_crystal_block",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
-                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 15).noOcclusion()));
+                    .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
 
 // WOOD / TREE
@@ -200,7 +219,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCARLET_TREE_LEAVES = registerBlock("scarlet_tree_leaves",
             () -> new ScarletLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> SCARLET_TREE_SAPLING = registerBlock("scarlet_tree_sapling",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(ModTreeGrowers.SCARLET,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> SCARLET_TREE_PLANKS = registerBlock("scarlet_tree_planks",
         () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
@@ -224,6 +243,24 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCARLET_TREE_TRAPDOOR = registerBlock("scarlet_tree_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.OAK ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
 
+// Life Tree
+    public static final RegistryObject<Block> LIFE_TREE_LOG = registerBlock("life_tree_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> LIFE_TREE_WOOD = registerBlock("life_tree_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_LIFE_TREE_LOG = registerBlock("stripped_life_tree_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_LIFE_TREE_WOOD = registerBlock("stripped_life_tree_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> LIFE_TREE_LEAVES = registerBlock("life_tree_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).lightLevel(value -> 8)));
+    public static final RegistryObject<Block> LIFE_TREE_SAPLING = registerBlock("life_tree_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).lightLevel(value -> 6)));
+
+    public static final RegistryObject<Block> LIFE_TREE_PLANKS = registerBlock("life_tree_planks",
+            () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+
 
 
 
@@ -236,6 +273,82 @@ public class ModBlocks {
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
+
+    private static RegistryObject<Block> registerOreStone(String name, float strength) {
+        return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.of().strength(strength).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    }
+
+    private static RegistryObject<Block> registerLogBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+        {
+            @Override
+            public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+            }
+        });
+    }
+    private static RegistryObject<Block> registerStrippedLogBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.WOOD))
+        {
+            @Override
+            public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+            }
+        });
+    }
+
+    private static RegistryObject<Block> registerWoodBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
+                {
+                    @Override
+                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                    }
+                });
+    }
+    private static RegistryObject<Block> registerStrippedWoodBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+                {
+                    @Override
+                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                    }
+                });
+    }
+
+    private static RegistryObject<Block> registerLeavesBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+                {
+                    @Override
+                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                    }
+                });
+    }
+
+    private static RegistryObject<Block> registerPlanksBlock(String name, String tooltipTranslationKey) {
+        return BLOCKS.register(name,
+                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS))
+                {
+                    @Override
+                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
+                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                    }
+                });
+    }
+
+
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

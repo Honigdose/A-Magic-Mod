@@ -32,6 +32,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.FIRERYTE_BLOCK.get());
         dropSelf(ModBlocks.SUIRYTE_BLOCK.get());
 
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get());
+        dropSelf(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get());
+
         dropSelf(ModBlocks.FIRERYTE_RAW_BLOCK.get());
 
         this.add(ModBlocks.FIRE_CRYSTAL_BLOCK.get(),
@@ -149,6 +157,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.SCARLET_TREE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SCARLET_TREE_DOOR.get()));
 
+        // Life Tree
+        this.dropSelf(ModBlocks.LIFE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.LIFE_TREE_SAPLING.get());
+        this.dropSelf(ModBlocks.STRIPPED_LIFE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.LIFE_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
+        this.add(ModBlocks.LIFE_TREE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.LIFE_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(ModBlocks.LIFE_TREE_PLANKS.get());
 
 
 

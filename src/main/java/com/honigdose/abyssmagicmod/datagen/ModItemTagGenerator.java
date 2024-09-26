@@ -25,11 +25,12 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.SCARLET_TREE_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_SCARLET_TREE_LOG.get().asItem())
                 .add(ModBlocks.SCARLET_TREE_WOOD.get().asItem())
-                .add(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get().asItem());
+                .add(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get().asItem())
 
-
-
-
+                .add(ModBlocks.LIFE_TREE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_LIFE_TREE_LOG.get().asItem())
+                .add(ModBlocks.LIFE_TREE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get().asItem());
 
     }
 }

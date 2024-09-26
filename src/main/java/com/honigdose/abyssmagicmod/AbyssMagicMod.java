@@ -4,12 +4,15 @@ import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.creativtab.ModCreativeModeTabs;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
+import com.honigdose.abyssmagicmod.worldgen.tree.custom.LifeTree.LifeTreeTrunkPlacer;
+import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletFoliagePlacer;
+import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletTrunkPlacer;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,59 +22,60 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
+import static net.minecraft.core.Registry.register;
+
+
 @Mod(AbyssMagicMod.MOD_ID)
-public class AbyssMagicMod
-{
-    // Define mod id in a common place for everything to reference
+public class AbyssMagicMod {
+
     public static final String MOD_ID = "abyssmagicmod";
-    // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final DeferredRegister<TrunkPlacerType<?>> SCARLET_TRUNK_PLACER_TYPE_REGISTER = DeferredRegister.create(Registries.TRUNK_PLACER_TYPE, AbyssMagicMod.MOD_ID);
+    public static RegistryObject<TrunkPlacerType<ScarletTrunkPlacer>> SCARLET_TRUNK_PLACER = SCARLET_TRUNK_PLACER_TYPE_REGISTER.register("scarlet_trunk_placer", () -> new TrunkPlacerType<>(ScarletTrunkPlacer.CODEC));
+    public static final DeferredRegister<FoliagePlacerType<?>> SCARLET_FOLIAGE_PLACER_TYPE_REGISTER = DeferredRegister.create(Registries.FOLIAGE_PLACER_TYPE, AbyssMagicMod.MOD_ID);
+    public static RegistryObject<FoliagePlacerType<ScarletFoliagePlacer>> SCARLET_FOLIAGE_PLACER = SCARLET_FOLIAGE_PLACER_TYPE_REGISTER.register("scarlet_foliage_placer", () -> new FoliagePlacerType<>(ScarletFoliagePlacer.CODEC));
+
+    public static final DeferredRegister<TrunkPlacerType<?>> LIFE_TREE_TRUNK_PLACER_TYPE_REGISTER = DeferredRegister.create(Registries.TRUNK_PLACER_TYPE, AbyssMagicMod.MOD_ID);
+    public static RegistryObject<TrunkPlacerType<LifeTreeTrunkPlacer>> LIFE_TREE_TRUNK_PLACER = LIFE_TREE_TRUNK_PLACER_TYPE_REGISTER.register("life_tree_trunk_placer", () -> new TrunkPlacerType<>(LifeTreeTrunkPlacer.CODEC));
 
     public AbyssMagicMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::commonSetup);
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
 
-        ModCreativeModeTabs.register(modEventBus);
+        modEventBus.addListener(this::commonSetup);
+        MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModParticles.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+
+        SCARLET_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);
+        SCARLET_FOLIAGE_PLACER_TYPE_REGISTER.register(modEventBus);
+        LIFE_TREE_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);
 
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-
     private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-//hello
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        // Common setup code
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event){
-
-
+    public void onServerStarting(ServerStartingEvent event) {
+        // Server starting code
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
-
+            // Client setup code
         }
     }
 }
+
