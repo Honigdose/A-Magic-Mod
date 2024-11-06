@@ -26,7 +26,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import static net.minecraft.core.Registry.register;
 
 
 @Mod(AbyssMagicMod.MOD_ID)

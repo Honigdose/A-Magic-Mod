@@ -33,31 +33,28 @@ public class ModItems {
     }
 
     //INGOTS AND RAW ORE
+    public static final RegistryObject<Item> ASTRATHYL = registerItem("astrathyl");
     public static final RegistryObject<Item> ABYSSSTEEL = registerItemWithTooltip("abysssteel", "tooltip.abyssmagicmod.abysssteel.tooltip.1");
-    public static final RegistryObject<Item> RAW_ABYSSSTEEL = registerItem("raw_abysssteel");
-
     public static final RegistryObject<Item> BLOODGOLD = registerItem("bloodgold");
-    public static final RegistryObject<Item> RAW_BLOODGOLD = registerItem("raw_bloodgold");
-
     public static final RegistryObject<Item> CELESTIUM = registerItem("celestium");
-    public static final RegistryObject<Item> RAW_CELESTIUM = registerItem("raw_celestium");
-
     public static final RegistryObject<Item> FIRERYTE = registerItem("fireryte");
-    public static final RegistryObject<Item> RAW_FIRERYTE = registerItem("raw_fireryte");
-
     public static final RegistryObject<Item> FLORASTEEL = registerItem("florasteel");
-    public static final RegistryObject<Item> RAW_FLORASTEEl = registerItem("raw_florasteel");
-
     public static final RegistryObject<Item> LUNARIUM = registerItem("lunarium");
-    public static final RegistryObject<Item> RAW_LUNARIUM = registerItem("raw_lunarium");
-
     public static final RegistryObject<Item> SOLARIUM = registerItem("solarium");
-    public static final RegistryObject<Item> RAW_SOLARIUM = registerItem("raw_solarium");
-
     public static final RegistryObject<Item> SUIRYTE = registerItem("suiryte");
-    public static final RegistryObject<Item> RAW_SUIRYTE = registerItem("raw_suiryte");
-
     public static final RegistryObject<Item> SYLPHTHYL = registerItem("sylphthyl");
+
+
+
+    public static final RegistryObject<Item> RAW_ASTRATHYL = registerItem("raw_astrathyl");
+    public static final RegistryObject<Item> RAW_ABYSSSTEEL = registerItem("raw_abysssteel");
+    public static final RegistryObject<Item> RAW_BLOODGOLD = registerItem("raw_bloodgold");
+    public static final RegistryObject<Item> RAW_CELESTIUM = registerItem("raw_celestium");
+    public static final RegistryObject<Item> RAW_FIRERYTE = registerItem("raw_fireryte");
+    public static final RegistryObject<Item> RAW_FLORASTEEl = registerItem("raw_florasteel");
+    public static final RegistryObject<Item> RAW_LUNARIUM = registerItem("raw_lunarium");
+    public static final RegistryObject<Item> RAW_SOLARIUM = registerItem("raw_solarium");
+    public static final RegistryObject<Item> RAW_SUIRYTE = registerItem("raw_suiryte");
     public static final RegistryObject<Item> RAW_SYLPHTHYL = registerItem("raw_sylphthyl");
 
     public static final RegistryObject<Item> MYRINIUM = registerItem("myrinium");
@@ -65,21 +62,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> MANATHYL = registerItem("manathyl");
 
-    public static final RegistryObject<Item> MAGESSENZ = registerItem("magessenz");
-    public static final RegistryObject<Item> MAGESSENZ_FIRETYP = registerItem("magessenz_firetyp");
-    public static final RegistryObject<Item> MAGESSENZ_AIRTYP = registerItem("magessenz_airtyp");
-    public static final RegistryObject<Item> MAGESSENZ_WATERTYP = registerItem("magessenz_watertyp");
-    public static final RegistryObject<Item> MAGESSENZ_NATURTYP = registerItem("magessenz_naturtyp");
-    public static final RegistryObject<Item> MAGESSENZ_LUNARTYP = registerItem("magessenz_lunartyp");
-    public static final RegistryObject<Item> MAGESSENZ_SOLARTYP = registerItem("magessenz_solartyp");
 
-    public static final RegistryObject<Item> RAW_MAGESSENZ = registerItem("raw_magessenz");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_FIRETYP = registerItem("raw_magessenz_firetyp");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_AIRTYP = registerItem("raw_magessenz_airtyp");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_WATERTYP = registerItem("raw_magessenz_watertyp");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_NATURTYP = registerItem("raw_magessenz_naturtyp");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_LUNARTYP = registerItem("raw_magessenz_lunartyp");
-    public static final RegistryObject<Item> RAW_MAGESSENZ_SOLARTYP = registerItem("raw_magessenz_solartyp");
+    public static final RegistryObject<Item> SILVER  = registerItem("silver");
+
+    public static final RegistryObject<Item> RAW_SILVER  = registerItem("raw_silver");
+
+
 
     //CRYSTAL SHARD
     public static final RegistryObject<Item> FIRE_CRYSTAL_SHARD = registerItem("fire_crystal_shard");

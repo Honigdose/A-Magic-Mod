@@ -2,6 +2,7 @@ package com.honigdose.abyssmagicmod.datagen;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        basicItem(ModItems.ASTRATHYL.get());
         basicItem(ModItems.ABYSSSTEEL.get());
         basicItem(ModItems.FIRERYTE.get());
         basicItem(ModItems.SYLPHTHYL.get());
@@ -33,6 +35,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BLOODGOLD.get());
         basicItem(ModItems.CELESTIUM.get());
 
+        basicItem(ModItems.RAW_ASTRATHYL.get());
         basicItem(ModItems.RAW_ABYSSSTEEL.get());
         basicItem(ModItems.RAW_FIRERYTE.get());
         basicItem(ModItems.RAW_SYLPHTHYL.get());
@@ -44,21 +47,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_BLOODGOLD.get());
         basicItem(ModItems.RAW_MYRINIUM.get());
 
-        basicItem(ModItems.MAGESSENZ.get());
-        basicItem(ModItems.MAGESSENZ_SOLARTYP.get());
-        basicItem(ModItems.MAGESSENZ_LUNARTYP.get());
-        basicItem(ModItems.MAGESSENZ_FIRETYP.get());
-        basicItem(ModItems.MAGESSENZ_WATERTYP.get());
-        basicItem(ModItems.MAGESSENZ_AIRTYP.get());
-        basicItem(ModItems.MAGESSENZ_NATURTYP.get());
-
-        basicItem(ModItems.RAW_MAGESSENZ.get());
-        basicItem(ModItems.RAW_MAGESSENZ_SOLARTYP.get());
-        basicItem(ModItems.RAW_MAGESSENZ_LUNARTYP.get());
-        basicItem(ModItems.RAW_MAGESSENZ_FIRETYP.get());
-        basicItem(ModItems.RAW_MAGESSENZ_WATERTYP.get());
-        basicItem(ModItems.RAW_MAGESSENZ_AIRTYP.get());
-        basicItem(ModItems.RAW_MAGESSENZ_NATURTYP.get());
+        basicItem(ModItems.SILVER.get());
+        basicItem(ModItems.RAW_SILVER.get());
 
         basicItem(ModItems.AIR_CRYSTAL_SHARD.get());
         basicItem(ModItems.NATUR_CRYSTAL_SHARD.get());
@@ -92,6 +82,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Life Tree
         saplingItem(ModBlocks.LIFE_TREE_SAPLING);
+        simpleBlockItem(ModBlocks.LIFE_TREE_FIRETYP_DOOR);
         //Tools
         //Stage 1
         handheldItem(ModItems.FIRERYTE_PICKAXE_STAGE1);

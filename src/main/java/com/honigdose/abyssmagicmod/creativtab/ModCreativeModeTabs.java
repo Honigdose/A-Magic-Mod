@@ -22,7 +22,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.abyssmagicmod.abyssmagic_items"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                    // ORE/INGOTS/RAW ORE
+                        // ORE/INGOTS/RAW ORE
+                        output.accept(ModItems.ASTRATHYL.get());
                         output.accept(ModItems.ABYSSSTEEL.get());
                         output.accept(ModItems.BLOODGOLD.get());
                         output.accept(ModItems.CELESTIUM.get());
@@ -32,20 +33,26 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SOLARIUM.get());
                         output.accept(ModItems.SUIRYTE.get());
                         output.accept(ModItems.SYLPHTHYL.get());
+
+
                         output.accept(ModItems.MYRINIUM.get());
                         output.accept(ModItems.MANATHYL.get());
-                        output.accept(ModItems.MAGESSENZ.get());
-                        output.accept(ModItems.MAGESSENZ_AIRTYP.get());
-                        output.accept(ModItems.MAGESSENZ_FIRETYP.get());
-                        output.accept(ModItems.MAGESSENZ_LUNARTYP.get());
-                        output.accept(ModItems.MAGESSENZ_WATERTYP.get());
-                        output.accept(ModItems.MAGESSENZ_NATURTYP.get());
-                        output.accept(ModItems.MAGESSENZ_SOLARTYP.get());
 
+
+
+                        output.accept(ModBlocks.ASTRATHYL_BLOCK.get());
+                        output.accept(ModBlocks.ABYSSSTEEL_BLOCK.get());
+                        output.accept(ModBlocks.BLOODGOLD_BLOCK.get());
+                        output.accept(ModBlocks.CELESTIUM_BLOCK.get());
                         output.accept(ModBlocks.FIRERYTE_BLOCK.get());
                         output.accept(ModBlocks.SUIRYTE_BLOCK.get());
+                        output.accept(ModBlocks.FLORASTEEL_BLOCK.get());
+                        output.accept(ModBlocks.SYLPHTHYL_BLOCK.get());
+                        output.accept(ModBlocks.LUNARIUM_BLOCK.get());
+                        output.accept(ModBlocks.SOLARIUM_BLOCK.get());
 
                         output.accept(ModItems.RAW_ABYSSSTEEL.get());
+                        output.accept(ModItems.RAW_ASTRATHYL.get());
                         output.accept(ModItems.RAW_BLOODGOLD.get());
                         output.accept(ModItems.RAW_CELESTIUM.get());
                         output.accept(ModItems.RAW_FIRERYTE.get());
@@ -55,16 +62,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_SUIRYTE.get());
                         output.accept(ModItems.RAW_SYLPHTHYL.get());
                         output.accept(ModItems.RAW_MYRINIUM.get());
-                        output.accept(ModItems.RAW_MAGESSENZ.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_AIRTYP.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_FIRETYP.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_LUNARTYP.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_WATERTYP.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_NATURTYP.get());
-                        output.accept(ModItems.RAW_MAGESSENZ_SOLARTYP.get());
 
-                        output.accept(ModBlocks.FIRERYTE_RAW_BLOCK.get());
 
+                        output.accept(ModBlocks.FIRERYTE_ORE_STONE.get());
+                        output.accept(ModBlocks.SOLARIUM_ORE_STONE.get());
+                        output.accept(ModBlocks.LUNARIUM_ORE_STONE.get());
+                        output.accept(ModBlocks.SYLPHTHYL_ORE_STONE.get());
+                        output.accept(ModBlocks.SUIRYTE_ORE_STONE.get());
+                        output.accept(ModBlocks.FLORASTEEL_ORE_STONE.get());
 
                         output.accept(ModBlocks.ABYSSSTEEL_ORE.get());
                         output.accept(ModBlocks.FIRERYTE_ORE.get());
@@ -73,35 +78,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOLARIUM_ORE.get());
                         output.accept(ModBlocks.SUIRYTE_ORE.get());
                         output.accept(ModBlocks.SYLPHTHYL_ORE.get());
+
                         output.accept(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get());
                         output.accept(ModBlocks.MYRINIUM_ORE_STONE.get());
 
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get());
+                        output.accept(ModBlocks.SILVER_ORE_STONE.get());
 
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get());
-
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get());
-                        output.accept(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get());
+                        output.accept(ModBlocks.SILVER_ORE_DEEPSLATE.get());
 
 
-                    // CRYSTALS
+                        // CRYSTALS
                         output.accept(ModBlocks.FIRE_CRYSTAL.get());
                         output.accept(ModBlocks.AIR_CRYSTAL.get());
                         output.accept(ModBlocks.NATUR_CRYSTAL.get());
@@ -135,8 +121,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CELESTIAL_CRYSTAL_SHARD.get());
                         output.accept(ModItems.ARCANA_CRYSTAL_SHARD.get());
 
-                    // WOOD
-                    // Scarlet Tree
+                        // WOOD
+                        // Scarlet Tree
                         output.accept(ModBlocks.SCARLET_TREE_SAPLING.get());
                         output.accept(ModBlocks.SCARLET_TREE_LOG.get());
                         output.accept(ModBlocks.STRIPPED_SCARLET_TREE_LOG.get());
@@ -154,7 +140,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SCARLET_TREE_DOOR.get());
                         output.accept(ModBlocks.SCARLET_TREE_TRAPDOOR.get());
 
-                    // Life Tree
+                        // Life Tree
                         output.accept(ModBlocks.LIFE_TREE_SAPLING.get());
                         output.accept(ModBlocks.LIFE_TREE_LOG.get());
                         output.accept(ModBlocks.STRIPPED_LIFE_TREE_LOG.get());
@@ -162,10 +148,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
                         output.accept(ModBlocks.LIFE_TREE_LEAVES.get());
                         output.accept(ModBlocks.LIFE_TREE_PLANKS.get());
+                        //FIRE TYP
+                        output.accept(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get());
 
 
-                    //Tools
-                    //Stage 1
+                        //Tools
+                        //Stage 1
                         output.accept(ModItems.FIRERYTE_PICKAXE_STAGE1.get());
 
 

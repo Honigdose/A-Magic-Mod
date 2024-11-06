@@ -1,10 +1,12 @@
 package com.honigdose.abyssmagicmod.datagen;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -18,101 +20,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(pOutput, pRegistries);
     }
 
-    private void registerBlockRecipes(RecipeOutput recipeOutput) {
+    private void registerRareBlockRecipes(RecipeOutput recipeOutput) {
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ.get())
-                .unlockedBy("has_magessenz", has(ModItems.MAGESSENZ.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_AIRTYP.get())
-                .unlockedBy("has_magessenz_airtyp", has(ModItems.MAGESSENZ_AIRTYP.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_WATERTYP.get())
-                .unlockedBy("has_magessenz_watertyp", has(ModItems.MAGESSENZ_WATERTYP.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_FIRETYP.get())
-                .unlockedBy("has_magessenz_firetype", has(ModItems.MAGESSENZ_FIRETYP.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_NATURTYP.get())
-                .unlockedBy("has_magessenz_naturtyp", has(ModItems.MAGESSENZ_NATURTYP.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_LUNARTYP.get())
-                .unlockedBy("has_magessenz_lunartyp", has(ModItems.MAGESSENZ_LUNARTYP.get()))
-                .save(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.MAGESSENZ_SOLARTYP.get())
-                .unlockedBy("has_magessenz_solartyp", has(ModItems.MAGESSENZ_SOLARTYP.get()))
-                .save(recipeOutput);
+        IngottoBlock(recipeOutput, ModBlocks.ASTRATHYL_BLOCK.get(), ModItems.ASTRATHYL.get());
+        IngottoBlock(recipeOutput, ModBlocks.ABYSSSTEEL_BLOCK.get(), ModItems.ABYSSSTEEL.get());
+        IngottoBlock(recipeOutput, ModBlocks.BLOODGOLD_BLOCK.get(), ModItems.BLOODGOLD.get());
+        IngottoBlock(recipeOutput, ModBlocks.CELESTIUM_BLOCK.get(), ModItems.CELESTIUM.get());
+        IngottoBlock(recipeOutput, ModBlocks.FIRERYTE_BLOCK.get(), ModItems.FIRERYTE.get());
+        IngottoBlock(recipeOutput, ModBlocks.SUIRYTE_BLOCK.get(), ModItems.SUIRYTE.get());
+        IngottoBlock(recipeOutput, ModBlocks.FLORASTEEL_BLOCK.get(), ModItems.FLORASTEEL.get());
+        IngottoBlock(recipeOutput, ModBlocks.SYLPHTHYL_BLOCK.get(), ModItems.SYLPHTHYL.get());
+        IngottoBlock(recipeOutput, ModBlocks.LUNARIUM_BLOCK.get(), ModItems.LUNARIUM.get());
+        IngottoBlock(recipeOutput, ModBlocks.SOLARIUM_BLOCK.get(), ModItems.SOLARIUM.get());
     }
 
-    private void registerBlocktoIngotRecipes(RecipeOutput recipeOutput){
+    private void registerRareBlocktoIngotRecipes(RecipeOutput recipeOutput){
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK.get())
-                .unlockedBy("has_magessenz_block", has(ModBlocks.MAGESSENZ_BLOCK.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_WATERTYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get())
-                .unlockedBy("has_magessenz_block_watertyp", has(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_AIRTYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get())
-                .unlockedBy("has_magessenz_block_airtyp", has(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_FIRETYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get())
-                .unlockedBy("has_magessenz_block_firetyp", has(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_NATURTYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get())
-                .unlockedBy("has_magessenz_block_naturtyp", has(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_SOLARTYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get())
-                .unlockedBy("has_magessenz_block_solartyp", has(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get()))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MAGESSENZ_LUNARTYP.get(), 9)
-                .requires(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get())
-                .unlockedBy("has_magessenz_block_lunartyp", has(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get()))
-                .save(recipeOutput);
+        BlocktoIngot(recipeOutput, ModItems.ASTRATHYL.get(), ModBlocks.ASTRATHYL_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.ABYSSSTEEL.get(), ModBlocks.ABYSSSTEEL_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.BLOODGOLD.get(), ModBlocks.BLOODGOLD_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.CELESTIUM.get(), ModBlocks.CELESTIUM_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.FIRERYTE.get(), ModBlocks.FIRERYTE_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.SUIRYTE.get(), ModBlocks.SUIRYTE_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.FLORASTEEL.get(), ModBlocks.FLORASTEEL_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.SYLPHTHYL.get(), ModBlocks.SYLPHTHYL_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.LUNARIUM.get(), ModBlocks.LUNARIUM_BLOCK.get());
+        BlocktoIngot(recipeOutput, ModItems.SOLARIUM.get(), ModBlocks.SOLARIUM_BLOCK.get());
     }
 
     private void registerWoodRecipes(RecipeOutput recipeOutput){
@@ -145,28 +78,38 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        registerBlockRecipes(recipeOutput);
-        registerBlocktoIngotRecipes(recipeOutput);
+        registerRareBlockRecipes(recipeOutput);
+        registerRareBlocktoIngotRecipes(recipeOutput);
         registerWoodRecipes(recipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FIRERYTE_BLOCK.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.FIRERYTE.get())
-                .unlockedBy("has_fireryte", has(ModItems.FIRERYTE.get())).save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FIRERYTE.get(), 9)
-                .requires(ModBlocks.FIRERYTE_BLOCK.get())
-                .unlockedBy("has_fireryte_block", has(ModBlocks.FIRERYTE_BLOCK.get())).save(recipeOutput);
-
 
 
     }
     private void planksFromLog(RecipeOutput recipeOutput, Block planks, Block log) {
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
                 .requires(log)
                 .unlockedBy("has_log", has(log))
                 .save(recipeOutput);
+    }
+
+    private void IngottoBlock(RecipeOutput recipeOutput, Block ingotblock, Item ingot) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ingotblock)
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', ingot)
+                .unlockedBy("has_ingot", has(ingot))
+                .save(recipeOutput);
+
+    }
+
+    private void BlocktoIngot(RecipeOutput recipeOutput, Item ingot, Block ingotblock) {
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingot, 9)
+                .requires(ingotblock)
+                .unlockedBy("has_ingotblock", has(ingotblock))
+                .save(recipeOutput);
+
     }
 }

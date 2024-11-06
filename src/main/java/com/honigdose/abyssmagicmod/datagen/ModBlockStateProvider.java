@@ -2,6 +2,8 @@ package com.honigdose.abyssmagicmod.datagen;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.sun.jdi.event.ModificationWatchpointEvent;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -33,33 +35,38 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MYRINIUM_ORE_STONE);
         blockWithItem(ModBlocks.MYRINIUM_ORE_DEEPSLATE);
 
-        blockWithItem(ModBlocks.FIRERYTE_BLOCK);
-        blockWithItem(ModBlocks.SUIRYTE_BLOCK);
+        blockWithItem(ModBlocks.SILVER_ORE_STONE);
+        blockWithItem(ModBlocks.SILVER_ORE_DEEPSLATE);
 
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_WATERTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_AIRTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_NATURTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP);
+        blockWithItem(ModBlocks.FIRERYTE_ORE_STONE);
+        blockWithItem(ModBlocks.SOLARIUM_ORE_STONE);
+        blockWithItem(ModBlocks.LUNARIUM_ORE_STONE);
+        blockWithItem(ModBlocks.SYLPHTHYL_ORE_STONE);
+        blockWithItem(ModBlocks.FLORASTEEL_ORE_STONE);
+        blockWithItem(ModBlocks.SUIRYTE_ORE_STONE);
 
-        blockWithItem(ModBlocks.FIRERYTE_RAW_BLOCK);
+        ingotBlock(ModBlocks.FIRERYTE_BLOCK);
+        blockItem(ModBlocks.FIRERYTE_BLOCK);
+        ingotBlock(ModBlocks.SUIRYTE_BLOCK);
+        blockItem(ModBlocks.SUIRYTE_BLOCK);
+        ingotBlock(ModBlocks.FLORASTEEL_BLOCK);
+        blockItem(ModBlocks.FLORASTEEL_BLOCK);
+        ingotBlock(ModBlocks.SYLPHTHYL_BLOCK);
+        blockItem(ModBlocks.SYLPHTHYL_BLOCK);
+        ingotBlock(ModBlocks.SOLARIUM_BLOCK);
+        blockItem(ModBlocks.SOLARIUM_BLOCK);
+        ingotBlock(ModBlocks.LUNARIUM_BLOCK);
+        blockItem(ModBlocks.LUNARIUM_BLOCK);
+        ingotBlock(ModBlocks.ASTRATHYL_BLOCK);
+        blockItem(ModBlocks.ASTRATHYL_BLOCK);
+        ingotBlock(ModBlocks.ABYSSSTEEL_BLOCK);
+        blockItem(ModBlocks.ABYSSSTEEL_BLOCK);
+        ingotBlock(ModBlocks.BLOODGOLD_BLOCK);
+        blockItem(ModBlocks.BLOODGOLD_BLOCK);
+        ingotBlock(ModBlocks.CELESTIUM_BLOCK);
+        blockItem(ModBlocks.CELESTIUM_BLOCK);
 
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP);
-        blockWithItem(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP);
+
 
         crystalBlock(ModBlocks.FIRE_CRYSTAL_BLOCK);
         crystalBlock(ModBlocks.WATER_CRYSTAL_BLOCK);
@@ -137,6 +144,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.LIFE_TREE_WOOD.get()), blockTexture(ModBlocks.LIFE_TREE_LOG.get()), blockTexture(ModBlocks.LIFE_TREE_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_LIFE_TREE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_LIFE_TREE_LOG.get()), blockTexture(ModBlocks.STRIPPED_LIFE_TREE_LOG.get()));
 
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.LIFE_TREE_FIRETYP_DOOR.get()),modLoc("block/life_tree_firetyp_door_bottom"),modLoc("block/life_tree_firetyp_door_top"), "translucent");
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){
@@ -165,11 +174,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().cubeAll(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("translucent"));
     }
     private void crystalclusterBlock(RegistryObject<Block> blockRegistryObject) {
-        // Erstelle die Blockstates mit mehreren Varianten
         getVariantBuilder(blockRegistryObject.get()).forAllStates(state -> {
             Direction direction = state.getValue(BlockStateProperties.FACING);
 
-            // Definiere Rotation basierend auf der Richtung
             int xRotation = 0;
             int yRotation = 0;
 
@@ -196,10 +203,53 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     break;
             }
 
-            // Definiere den Render-Typ (zum Beispiel "cutout")
             return ConfiguredModel.builder()
                     .modelFile(models().cross(blockRegistryObject.getId().getPath(), blockTexture(blockRegistryObject.get()))
                             .renderType("cutout"))
+                    .rotationX(xRotation)
+                    .rotationY(yRotation)
+                    .build();
+        });
+
+    }
+    private void ingotBlock(RegistryObject<Block> blockRegistryObject) {
+        getVariantBuilder(blockRegistryObject.get()).forAllStates(state -> {
+            Direction direction = state.getValue(BlockStateProperties.FACING);
+
+            int xRotation = 0;
+            int yRotation = 0;
+
+            switch (direction) {
+                case DOWN:
+                    xRotation = 180; // Unterseite nach unten
+                    yRotation = 0;
+                    break;
+                case UP:
+                    xRotation = 0;   // Oberseite nach oben, keine Rotation
+                    yRotation = 0;
+                    break;
+                case NORTH:
+                    xRotation = 0;  // Vorderseite nach Norden
+                    yRotation = 180;
+                    break;
+                case SOUTH:
+                    xRotation = 0;  // Vorderseite nach Süden
+                    yRotation = 0;
+                    break;
+                case EAST:
+                    xRotation = 0;  // Vorderseite nach Osten
+                    yRotation = 270;
+                    break;
+                case WEST:
+                    xRotation = 0;  // Vorderseite nach Westen
+                    yRotation = 90;
+                    break;
+            }
+
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().cubeAll(blockRegistryObject.getId().getPath(), blockTexture(blockRegistryObject.get()))
+                            .renderType("solid"))
                     .rotationX(xRotation)
                     .rotationY(yRotation)
                     .build();

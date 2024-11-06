@@ -1,22 +1,16 @@
 package com.honigdose.abyssmagicmod.block;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
-import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
-import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
-import com.honigdose.abyssmagicmod.block.custom.ScarletLeavesBlock;
+import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModFlammableRotatedPillarBlock;
+import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModFlammableWoodBlock;
+import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModRotatedBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,114 +19,51 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 
-import java.util.List;
 import java.util.function.Supplier;
+
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, AbyssMagicMod.MOD_ID);
 
 // ORE
-    public static final RegistryObject<Block> ABYSSSTEEL_ORE = registerBlock("abysssteel_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> FIRERYTE_ORE = registerBlock("fireryte_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> SOLARIUM_ORE = registerBlock("solarium_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().lightLevel(value -> 8)));
-    public static final RegistryObject<Block> LUNARIUM_ORE = registerBlock("lunarium_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> SUIRYTE_ORE = registerBlock("suiryte_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> FLORASTEEL_ORE = registerBlock("florasteel_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> SYLPHTHYL_ORE = registerBlock("sylphthyl_ore",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
-    public static final RegistryObject<Block> FIRERYTE_RAW_BLOCK = registerBlock("fireryte_raw_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> FIRERYTE_BLOCK = registerBlock("fireryte_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> SUIRYTE_BLOCK = registerBlock("suiryte_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ABYSSSTEEL_ORE = registerrareOreDeepslate("abysssteel_ore", 1, 2, 10);
+    public static final RegistryObject<Block> FIRERYTE_ORE = registerrareOreDeepslate("fireryte_ore", 1, 2, 10);
+    public static final RegistryObject<Block> SOLARIUM_ORE = registerrareOreDeepslate("solarium_ore", 1, 2, 10);
+    public static final RegistryObject<Block> LUNARIUM_ORE = registerrareOreDeepslate("lunarium_ore", 1, 2, 10);
+    public static final RegistryObject<Block> SUIRYTE_ORE = registerrareOreDeepslate("suiryte_ore", 1, 2, 10);
+    public static final RegistryObject<Block> FLORASTEEL_ORE = registerrareOreDeepslate("florasteel_ore", 1, 2, 10);
+    public static final RegistryObject<Block> SYLPHTHYL_ORE = registerrareOreDeepslate("sylphthyl_ore", 1, 2, 10);
 
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK = registerBlock("magessenz_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_WATERTYP = registerBlock("magessenz_block_watertyp",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_FIRETYPE = registerBlock("magessenz_block_firetype",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_AIRTYP = registerBlock("magessenz_block_airtyp",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_NATURTYP = registerBlock("magessenz_block_naturtyp",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_LUNARTYP = registerBlock("magessenz_block_lunartyp",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
-    public static final RegistryObject<Block> MAGESSENZ_BLOCK_SOLARTYP = registerBlock("magessenz_block_solartyp",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> FIRERYTE_ORE_STONE = registerrareOreStone("fireryte_ore_stone", 1, 2, 10);
+    public static final RegistryObject<Block> SOLARIUM_ORE_STONE = registerrareOreStone("solarium_ore_stone", 1, 2, 10);
+    public static final RegistryObject<Block> LUNARIUM_ORE_STONE = registerrareOreStone("lunarium_ore_stone", 1, 2, 10);
+    public static final RegistryObject<Block> SUIRYTE_ORE_STONE = registerrareOreStone("suiryte_ore_stone", 1, 2, 10);
+    public static final RegistryObject<Block> FLORASTEEL_ORE_STONE = registerrareOreStone("florasteel_ore_stone", 1, 2, 10);
+    public static final RegistryObject<Block> SYLPHTHYL_ORE_STONE = registerrareOreStone("sylphthyl_ore_stone", 1, 2, 10);
 
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE = registerBlock("magessenz_ore_deepslate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_FIRETYP = registerBlock("magessenz_ore_deepslate_firetyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_SOLARTYP = registerBlock("magessenz_ore_deepslate_solartyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_LUNARIUM = registerBlock("magessenz_ore_deepslate_lunartyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_WATERTYP = registerBlock("magessenz_ore_deepslate_watertyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_NATURTYP = registerBlock("magessenz_ore_deepslate_naturtyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_DEEPSLATE_AIRTYP = registerBlock("magessenz_ore_deepslate_airtyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE = registerBlock("magessenz_ore_stone",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_FIRETYP = registerBlock("magessenz_ore_stone_firetyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_SOLARTYP = registerBlock("magessenz_ore_stone_solartyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_LUNARIUM = registerBlock("magessenz_ore_stone_lunartyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_WATERTYP = registerBlock("magessenz_ore_stone_watertyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_NATURTYP = registerBlock("magessenz_ore_stone_naturtyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final RegistryObject<Block> MAGESSENZ_ORE_STONE_AIRTYP = registerBlock("magessenz_ore_stone_airtyp",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final RegistryObject<Block> ASTRATHYL_BLOCK = registerIngotBlock("astrathyl_block", 1);
+    public static final RegistryObject<Block> FIRERYTE_BLOCK = registerIngotBlock("fireryte_block", 1);
+    public static final RegistryObject<Block> SUIRYTE_BLOCK = registerIngotBlock("suiryte_block", 1);
+    public static final RegistryObject<Block> SOLARIUM_BLOCK = registerIngotBlock("solarium_block", 1);
+    public static final RegistryObject<Block> LUNARIUM_BLOCK = registerIngotBlock("lunarium_block", 1);
+    public static final RegistryObject<Block> FLORASTEEL_BLOCK = registerIngotBlock("florasteel_block", 1);
+    public static final RegistryObject<Block> SYLPHTHYL_BLOCK = registerIngotBlock("sylphthyl_block", 1);
+    public static final RegistryObject<Block> BLOODGOLD_BLOCK = registerIngotBlock("bloodgold_block", 1);
+    public static final RegistryObject<Block> CELESTIUM_BLOCK = registerIngotBlock("celestium_block", 1);
+    public static final RegistryObject<Block> ABYSSSTEEL_BLOCK = registerIngotBlock("abysssteel_block", 1);
+
+    public static final RegistryObject<Block> SILVER_ORE_STONE = registerOreStone("silver_ore_stone", 10);
+
+    public static final RegistryObject<Block> SILVER_ORE_DEEPSLATE = registerOreStone("silver_ore_deepslate", 10);
 
     public static final RegistryObject<Block> MYRINIUM_ORE_DEEPSLATE = registerBlock("myrinium_ore_deepslate",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE)));
     public static final RegistryObject<Block> MYRINIUM_ORE_STONE = registerBlock("myrinium_ore_stone",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-
-
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE)));
 
 
 // CRYSTALS
@@ -205,11 +136,10 @@ public class ModBlocks {
             () -> new TintedGlassBlock(BlockBehaviour.Properties.of()
                     .strength(2f).sound(SoundType.AMETHYST).lightLevel(value -> 12).noOcclusion()));
 
-
-// WOOD / TREE
-// Scarlet Tree
+    // WOOD / TREE
+    // Scarlet Tree
     public static final RegistryObject<Block> SCARLET_TREE_LOG = registerBlock("scarlet_tree_log",
-             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> SCARLET_TREE_WOOD = registerBlock("scarlet_tree_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
     public static final RegistryObject<Block> STRIPPED_SCARLET_TREE_LOG = registerBlock("stripped_scarlet_tree_log",
@@ -217,14 +147,17 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_SCARLET_TREE_WOOD = registerBlock("stripped_scarlet_tree_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> SCARLET_TREE_LEAVES = registerBlock("scarlet_tree_leaves",
-            () -> new ScarletLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+
     public static final RegistryObject<Block> SCARLET_TREE_SAPLING = registerBlock("scarlet_tree_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SCARLET,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> SCARLET_TREE_PLANKS = registerBlock("scarlet_tree_planks",
-        () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+            () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> SCARLET_TREE_SLAB = registerBlock("scarlet_tree_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+
     public static final RegistryObject<Block> SCARLET_TREE_STAIR = registerBlock("scarlet_tree_stair",
             () -> new StairBlock(ModBlocks.SCARLET_TREE_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
@@ -243,7 +176,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCARLET_TREE_TRAPDOOR = registerBlock("scarlet_tree_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.OAK ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
 
-// Life Tree
+    // Life Tree
     public static final RegistryObject<Block> LIFE_TREE_LOG = registerBlock("life_tree_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> LIFE_TREE_WOOD = registerBlock("life_tree_wood",
@@ -258,9 +191,10 @@ public class ModBlocks {
             () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).lightLevel(value -> 6)));
 
     public static final RegistryObject<Block> LIFE_TREE_PLANKS = registerBlock("life_tree_planks",
-            () -> new ModFlammableWoodBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
 
-
+    public static final RegistryObject<Block> LIFE_TREE_FIRETYP_DOOR = registerBlock("life_tree_firetyp_door",
+            () -> new DoorBlock(BlockSetType.OAK ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
 
 
 
@@ -274,79 +208,57 @@ public class ModBlocks {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
+    private static RegistryObject<Block> registerrareOreDeepslate(String name, int xp1, int xp2, float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new DropExperienceBlock(UniformInt.of(xp1, xp2),BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.DEEPSLATE)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static RegistryObject<Block> registerrareOreStone(String name, int xp1, int xp2, float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new DropExperienceBlock(UniformInt.of(xp1, xp2),BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.STONE)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static RegistryObject<Block> registerOreDeepslate(String name, float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new Block(BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.DEEPSLATE)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
     private static RegistryObject<Block> registerOreStone(String name, float strength) {
-        return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.of().strength(strength).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new Block(BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.STONE)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
     }
 
-    private static RegistryObject<Block> registerLogBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
-        {
-            @Override
-            public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-            }
-        });
-    }
-    private static RegistryObject<Block> registerStrippedLogBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG).sound(SoundType.WOOD))
-        {
-            @Override
-            public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-            }
-        });
+    private static RegistryObject<Block> registerIngotBlock(String name, float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new ModRotatedBlock(BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .sound(SoundType.COPPER)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
     }
 
-    private static RegistryObject<Block> registerWoodBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
-                {
-                    @Override
-                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-                    }
-                });
-    }
-    private static RegistryObject<Block> registerStrippedWoodBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
-                {
-                    @Override
-                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-                    }
-                });
-    }
 
-    private static RegistryObject<Block> registerLeavesBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
-                {
-                    @Override
-                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-                    }
-                });
-    }
-
-    private static RegistryObject<Block> registerPlanksBlock(String name, String tooltipTranslationKey) {
-        return BLOCKS.register(name,
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS))
-                {
-                    @Override
-                    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-                        pTooltipComponents.add(Component.translatable(tooltipTranslationKey));
-                        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-                    }
-                });
-    }
 
 
 

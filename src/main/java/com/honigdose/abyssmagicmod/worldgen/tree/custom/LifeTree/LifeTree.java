@@ -1,6 +1,7 @@
 package com.honigdose.abyssmagicmod.worldgen.tree.custom.LifeTree;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.worldgen.ModConfiguredFeatures;
 import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletFoliagePlacer;
 import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletTrunkPlacer;

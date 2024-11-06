@@ -1,6 +1,7 @@
 package com.honigdose.abyssmagicmod.datagen.loot;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -29,18 +30,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
         dropSelf(ModBlocks.FIRERYTE_BLOCK.get());
         dropSelf(ModBlocks.SUIRYTE_BLOCK.get());
+        dropSelf(ModBlocks.FLORASTEEL_BLOCK.get());
+        dropSelf(ModBlocks.SYLPHTHYL_BLOCK.get());
+        dropSelf(ModBlocks.SOLARIUM_BLOCK.get());
+        dropSelf(ModBlocks.LUNARIUM_BLOCK.get());
+        dropSelf(ModBlocks.ABYSSSTEEL_BLOCK.get());
+        dropSelf(ModBlocks.ASTRATHYL_BLOCK.get());
+        dropSelf(ModBlocks.CELESTIUM_BLOCK.get());
+        dropSelf(ModBlocks.BLOODGOLD_BLOCK.get());
 
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_WATERTYP.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_FIRETYPE.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_NATURTYP.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_AIRTYP.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_SOLARTYP.get());
-        dropSelf(ModBlocks.MAGESSENZ_BLOCK_LUNARTYP.get());
-
-        dropSelf(ModBlocks.FIRERYTE_RAW_BLOCK.get());
 
         this.add(ModBlocks.FIRE_CRYSTAL_BLOCK.get(),
                 block -> createOreDrop(ModBlocks.FIRE_CRYSTAL_BLOCK.get(), ModItems.FIRE_CRYSTAL_SHARD.get()));
@@ -100,35 +101,24 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.FLORASTEEL_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.FLORASTEEL_ORE.get(), ModItems.RAW_FLORASTEEl.get(), 1,3));
 
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE.get(), ModItems.RAW_MAGESSENZ.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_SOLARTYP.get(), ModItems.RAW_MAGESSENZ_SOLARTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_LUNARIUM.get(), ModItems.RAW_MAGESSENZ_LUNARTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_FIRETYP.get(), ModItems.RAW_MAGESSENZ_FIRETYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_AIRTYP.get(), ModItems.RAW_MAGESSENZ_AIRTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_NATURTYP.get(), ModItems.RAW_MAGESSENZ_NATURTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE_WATERTYP.get(), ModItems.RAW_MAGESSENZ_WATERTYP.get(), 1,5));
+        this.add(ModBlocks.FIRERYTE_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.FIRERYTE_ORE_STONE.get(), ModItems.RAW_FIRERYTE.get(), 1,3));
+        this.add(ModBlocks.LUNARIUM_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.LUNARIUM_ORE_STONE.get(), ModItems.RAW_LUNARIUM.get(), 1,3));
+        this.add(ModBlocks.SOLARIUM_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.SOLARIUM_ORE_STONE.get(), ModItems.RAW_SOLARIUM.get(), 1,3));
+        this.add(ModBlocks.SUIRYTE_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.SUIRYTE_ORE_STONE.get(), ModItems.RAW_SUIRYTE.get(), 1,3));
+        this.add(ModBlocks.SYLPHTHYL_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.SYLPHTHYL_ORE_STONE.get(), ModItems.RAW_SYLPHTHYL.get(), 1,3));
+        this.add(ModBlocks.FLORASTEEL_ORE_STONE.get(),
+                block -> createMultipleOreDrops(ModBlocks.FLORASTEEL_ORE_STONE.get(), ModItems.RAW_FLORASTEEl.get(), 1,3));
 
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_STONE.get(), ModItems.RAW_MAGESSENZ.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_SOLARTYP.get(), ModItems.RAW_MAGESSENZ_SOLARTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_LUNARIUM.get(), ModItems.RAW_MAGESSENZ_LUNARTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_FIRETYP.get(), ModItems.RAW_MAGESSENZ_FIRETYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_AIRTYP.get(), ModItems.RAW_MAGESSENZ_AIRTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_NATURTYP.get(), ModItems.RAW_MAGESSENZ_NATURTYP.get(), 1,5));
-        this.add(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get(),
-                block -> createMultipleOreDrops(ModBlocks.MAGESSENZ_ORE_DEEPSLATE_WATERTYP.get(), ModItems.RAW_MAGESSENZ_WATERTYP.get(), 1,5));
+        this.add(ModBlocks.SILVER_ORE_STONE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE_STONE.get(), ModItems.RAW_SILVER.get()));
+        this.add(ModBlocks.SILVER_ORE_DEEPSLATE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_SILVER.get()));
+
 
         this.add(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get(),
                 block -> createMultipleOreDrops(ModBlocks.MYRINIUM_ORE_DEEPSLATE.get(), ModItems.RAW_MYRINIUM.get(), 1,5));
@@ -166,7 +156,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.LIFE_TREE_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.LIFE_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(ModBlocks.LIFE_TREE_PLANKS.get());
-
+        // FIRETYP
+        this.add(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get(),
+                block -> createDoorTable(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get()));
 
 
 

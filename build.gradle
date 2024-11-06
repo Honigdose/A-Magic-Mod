@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = mod_version
@@ -118,6 +119,16 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+                includeGroup("software.bernie.geckolib")
+        }
+    }
+
 }
 
 dependencies {
@@ -145,6 +156,7 @@ dependencies {
     
     // Hack fix for now, force jopt-simple to be exactly 5.0.4 because Mojang ships that version, but some transitive dependencies request 6.0+ 
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.21.1:4.6.6")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

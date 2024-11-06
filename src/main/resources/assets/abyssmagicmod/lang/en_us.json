@@ -2,64 +2,35 @@
   "creativetab.abyssmagicmod.abyssmagic_items": "Abyss Magic Mod Tab",
 
   "item.abyssmagicmod.abysssteel": "Abysssteel Ingot",
-  "tooltip.abyssmagicmod.abysssteel.tooltip.1": "§Ingot with Voidmagic",
+  "tooltip.abyssmagicmod.abysssteel.tooltip.1": "Ingot with Voidmagic",
+
+  "item.abyssmagicmod.raw_astrathyl": "Raw Astrathyl",
   "item.abyssmagicmod.raw_abysssteel": "Raw Abysssteel",
-
-  "item.abyssmagicmod.bloodgold": "Bloodgold Ingot",
   "item.abyssmagicmod.raw_bloodgold": "Raw Bloodgold",
-
-  "item.abyssmagicmod.celestium": "Celestium Ingot",
   "item.abyssmagicmod.raw_celestium": "Raw Celestium",
-
-  "item.abyssmagicmod.fireryte": "Fireryte Ingot",
   "item.abyssmagicmod.raw_fireryte": "Raw Fireryte",
-
-  "item.abyssmagicmod.florasteel": "Florasteel Ingot",
   "item.abyssmagicmod.raw_florasteel": "Raw Florasteel",
-
-  "item.abyssmagicmod.lunarium": "Lunarium Ingot",
   "item.abyssmagicmod.raw_lunarium": "Raw Lunarium",
-
-  "item.abyssmagicmod.solarium": "Solarium Ingot",
   "item.abyssmagicmod.raw_solarium": "Raw Solarium",
-
-  "item.abyssmagicmod.suiryte": "Suiryte Ingot",
   "item.abyssmagicmod.raw_suiryte": "Raw Suiryte",
-
-  "item.abyssmagicmod.sylphthyl": "Sylphthyl Ingot",
   "item.abyssmagicmod.raw_sylphthyl": "Raw Sylphthyl",
-
-  "item.abyssmagicmod.myrinium": "Myrinium Ingot",
   "item.abyssmagicmod.raw_myrinium": "Raw Myrinium",
 
-  "item.abyssmagicmod.manathyl": "Manathyl",
 
+  "item.abyssmagicmod.astrathyl": "Astrathyl Ingot",
+  "item.abyssmagicmod.bloodgold": "Bloodgold Ingot",
+  "item.abyssmagicmod.celestium": "Celestium Ingot",
+  "item.abyssmagicmod.fireryte": "Fireryte Ingot",
+  "item.abyssmagicmod.florasteel": "Florasteel Ingot",
+  "item.abyssmagicmod.lunarium": "Lunarium Ingot",
+  "item.abyssmagicmod.solarium": "Solarium Ingot",
+  "item.abyssmagicmod.suiryte": "Suiryte Ingot",
+  "item.abyssmagicmod.sylphthyl": "Sylphthyl Ingot",
+  "item.abyssmagicmod.myrinium": "Myrinium Ingot",
+  "item.abyssmagicmod.manathyl": "Manathyl",
 
   "item.abyssmagicmod.fireryte_pickaxe_stage1": "Fireryte Pickaxe",
 
-  "block.abyssmagicmod.magessenz_block": "Mageessenz Block",
-  "block.abyssmagicmod.magessenz_block_watertyp": "Mageessenz Water Block",
-  "block.abyssmagicmod.magessenz_block_firetyp": "Mageessenz Fire Block",
-  "block.abyssmagicmod.magessenz_block_airtyp": "Mageessenz Air Block",
-  "block.abyssmagicmod.magessenz_block_naturtyp": "Mageessenz Natur Block",
-  "block.abyssmagicmod.magessenz_block_lunartyp": "Mageessenz Lunar Block",
-  "block.abyssmagicmod.magessenz_block_solartyp": "Mageessenz Solar Block",
-
-  "item.abyssmagicmod.magessenz": "Mageessenz Ingot",
-  "item.abyssmagicmod.magessenz_airtyp": "Mageessenz Air Ingot",
-  "item.abyssmagicmod.magessenz_firetyp": "Mageessenz Fire Ingot",
-  "item.abyssmagicmod.magessenz_naturtyp": "Mageessenz Natur Ingot",
-  "item.abyssmagicmod.magessenz_watertyp": "Mageessenz Water Ingot",
-  "item.abyssmagicmod.magessenz_solartyp": "Mageessenz Solar Ingot",
-  "item.abyssmagicmod.magessenz_lunartyp": "Mageessenz Lunar Ingot",
-
-  "item.abyssmagicmod.raw_magessenz": "Raw Mageessenz",
-  "item.abyssmagicmod.raw_magessenz_airtyp": "Raw Mageessenz Air",
-  "item.abyssmagicmod.raw_magessenz_firetyp": "Raw Mageessenz Fire",
-  "item.abyssmagicmod.raw_magessenz_naturtyp": "Raw Mageessenz Natur",
-  "item.abyssmagicmod.raw_magessenz_watertyp": "Raw Mageessenz Water",
-  "item.abyssmagicmod.raw_magessenz_solartyp": "Raw Mageessenz Solar",
-  "item.abyssmagicmod.raw_magessenz_lunartyp": "Raw Mageessenz Lunar",
 
   "block.abyssmagicmod.abysssteel_ore": "Abysssteel Ore",
   "block.abyssmagicmod.fireryte_ore": "Fireryte Ore",
@@ -69,29 +40,34 @@
   "block.abyssmagicmod.suiryte_ore": "Suiryte Ore",
   "block.abyssmagicmod.sylphthyl_ore": "Sylphthyl Ore",
 
-  "block.abyssmagicmod.magessenz_ore_deepslate": "Magessenz Ore",
-  "block.abyssmagicmod.magessenz_ore_deepslate_firetyp": "Magessenz Ore Firetyp",
-  "block.abyssmagicmod.magessenz_ore_deepslate_airtyp": "Magessenz Ore Airtyp",
-  "block.abyssmagicmod.magessenz_ore_deepslate_watertyp": "Magessenz Ore Watertyp",
-  "block.abyssmagicmod.magessenz_ore_deepslate_naturtyp": "Magessenz Ore Naturtyp",
-  "block.abyssmagicmod.magessenz_ore_deepslate_solartyp": "Magessenz Ore Solartyp",
-  "block.abyssmagicmod.magessenz_ore_deepslate_lunartyp": "Magessenz Ore Lunartyp",
-
-  "block.abyssmagicmod.magessenz_ore_stone": "Magessenz Ore",
-  "block.abyssmagicmod.magessenz_ore_stone_firetyp": "Magessenz Ore Firetyp",
-  "block.abyssmagicmod.magessenz_ore_stone_airtyp": "Magessenz Ore Airtyp",
-  "block.abyssmagicmod.magessenz_ore_stone_watertyp": "Magessenz Ore Watertyp",
-  "block.abyssmagicmod.magessenz_ore_stone_naturtyp": "Magessenz Ore Naturtyp",
-  "block.abyssmagicmod.magessenz_ore_stone_solartyp": "Magessenz Ore Solartyp",
-  "block.abyssmagicmod.magessenz_ore_stone_lunartyp": "Magessenz Ore Lunartyp",
+  "block.abyssmagicmod.fireryte_ore_stone": "Fireryte Ore",
+  "block.abyssmagicmod.solarium_ore_stone": "Solarium Ore",
+  "block.abyssmagicmod.lunarium_ore_stone": "Lunarium Ore",
+  "block.abyssmagicmod.florasteel_ore_stone": "Florasteel Ore",
+  "block.abyssmagicmod.suiryte_ore_stone": "Suiryte Ore",
+  "block.abyssmagicmod.sylphthyl_ore_stone": "Sylphthyl Ore",
 
   "block.abyssmagicmod.myrinium_ore_deepslate": "Myrinium Ore",
   "block.abyssmagicmod.myrinium_ore_stone": "Myrinium Ore",
+
+  "block.abyssmagicmod.silver_ore_stone": "Silver Ore",
+  "block.abyssmagicmod.silver_ore_deepslate": "Silver Ore",
+
+  "item.abyssmagicmod.silver": "Silver Ingot",
+  "item.abyssmagicmod.raw_silver": "Raw Silver",
 
   "block.abyssmagicmod.fireryte_raw_block": "Raw Fireryte Block",
 
   "block.abyssmagicmod.fireryte_block": "Fireryte Block",
   "block.abyssmagicmod.suiryte_block": "Suiryte Block",
+  "block.abyssmagicmod.florasteel_block": "Florasteel Block",
+  "block.abyssmagicmod.sylphthyl_block": "Sylphthyl Block",
+  "block.abyssmagicmod.solarium_block": "Solarium Block",
+  "block.abyssmagicmod.lunarium_block": "Lunarium Block",
+  "block.abyssmagicmod.astrathyl_block": "Astrathyl Block",
+  "block.abyssmagicmod.abysssteel_block": "Abysssteel Block",
+  "block.abyssmagicmod.bloodgold_block": "Bloodgold Block",
+  "block.abyssmagicmod.celestium_block": "Celestium Block",
 
   "block.abyssmagicmod.fire_crystal": "Fire Crystal",
   "block.abyssmagicmod.fire_crystal_block": "Fire Crystal Block",
@@ -149,5 +125,6 @@
   "block.abyssmagicmod.stripped_life_tree_wood": "Stripped Life Tree Wood",
   "block.abyssmagicmod.life_tree_leaves": "Life Tree Leaves",
   "block.abyssmagicmod.life_tree_sapling": "Life Tree Sapling",
-  "block.abyssmagicmod.life_tree_planks": "Life Tree Planks"
+  "block.abyssmagicmod.life_tree_planks": "Life Tree Planks",
+  "block.abyssmagicmod.life_tree_firetyp_door": "Life Tree Door"
 }
