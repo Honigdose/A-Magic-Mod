@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "abyssmagicmod:block/large_solar_crystal_bottom"
+    },
+    "half=upper": {
+      "model": "abyssmagicmod:block/large_solar_crystal_top"
+    }
+  }
+}

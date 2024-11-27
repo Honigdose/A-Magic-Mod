@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "trianglebottles=1,waterlogged=false,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 180
+    },
+    "trianglebottles=1,waterlogged=false,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle"
+    },
+    "trianglebottles=1,waterlogged=false,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 270
+    },
+    "trianglebottles=1,waterlogged=false,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 90
+    },
+    "trianglebottles=1,waterlogged=true,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 180
+    },
+    "trianglebottles=1,waterlogged=true,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle"
+    },
+    "trianglebottles=1,waterlogged=true,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 270
+    },
+    "trianglebottles=1,waterlogged=true,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle",
+      "y": 90
+    },
+    "trianglebottles=2,waterlogged=false,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 180
+    },
+    "trianglebottles=2,waterlogged=false,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two"
+    },
+    "trianglebottles=2,waterlogged=false,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 270
+    },
+    "trianglebottles=2,waterlogged=false,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 90
+    },
+    "trianglebottles=2,waterlogged=true,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 180
+    },
+    "trianglebottles=2,waterlogged=true,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two"
+    },
+    "trianglebottles=2,waterlogged=true,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 270
+    },
+    "trianglebottles=2,waterlogged=true,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_two",
+      "y": 90
+    },
+    "trianglebottles=3,waterlogged=false,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 180
+    },
+    "trianglebottles=3,waterlogged=false,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three"
+    },
+    "trianglebottles=3,waterlogged=false,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 270
+    },
+    "trianglebottles=3,waterlogged=false,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 90
+    },
+    "trianglebottles=3,waterlogged=true,facing=north": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 180
+    },
+    "trianglebottles=3,waterlogged=true,facing=south": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three"
+    },
+    "trianglebottles=3,waterlogged=true,facing=east": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 270
+    },
+    "trianglebottles=3,waterlogged=true,facing=west": {
+      "model": "abyssmagicmod:block/magic_triangle_bottle_three",
+      "y": 90
+    }
+  }
+}

@@ -2,7 +2,6 @@ package com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree;
 
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.worldgen.ModConfiguredFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;

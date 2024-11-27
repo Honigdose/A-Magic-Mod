@@ -1,4 +1,4 @@
-package com.honigdose.abyssmagicmod.block.custom.customblockclass;
+package com.honigdose.abyssmagicmod.block.custom;
 
 import com.honigdose.abyssmagicmod.particle.ModParticles;
 import net.minecraft.core.BlockPos;

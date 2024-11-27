@@ -2,6 +2,7 @@ package com.honigdose.abyssmagicmod.event;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
+import com.honigdose.abyssmagicmod.particle.custom.CuteCrystalParticle;
 import com.honigdose.abyssmagicmod.particle.custom.ScarletLeavesParticle;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,5 +19,10 @@ public class ModClientEvents {
                 ModParticles.SCARLET_LEAVES_PARTICLE.get(),
                 ScarletLeavesParticle.Provider::new
         );
+        Minecraft.getInstance().particleEngine.register(
+                ModParticles.CUTE_CRYSTAL_PARTICLE.get(),
+                CuteCrystalParticle.Provider::new
+        );
     }
+
 }

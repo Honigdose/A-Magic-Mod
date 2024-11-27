@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "abyssmagicmod:block/large_air_crystal_bottom"
+    },
+    "half=upper": {
+      "model": "abyssmagicmod:block/large_air_crystal_top"
+    }
+  }
+}
