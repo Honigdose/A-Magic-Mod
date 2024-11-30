@@ -302,7 +302,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SQUARE_WATER_ESSENZ.get());
                         output.accept(ModItems.TRIANGLE_WATER_ESSENZ.get());
                         output.accept(ModItems.ROUND_NATUR_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_FIRE_ESSENZ.get());
+                        output.accept(ModItems.SQUARE_NATUR_ESSENZ.get());
                         output.accept(ModItems.TRIANGLE_NATUR_ESSENZ.get());
                         output.accept(ModItems.ROUND_AIR_ESSENZ.get());
                         output.accept(ModItems.SQUARE_AIR_ESSENZ.get());

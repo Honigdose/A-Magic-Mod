@@ -1,6 +1,6 @@
 {
   "values": [
-    "#minecraft:needs_inron_tool"
+    "#minecraft:needs_iron_tool"
   ],
   "remove": [
     "abyssmagicmod:needs_fireryte_tool"
