@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "waterlogged=false,facing=north,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 0 },
+    "waterlogged=false,facing=north,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 0 },
+    "waterlogged=false,facing=north,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 0 },
+
+    "waterlogged=false,facing=south,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 180 },
+    "waterlogged=false,facing=south,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 180 },
+    "waterlogged=false,facing=south,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 180 },
+
+    "waterlogged=false,facing=east,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 90 },
+    "waterlogged=false,facing=east,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 90 },
+    "waterlogged=false,facing=east,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 90 },
+
+    "waterlogged=false,facing=west,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 270 },
+    "waterlogged=false,facing=west,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 270 },
+    "waterlogged=false,facing=west,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 270 },
+
+    "waterlogged=true,facing=north,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 0 },
+    "waterlogged=true,facing=north,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 0 },
+    "waterlogged=true,facing=north,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 0 },
+
+    "waterlogged=true,facing=south,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 180 },
+    "waterlogged=true,facing=south,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 180 },
+    "waterlogged=true,facing=south,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 180 },
+
+    "waterlogged=true,facing=east,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 90 },
+    "waterlogged=true,facing=east,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 90 },
+    "waterlogged=true,facing=east,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 90 },
+
+    "waterlogged=true,facing=west,model=0": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_a", "y": 270 },
+    "waterlogged=true,facing=west,model=1": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_b", "y": 270 },
+    "waterlogged=true,facing=west,model=2": { "model": "abyssmagicmod:block/warped_alchemy_shelf_jar_c", "y": 270 }
+  }
+}

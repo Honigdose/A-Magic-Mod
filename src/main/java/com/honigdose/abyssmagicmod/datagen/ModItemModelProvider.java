@@ -23,6 +23,15 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        basicItem(ModItems.CHALK.get());
+        basicItem(ModItems.RAW_CHALK.get());
+
+        basicItem(ModItems.QUILL.get());
+
+        simpleBlockItem(ModBlocks.MORTAR_AND_PESTLE);
+        simpleBlockItem(ModBlocks.INK_BOTTLE);
+        simpleBlockItem(ModBlocks.EMPTY_INK_BOTTLE);
+
         simpleBlockItem(ModBlocks.MAGIC_ROUND_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_TRIANGLE_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_SQUARE_BOTTLE);

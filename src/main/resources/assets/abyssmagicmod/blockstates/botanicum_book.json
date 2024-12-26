@@ -1,0 +1,34 @@
+{
+	"variants": {
+		"waterlogged=false,facing=north": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 180
+		},
+		"waterlogged=false,facing=south": {
+			"model": "abyssmagicmod:block/botanicum_book_block"
+		},
+		"waterlogged=false,facing=east": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 270
+		},
+		"waterlogged=false,facing=west": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 90
+		},
+		"waterlogged=true,facing=north": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 180
+		},
+		"waterlogged=true,facing=south": {
+			"model": "abyssmagicmod:block/botanicum_book_block"
+		},
+		"waterlogged=true,facing=east": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 270
+		},
+		"waterlogged=true,facing=west": {
+			"model": "abyssmagicmod:block/botanicum_book_block",
+			"y": 90
+		}
+	}
+}

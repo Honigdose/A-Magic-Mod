@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "waterlogged=false,facing=north": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 0
+    },
+    "waterlogged=false,facing=south": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 180
+    },
+    "waterlogged=false,facing=east": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 90
+    },
+
+    "waterlogged=false,facing=west": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 270
+    },
+    "waterlogged=true,facing=north": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 0
+    },
+    "waterlogged=true,facing=south": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 180
+    },
+    "waterlogged=true,facing=east": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 90
+    },
+
+    "waterlogged=true,facing=west": {
+      "model": "abyssmagicmod:block/oak_alchemy_shelf",
+      "y": 270
+    }
+  }
+}

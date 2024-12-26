@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "abyssmagicmod:item/bestiary_book_2"
+  }
+}

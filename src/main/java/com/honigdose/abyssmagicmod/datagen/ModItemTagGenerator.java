@@ -32,5 +32,9 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.LIFE_TREE_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get().asItem());
 
+        this.tag(ItemTags.PLANKS)
+                .add((ModBlocks.LIFE_TREE_PLANKS.get().asItem()))
+                .add((ModBlocks.SCARLET_TREE_PLANKS.get().asItem()));
+
     }
 }

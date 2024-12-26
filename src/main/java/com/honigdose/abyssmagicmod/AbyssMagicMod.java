@@ -1,9 +1,11 @@
 package com.honigdose.abyssmagicmod;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.creativtab.ModCreativeModeTabs;
+import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
+import com.honigdose.abyssmagicmod.ehh.ModCreativeModeTabs;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
+import com.honigdose.abyssmagicmod.screen.ModMenuTypes;
 import com.honigdose.abyssmagicmod.worldgen.tree.custom.LifeTree.LifeTreeTrunkPlacer;
 import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletFoliagePlacer;
 import com.honigdose.abyssmagicmod.worldgen.tree.custom.ScarletTree.ScarletTrunkPlacer;
@@ -25,7 +27,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
-
 
 
 @Mod(AbyssMagicMod.MOD_ID)
@@ -52,10 +53,14 @@ public class AbyssMagicMod {
         ModBlocks.register(modEventBus);
         ModParticles.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        ModBlockEntites.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         SCARLET_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);
         SCARLET_FOLIAGE_PLACER_TYPE_REGISTER.register(modEventBus);
         LIFE_TREE_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);
+
 
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -73,7 +78,6 @@ public class AbyssMagicMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            // Client setup code
         }
     }
 }

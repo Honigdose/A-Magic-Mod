@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/generated",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "abyssmagicmod:block/bestiary_book_block"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "abyssmagicmod:item/bestiary_book_item"
+    },
+    "ground": {
+      "parent": "abyssmagicmod:block/bestiary_book_item"
+    },
+    "fixed": {
+      "parent": "abyssmagicmod:item/bestiary_book_item"
+    }
+  }
+}

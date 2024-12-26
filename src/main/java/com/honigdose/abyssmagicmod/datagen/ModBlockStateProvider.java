@@ -164,6 +164,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
 
         // TREE
+        // Minecraft Wood Typ
+
         //SCARLET TREE
         blockWithItem(ModBlocks.SCARLET_TREE_PLANKS);
         logBlock(((RotatedPillarBlock) ModBlocks.SCARLET_TREE_LOG.get()));

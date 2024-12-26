@@ -1,19 +1,33 @@
 package com.honigdose.abyssmagicmod.block;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
+import com.honigdose.abyssmagicmod.block.alchemy.MortarAndPestleBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.ShelfBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.ShelfCornerBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.ShelfDekoBlock;
 import com.honigdose.abyssmagicmod.block.custom.*;
-import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModFlammableRotatedPillarBlock;
-import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModFlammableWoodBlock;
-import com.honigdose.abyssmagicmod.block.custom.customblockclass.ModRotatedBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicRoundBottlesBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicSquareBottlesBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicTriangleBottlesBlock;
+import com.honigdose.abyssmagicmod.block.crystals.LargeMagicCrystalBlock;
+import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
+import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
+import com.honigdose.abyssmagicmod.block.custom.ModRotatedBlock;
+import com.honigdose.abyssmagicmod.block.natur.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -93,49 +107,49 @@ public class ModBlocks {
 
 
 // CRYSTALS
-    public static final RegistryObject<Block> BABY_FIRE_CRYSTAL = registerClusterCrystalBlock("baby_fire_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_AIR_CRYSTAL = registerClusterCrystalBlock("baby_air_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_NATUR_CRYSTAL = registerClusterCrystalBlock("baby_natur_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_WATER_CRYSTAL = registerClusterCrystalBlock("baby_water_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_SOLAR_CRYSTAL = registerClusterCrystalBlock("baby_solar_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_LUNAR_CRYSTAL = registerClusterCrystalBlock("baby_lunar_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_VOID_CRYSTAL = registerClusterCrystalBlock("baby_void_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_DEMONIC_CRYSTAL = registerClusterCrystalBlock("baby_demonic_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("baby_celestial_crystal",2,1,5,5);
-    public static final RegistryObject<Block> BABY_ARCANA_CRYSTAL = registerClusterCrystalBlock("baby_arcana_crystal",2,1,5,5);
+    public static final RegistryObject<Block> BABY_FIRE_CRYSTAL = registerClusterCrystalBlock("baby_fire_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_AIR_CRYSTAL = registerClusterCrystalBlock("baby_air_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_NATUR_CRYSTAL = registerClusterCrystalBlock("baby_natur_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_WATER_CRYSTAL = registerClusterCrystalBlock("baby_water_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_SOLAR_CRYSTAL = registerClusterCrystalBlock("baby_solar_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_LUNAR_CRYSTAL = registerClusterCrystalBlock("baby_lunar_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_VOID_CRYSTAL = registerClusterCrystalBlock("baby_void_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_DEMONIC_CRYSTAL = registerClusterCrystalBlock("baby_demonic_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("baby_celestial_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_ARCANA_CRYSTAL = registerClusterCrystalBlock("baby_arcana_crystal",2,1,5);
 
-    public static final RegistryObject<Block> VERY_SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("very_small_fire_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("very_small_air_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("very_small_natur_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("very_small_water_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("very_small_solar_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("very_small_lunar_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("very_small_void_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("very_small_demonic_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("very_small_celestial_crystal",2,2,5,5);
-    public static final RegistryObject<Block> VERY_SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("very_small_arcana_crystal",2,2,5,5);
+    public static final RegistryObject<Block> VERY_SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("very_small_fire_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("very_small_air_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("very_small_natur_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("very_small_water_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("very_small_solar_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("very_small_lunar_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("very_small_void_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("very_small_demonic_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("very_small_celestial_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("very_small_arcana_crystal",2,2,5);
 
-    public static final RegistryObject<Block> SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("small_fire_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("small_air_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("small_natur_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("small_water_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("small_solar_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("small_lunar_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("small_void_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("small_demonic_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("small_celestial_crystal",4,2,5,5);
-    public static final RegistryObject<Block> SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("small_arcana_crystal",4,2,5,5);
+    public static final RegistryObject<Block> SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("small_fire_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("small_air_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("small_natur_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("small_water_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("small_solar_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("small_lunar_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("small_void_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("small_demonic_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("small_celestial_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("small_arcana_crystal",4,2,5);
 
-    public static final RegistryObject<Block> FIRE_CRYSTAL = registerClusterCrystalBlock("fire_crystal",6,4,5,5);
-    public static final RegistryObject<Block> AIR_CRYSTAL = registerClusterCrystalBlock("air_crystal",6,4,5,5);
-    public static final RegistryObject<Block> NATUR_CRYSTAL = registerClusterCrystalBlock("natur_crystal",6,4,5,5);
-    public static final RegistryObject<Block> WATER_CRYSTAL = registerClusterCrystalBlock("water_crystal",6,4,5,5);
-    public static final RegistryObject<Block> SOLAR_CRYSTAL = registerClusterCrystalBlock("solar_crystal",6,4,5,5);
-    public static final RegistryObject<Block> LUNAR_CRYSTAL = registerClusterCrystalBlock("lunar_crystal",6,4,5,5);
-    public static final RegistryObject<Block> VOID_CRYSTAL = registerClusterCrystalBlock("void_crystal",6,4,5,5);
-    public static final RegistryObject<Block> DEMONIC_CRYSTAL = registerClusterCrystalBlock("demonic_crystal",6,4,5,5);
-    public static final RegistryObject<Block> CELESTIAL_CRYSTAL = registerClusterCrystalBlock("celestial_crystal",6,4,5,5);
-    public static final RegistryObject<Block> ARCANA_CRYSTAL = registerClusterCrystalBlock("arcana_crystal",6,4,5,5);
+    public static final RegistryObject<Block> FIRE_CRYSTAL = registerClusterCrystalBlock("fire_crystal",6,4,5);
+    public static final RegistryObject<Block> AIR_CRYSTAL = registerClusterCrystalBlock("air_crystal",6,4,5);
+    public static final RegistryObject<Block> NATUR_CRYSTAL = registerClusterCrystalBlock("natur_crystal",6,4,5);
+    public static final RegistryObject<Block> WATER_CRYSTAL = registerClusterCrystalBlock("water_crystal",6,4,5);
+    public static final RegistryObject<Block> SOLAR_CRYSTAL = registerClusterCrystalBlock("solar_crystal",6,4,5);
+    public static final RegistryObject<Block> LUNAR_CRYSTAL = registerClusterCrystalBlock("lunar_crystal",6,4,5);
+    public static final RegistryObject<Block> VOID_CRYSTAL = registerClusterCrystalBlock("void_crystal",6,4,5);
+    public static final RegistryObject<Block> DEMONIC_CRYSTAL = registerClusterCrystalBlock("demonic_crystal",6,4,5);
+    public static final RegistryObject<Block> CELESTIAL_CRYSTAL = registerClusterCrystalBlock("celestial_crystal",6,4,5);
+    public static final RegistryObject<Block> ARCANA_CRYSTAL = registerClusterCrystalBlock("arcana_crystal",6,4,5);
 
     public static final RegistryObject<Block> LARGE_ARCANA_CRYSTAL = registerLargeClusterCrystalBlock("large_arcana_crystal",4);
     public static final RegistryObject<Block> LARGE_FIRE_CRYSTAL = registerLargeClusterCrystalBlock("large_fire_crystal",4);
@@ -149,19 +163,52 @@ public class ModBlocks {
     public static final RegistryObject<Block> LARGE_CELESTIAL_CRYSTAL = registerLargeClusterCrystalBlock("large_celestial_crystal",4);
 
 
-    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerCrystalBlock("fire_crystal_block",4, 7);
-    public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerCrystalBlock("air_crystal_block",4, 7);
-    public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerCrystalBlock("natur_crystal_block",4, 7);
-    public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerCrystalBlock("water_crystal_block",4, 7);
-    public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerCrystalBlock("solar_crystal_block",4, 7);
-    public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerCrystalBlock("lunar_crystal_block",4, 7);
-    public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerCrystalBlock("void_crystal_block",4,7);
-    public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerCrystalBlock("demonic_crystal_block",4, 7);
-    public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerCrystalBlock("celestial_crystal_block",4, 7);
-    public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerCrystalBlock("arcana_crystal_block",4, 10);
+    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerCrystalBlock("fire_crystal_block",4, 11);
+    public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerCrystalBlock("air_crystal_block",4, 11);
+    public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerCrystalBlock("natur_crystal_block",4, 11);
+    public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerCrystalBlock("water_crystal_block",4, 11);
+    public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerCrystalBlock("solar_crystal_block",4, 11);
+    public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerCrystalBlock("lunar_crystal_block",4, 11);
+    public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerCrystalBlock("void_crystal_block",4,11);
+    public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerCrystalBlock("demonic_crystal_block",4, 11);
+    public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerCrystalBlock("celestial_crystal_block",4, 11);
+    public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerCrystalBlock("arcana_crystal_block",4, 15);
 
 
-    // Bottles
+    // Alchemy
+    public static final RegistryObject<Block> RESEARCH_TABLE_OAK = registerBlock("research_table_oak",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_ACACIA = registerBlock("research_table_acacia",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_DARK_OAK = registerBlock("research_table_dark_oak",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_JUNGLE = registerBlock("research_table_jungle",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_CHERRY = registerBlock("research_table_cherry",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_MANGROVE = registerBlock("research_table_mangrove",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_BIRCH = registerBlock("research_table_birch",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_SPRUCE = registerBlock("research_table_spruce",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_WARPED = registerBlock("research_table_warped",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> RESEARCH_TABLE_CRIMSON = registerBlock("research_table_crimson",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> ALCHEMY_BOOK = BLOCKS.register("alchemy_book",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
+    public static final RegistryObject<Block> BESTIARY_BOOK = BLOCKS.register("bestiary_book",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
+    public static final RegistryObject<Block> FORGE_BOOK = BLOCKS.register("forge_book",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
+    public static final RegistryObject<Block> BOTANICUM_BOOK = BLOCKS.register("botanicum_book",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
     public static final RegistryObject<Block> MAGIC_ROUND_BOTTLE = BLOCKS.register("magic_round_bottle",
             () -> new MagicRoundBottlesBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
     public static final RegistryObject<Block> MAGIC_TRIANGLE_BOTTLE = BLOCKS.register("magic_triangle_bottle",
@@ -169,7 +216,70 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAGIC_SQUARE_BOTTLE = BLOCKS.register("magic_square_bottle",
             () -> new MagicSquareBottlesBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
 
+
+    public static final RegistryObject<Block> MORTAR_AND_PESTLE = BLOCKS.register("mortar_and_pestle",
+            () -> new MortarAndPestleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
+    public static final RegistryObject<Block> INK_BOTTLE = BLOCKS.register("ink_bottle",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noOcclusion()) {
+                public static final VoxelShape SHAPE = Block.box(5, 0, 5, 10, 5, 10);
+                @Override
+                public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, net.minecraft.world.phys.shapes.CollisionContext context) {
+                    return SHAPE;
+                }
+            });
+    public static final RegistryObject<Block> EMPTY_INK_BOTTLE = BLOCKS.register("empty_ink_bottle",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noOcclusion()) {
+                public static final VoxelShape SHAPE = Block.box(5, 0, 5, 10, 5, 10);
+                @Override
+                public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, net.minecraft.world.phys.shapes.CollisionContext context) {
+                    return SHAPE;
+                }
+            });
     // WOOD / TREE
+    //Minecraft Wood Typs
+    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_JAR = registerBlock("oak_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_MIX = registerBlock("oak_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_JAR = registerBlock("dark_oak_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_MIX = registerBlock("dark_oak_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_JAR = registerBlock("acacia_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_MIX = registerBlock("acacia_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_JAR = registerBlock("jungle_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_MIX = registerBlock("jungle_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_JAR = registerBlock("cherry_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_MIX = registerBlock("cherry_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_JAR = registerBlock("mangrove_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_MIX = registerBlock("mangrove_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_JAR = registerBlock("birch_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_MIX = registerBlock("birch_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_JAR = registerBlock("crimson_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_MIX = registerBlock("crimson_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_JAR = registerBlock("spruce_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_MIX = registerBlock("spruce_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_JAR = registerBlock("warped_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_MIX = registerBlock("warped_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+
+
     // Scarlet Tree
     public static final RegistryObject<Block> SCARLET_TREE_LOG = registerLogBlock("scarlet_tree_log");
     public static final RegistryObject<Block> SCARLET_TREE_WOOD = registerWoodBlock("scarlet_tree_wood");
@@ -194,6 +304,15 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
     public static final RegistryObject<Block> SCARLET_TREE_DOOR = registerDoor("scarlet_tree_door");
     public static final RegistryObject<Block> SCARLET_TREE_TRAPDOOR = registerTrapDoor("scarlet_tree_trapdoor");
+
+    public static final RegistryObject<Block> RESEARCH_TABLE_SCARLET = registerBlock("research_table_scarlet",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().lightLevel(value -> 3)));
+
+    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_JAR = registerBlock("scarlet_alchemy_shelf_jar",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_MIX = registerBlock("scarlet_alchemy_shelf_mix",
+            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+
 
 
     // Life Tree
@@ -273,12 +392,12 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static RegistryObject<Block> registerClusterCrystalBlock(String name, float x, float y , float strength, int light) {
+    private static RegistryObject<Block> registerClusterCrystalBlock(String name, float x, float y , float strength) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
                 new AmethystClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
                         .noOcclusion()
-                        .lightLevel(value -> light)
+                        .lightLevel(value -> 10)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
@@ -290,7 +409,7 @@ public class ModBlocks {
                 new LargeMagicCrystalBlock(BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
                         .noOcclusion()
-                        .lightLevel(value -> 7)
+                        .lightLevel(value -> 10)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);

@@ -1,8 +1,6 @@
 package com.honigdose.abyssmagicmod.datagen.loot;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -30,6 +28,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
+        dropSelf(ModBlocks.ALCHEMY_BOOK.get());
+        dropSelf(ModBlocks.BESTIARY_BOOK.get());
+        dropSelf(ModBlocks.FORGE_BOOK.get());
+        dropSelf(ModBlocks.BOTANICUM_BOOK.get());
+
+        dropSelf(ModBlocks.MORTAR_AND_PESTLE.get());
+        dropSelf(ModBlocks.INK_BOTTLE.get());
+        dropSelf(ModBlocks.EMPTY_INK_BOTTLE.get());
+
         dropSelf(ModBlocks.FIRERYTE_BLOCK.get());
         dropSelf(ModBlocks.SUIRYTE_BLOCK.get());
         dropSelf(ModBlocks.FLORASTEEL_BLOCK.get());
@@ -44,6 +51,38 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.MAGIC_ROUND_BOTTLE.get());
         dropSelf(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get());
         dropSelf(ModBlocks.MAGIC_SQUARE_BOTTLE.get());
+
+        dropSelf(ModBlocks.RESEARCH_TABLE_OAK.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_WARPED.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_JUNGLE.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_BIRCH.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_DARK_OAK.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_MANGROVE.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_CHERRY.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_ACACIA.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_SPRUCE.get());
+        dropSelf(ModBlocks.RESEARCH_TABLE_CRIMSON.get());
+
+        dropSelf(ModBlocks.OAK_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.OAK_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.BIRCH_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.BIRCH_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.DARK_OAK_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.DARK_OAK_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.JUNGLE_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.JUNGLE_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.CRIMSON_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.CRIMSON_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.SPRUCE_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.SPRUCE_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.WARPED_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.WARPED_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.MANGROVE_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.MANGROVE_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.CHERRY_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.CHERRY_ALCHEMY_SHELF_MIX.get());
+        dropSelf(ModBlocks.ACACIA_ALCHEMY_SHELF_JAR.get());
+        dropSelf(ModBlocks.ACACIA_ALCHEMY_SHELF_MIX.get());
 
 
         this.add(ModBlocks.FIRE_CRYSTAL_BLOCK.get(),
@@ -283,6 +322,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SCARLET_TREE_TRAPDOOR.get());
         this.add(ModBlocks.SCARLET_TREE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.SCARLET_TREE_DOOR.get()));
+        this.dropSelf(ModBlocks.SCARLET_ALCHEMY_SHELF_JAR.get());
+        this.dropSelf(ModBlocks.SCARLET_ALCHEMY_SHELF_MIX.get());
+        this.dropSelf(ModBlocks.RESEARCH_TABLE_SCARLET.get());
 
         // Life Tree
         this.dropSelf(ModBlocks.LIFE_TREE_LOG.get());

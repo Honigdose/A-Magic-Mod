@@ -7,11 +7,18 @@ import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 
@@ -52,6 +59,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     private void registerWoodRecipes(RecipeOutput recipeOutput){
 
         // TREE
+        // Minecraft Wood Typs
+
         // SCARLET TREE
         woodFromLogs(recipeOutput, ModBlocks.SCARLET_TREE_WOOD.get(), ModBlocks.SCARLET_TREE_LOG.get());
         planksFromLog(recipeOutput, ModBlocks.SCARLET_TREE_PLANKS.get(), ModBlocks.SCARLET_TREE_LOG.get());
@@ -76,12 +85,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         planksFromLog(recipeOutput, ModBlocks.LIFE_TREE_PLANKS.get(), ModBlocks.LIFE_TREE_LOG.get());
     }
 
+
+    private void registerAlchemyRecipes(RecipeOutput recipeOutput){
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.INK_BOTTLE.get())
+                .pattern(" B ")
+                .pattern("ACA")
+                .pattern(" A ")
+                .define('A', Blocks.GLASS)
+                .define('B', ItemTags.PLANKS)
+                .define('C', Items.INK_SAC)
+                .unlockedBy("has_ink_bottle", has(ModBlocks.INK_BOTTLE.get())).save(recipeOutput);
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.EMPTY_INK_BOTTLE.get())
+                .pattern(" B ")
+                .pattern("A A")
+                .pattern(" A ")
+                .define('A', Blocks.GLASS)
+                .define('B', ItemTags.PLANKS)
+                .unlockedBy("has_empty_ink_bottle", has(ModBlocks.EMPTY_INK_BOTTLE.get())).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.INK_BOTTLE.get())
+                .requires(ModBlocks.EMPTY_INK_BOTTLE.get())
+                .requires(Items.INK_SAC)
+                .unlockedBy("has_ink_bottle2", has(ModBlocks.INK_BOTTLE.get())).save(recipeOutput, "abyssmagicmod:ink_bottle2");
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_CHALK.get(), 1)
+                .requires(ModBlocks.MORTAR_AND_PESTLE.get())
+                .requires(Items.WATER_BUCKET)
+                .requires(Blocks.CALCITE)
+                .unlockedBy("has_raw_chalk", has(ModItems.RAW_CHALK.get())).save(recipeOutput);
+
+
+    }
+
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
         registerRareBlockRecipes(recipeOutput);
         registerRareBlocktoIngotRecipes(recipeOutput);
         registerWoodRecipes(recipeOutput);
+        registerAlchemyRecipes(recipeOutput);
 
 
     }
@@ -113,4 +159,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
 
     }
+
+    private void AlchemyShelfBlock(RecipeOutput recipeOutput, Block shelf, Block planks, Block strippedlogs) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, shelf)
+                .pattern("BAB")
+                .pattern("A A")
+                .pattern("BAB")
+                .define('A', planks)
+                .define('B', strippedlogs)
+                .unlockedBy("has_planks", has(planks))
+                .save(recipeOutput);
+
+    }
+
+
 }
