@@ -3,8 +3,6 @@ package com.honigdose.abyssmagicmod.block;
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.alchemy.MortarAndPestleBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableBlock;
-import com.honigdose.abyssmagicmod.block.alchemy.ShelfBlock;
-import com.honigdose.abyssmagicmod.block.alchemy.ShelfCornerBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.ShelfDekoBlock;
 import com.honigdose.abyssmagicmod.block.custom.*;
 import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicRoundBottlesBlock;
@@ -206,7 +204,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FORGE_BOOK = BLOCKS.register("forge_book",
             () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
 
-    public static final RegistryObject<Block> BOTANICUM_BOOK = BLOCKS.register("botanicum_book",
+    public static final RegistryObject<Block> BOTANICA_BOOK = BLOCKS.register("botanica_book",
             () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
 
     public static final RegistryObject<Block> MAGIC_ROUND_BOTTLE = BLOCKS.register("magic_round_bottle",
@@ -238,47 +236,26 @@ public class ModBlocks {
             });
     // WOOD / TREE
     //Minecraft Wood Typs
-    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_JAR = registerBlock("oak_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_MIX = registerBlock("oak_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_JAR = registerBlock("dark_oak_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_MIX = registerBlock("dark_oak_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_JAR = registerBlock("acacia_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_MIX = registerBlock("acacia_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_JAR = registerBlock("jungle_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_MIX = registerBlock("jungle_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_JAR = registerBlock("cherry_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_MIX = registerBlock("cherry_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_JAR = registerBlock("mangrove_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_MIX = registerBlock("mangrove_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_JAR = registerBlock("birch_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_MIX = registerBlock("birch_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_JAR = registerBlock("crimson_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_MIX = registerBlock("crimson_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_JAR = registerBlock("spruce_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_MIX = registerBlock("spruce_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_JAR = registerBlock("warped_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_MIX = registerBlock("warped_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-
+    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_JAR = registerShelfBlock("oak_alchemy_shelf_jar");
+    public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_MIX = registerShelfBlock("oak_alchemy_shelf_mix");
+    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_JAR = registerShelfBlock("dark_oak_alchemy_shelf_jar");
+    public static final RegistryObject<Block> DARK_OAK_ALCHEMY_SHELF_MIX = registerShelfBlock("dark_oak_alchemy_shelf_mix");
+    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_JAR = registerShelfBlock("acacia_alchemy_shelf_jar");
+    public static final RegistryObject<Block> ACACIA_ALCHEMY_SHELF_MIX = registerShelfBlock("acacia_alchemy_shelf_mix");
+    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_JAR = registerShelfBlock("jungle_alchemy_shelf_jar");
+    public static final RegistryObject<Block> JUNGLE_ALCHEMY_SHELF_MIX = registerShelfBlock("jungle_alchemy_shelf_mix");
+    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_JAR = registerShelfBlock("cherry_alchemy_shelf_jar");
+    public static final RegistryObject<Block> CHERRY_ALCHEMY_SHELF_MIX = registerShelfBlock("cherry_alchemy_shelf_mix");
+    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_JAR = registerShelfBlock("mangrove_alchemy_shelf_jar");
+    public static final RegistryObject<Block> MANGROVE_ALCHEMY_SHELF_MIX = registerShelfBlock("mangrove_alchemy_shelf_mix");
+    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_JAR = registerShelfBlock("birch_alchemy_shelf_jar");
+    public static final RegistryObject<Block> BIRCH_ALCHEMY_SHELF_MIX = registerShelfBlock("birch_alchemy_shelf_mix");
+    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_JAR = registerShelfBlock("crimson_alchemy_shelf_jar");
+    public static final RegistryObject<Block> CRIMSON_ALCHEMY_SHELF_MIX = registerShelfBlock("crimson_alchemy_shelf_mix");
+    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_JAR = registerShelfBlock("spruce_alchemy_shelf_jar");
+    public static final RegistryObject<Block> SPRUCE_ALCHEMY_SHELF_MIX = registerShelfBlock("spruce_alchemy_shelf_mix");
+    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_JAR = registerShelfBlock("warped_alchemy_shelf_jar");
+    public static final RegistryObject<Block> WARPED_ALCHEMY_SHELF_MIX = registerShelfBlock("warped_alchemy_shelf_mix");
 
     // Scarlet Tree
     public static final RegistryObject<Block> SCARLET_TREE_LOG = registerLogBlock("scarlet_tree_log");
@@ -308,10 +285,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> RESEARCH_TABLE_SCARLET = registerBlock("research_table_scarlet",
             () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().lightLevel(value -> 3)));
 
-    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_JAR = registerBlock("scarlet_alchemy_shelf_jar",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
-    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_MIX = registerBlock("scarlet_alchemy_shelf_mix",
-            () -> new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_JAR = registerShelfBlock("scarlet_alchemy_shelf_jar");
+    public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_MIX = registerShelfBlock("scarlet_alchemy_shelf_mix");
+
 
 
 
@@ -509,7 +485,13 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
+    private static RegistryObject<Block> registerShelfBlock(String name) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new ShelfDekoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
 
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
 
 
 

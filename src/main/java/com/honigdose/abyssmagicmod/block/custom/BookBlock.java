@@ -2,6 +2,8 @@ package com.honigdose.abyssmagicmod.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -73,6 +75,9 @@ public class BookBlock extends Block {
         builder.add(WATERLOGGED, FACING);
     }
 
-
+    @Override
+    protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        super.tick(pState, pLevel, pPos, pRandom);
+    }
 }
 

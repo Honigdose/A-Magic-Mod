@@ -1,5 +1,4 @@
-package com.honigdose.abyssmagicmod.item.custom.books;
-
+package com.honigdose.abyssmagicmod.item.books.Botanica;
 
 import com.honigdose.abyssmagicmod.screen.custom.BestiaryBookScreen;
 import net.minecraft.client.Minecraft;
@@ -15,24 +14,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 
-public class BestiaryBook extends BlockItem {
+public class BotanicaBook extends BlockItem {
 
 
-    public BestiaryBook(Block pBlock, Properties pProperties) {
+    public BotanicaBook(Block pBlock, Properties pProperties) {
         super(pBlock, pProperties);
     }
-
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {
-            // Menü öffnen
-            Minecraft.getInstance().setScreen(new BestiaryBookScreen(Component.literal("Bestiary Book")));
+            Minecraft.getInstance().setScreen(new BotanicaBookScreen(Component.literal("Botanica Book")));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }
-
-
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
@@ -45,4 +40,6 @@ public class BestiaryBook extends BlockItem {
         // Standardplatzierung des Blocks erlauben
         return super.useOn(context);
     }
+
+
 }

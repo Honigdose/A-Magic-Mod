@@ -1,8 +1,7 @@
-package com.honigdose.abyssmagicmod.item.custom.books;
+package com.honigdose.abyssmagicmod.item.books.AlchemyBook;
 
 
 import com.honigdose.abyssmagicmod.screen.custom.AlchemyBookScreen;
-import com.honigdose.abyssmagicmod.screen.custom.ForgeBookScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -16,10 +15,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 
-public class ForgeBook extends BlockItem {
+public class AlchemyBook extends BlockItem {
 
 
-    public ForgeBook(Block pBlock, Properties pProperties) {
+    public AlchemyBook(Block pBlock, Properties pProperties) {
         super(pBlock, pProperties);
     }
 
@@ -27,7 +26,7 @@ public class ForgeBook extends BlockItem {
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {
             // Menü öffnen
-            Minecraft.getInstance().setScreen(new ForgeBookScreen(Component.literal("Forge Book")));
+            Minecraft.getInstance().setScreen(new AlchemyBookScreen(Component.literal("Alchemy Book")));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }

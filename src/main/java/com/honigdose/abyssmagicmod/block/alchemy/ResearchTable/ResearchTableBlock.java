@@ -1,13 +1,18 @@
 package com.honigdose.abyssmagicmod.block.alchemy.ResearchTable;
 
 
+import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
 import com.honigdose.abyssmagicmod.screen.custom.AlchemyBookScreen;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -18,6 +23,9 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -32,7 +40,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 
-public class ResearchTableBlock extends Block {
+public class ResearchTableBlock extends BaseEntityBlock {
     public static final EnumProperty<ChestType> PART = BlockStateProperties.CHEST_TYPE;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
@@ -64,6 +72,11 @@ public class ResearchTableBlock extends Block {
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(PART, ChestType.RIGHT));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return null;
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
@@ -125,12 +138,32 @@ public class ResearchTableBlock extends Block {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
-        if (pLevel.isClientSide) {
-            // Menü öffnen
-            Minecraft.getInstance().setScreen(new ResearchTableScreen(Component.literal("Research Table")));
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (pState.getBlock() != pNewState.getBlock()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof ResearchTableBlockEntity researchTableBlockEntity) {
+                researchTableBlockEntity.drops();
+            }
         }
-        return InteractionResult.SUCCESS;
+
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
+
+
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos,
+                                              Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if (!pLevel.isClientSide()) {
+            BlockEntity entity = pLevel.getBlockEntity(pPos);
+            if(entity instanceof ResearchTableBlockEntity researchTableBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(researchTableBlockEntity, Component.literal("Research Table")), pPos);
+            } else {
+                throw new IllegalStateException("Our Container provider is missing!");
+            }
+        }
+
+        return ItemInteractionResult.sidedSuccess(pLevel.isClientSide());
     }
 
     @Override
@@ -155,5 +188,21 @@ public class ResearchTableBlock extends Block {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, PART);
+    }
+
+    @Override
+    public @org.jetbrains.annotations.Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
+        return new ResearchTableBlockEntity(pPos,pState);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if(pLevel.isClientSide()) {
+            return null;
+        }
+
+        return createTickerHelper(pBlockEntityType, ModBlockEntites.RESEARCH_TABLE_BE.get(),
+                (level, blockPos, blockState, crystallizerBlockEntity) -> crystallizerBlockEntity.tick(level, blockPos, blockState));
     }
 }

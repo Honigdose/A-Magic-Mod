@@ -1,4 +1,4 @@
-package com.honigdose.abyssmagicmod.ehh;
+package com.honigdose.abyssmagicmod.util;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
@@ -322,7 +322,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.BESTIARY_BOOK.get());
                         output.accept(ModBlocks.FORGE_BOOK.get());
-                        output.accept(ModBlocks.BOTANICUM_BOOK.get());
+                        output.accept(ModBlocks.BOTANICA_BOOK.get());
 
                         output.accept(ModItems.CHALK.get());
                         output.accept(ModItems.RAW_CHALK.get());

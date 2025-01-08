@@ -2,12 +2,12 @@ package com.honigdose.abyssmagicmod.item;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.item.custom.books.AlchemyBook;
-import com.honigdose.abyssmagicmod.item.custom.books.BestiaryBook;
+import com.honigdose.abyssmagicmod.item.books.AlchemyBook.AlchemyBook;
+import com.honigdose.abyssmagicmod.item.books.Bestiary.BestiaryBook;
 import com.honigdose.abyssmagicmod.item.custom.MortarAndPestleItem;
 import com.honigdose.abyssmagicmod.item.custom.TestBook;
-import com.honigdose.abyssmagicmod.item.custom.books.BotanicumBook;
-import com.honigdose.abyssmagicmod.item.custom.books.ForgeBook;
+import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBook;
+import com.honigdose.abyssmagicmod.item.books.ForgeBook.ForgeBook;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -63,8 +63,8 @@ public class ModItems {
             () -> new MortarAndPestleItem(ModBlocks.MORTAR_AND_PESTLE.get() ,new Item.Properties().stacksTo(1).craftRemainder(Item.byBlock(MORTAR_AND_PESTLE.get()))));
 
     public static final RegistryObject<Item> INK_BOTTLE_ITEM = ITEMS.register("ink_bottle",
-            () -> new BlockItem(ModBlocks.INK_BOTTLE.get() ,new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> EMPTY_INK_BOTTLE = ITEMS.register("empty_ink_bottle",
+            () -> new BlockItem(ModBlocks.INK_BOTTLE.get() ,new Item.Properties().stacksTo(1).durability(4)));
+    public static final RegistryObject<Item> EMPTY_INK_BOTTLE_ITEM = ITEMS.register("empty_ink_bottle",
             () -> new BlockItem(ModBlocks.EMPTY_INK_BOTTLE.get() ,new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> TEST_BOOK = ITEMS.register("test_book",
@@ -79,8 +79,8 @@ public class ModItems {
     public static final RegistryObject<Item> FORGE_BOOK_ITEM = ITEMS.register("forge_book",
             () -> new ForgeBook(FORGE_BOOK.get() ,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> BOTANICUM_BOOK_ITEM = ITEMS.register("botanicum_book",
-            () -> new BotanicumBook(BOTANICUM_BOOK.get() ,new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BOTANICA_BOOK_ITEM = ITEMS.register("botanica_book",
+            () -> new BotanicaBook(BOTANICA_BOOK.get() ,new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> ROUND_FIRE_ESSENZ = registerEssenceItem("round_fire_essenz");
     public static final RegistryObject<Item> SQUARE_FIRE_ESSENZ = registerEssenceItem("square_fire_essenz");

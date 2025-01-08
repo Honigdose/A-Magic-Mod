@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "abyssmagicmod:item/botanicum_book"
+    "layer0": "abyssmagicmod:item/botanica_book"
   }
 }

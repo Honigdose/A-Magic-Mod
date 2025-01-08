@@ -31,7 +31,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.ALCHEMY_BOOK.get());
         dropSelf(ModBlocks.BESTIARY_BOOK.get());
         dropSelf(ModBlocks.FORGE_BOOK.get());
-        dropSelf(ModBlocks.BOTANICUM_BOOK.get());
+        dropSelf(ModBlocks.BOTANICA_BOOK.get());
 
         dropSelf(ModBlocks.MORTAR_AND_PESTLE.get());
         dropSelf(ModBlocks.INK_BOTTLE.get());

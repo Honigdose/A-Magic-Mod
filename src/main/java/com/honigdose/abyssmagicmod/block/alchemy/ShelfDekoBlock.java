@@ -8,6 +8,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -28,8 +30,11 @@ public class ShelfDekoBlock extends Block {
     public static final Property<Integer> MODEL = IntegerProperty.create("model", 0, 2);
 
     public ShelfDekoBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(
+        super(BlockBehaviour.Properties.of()
+                .strength(2F)
+                .sound(SoundType.WOOD)
+                .noOcclusion());
+    this.registerDefaultState(
                 this.stateDefinition.any()
                         .setValue(FACING, Direction.NORTH)
                         .setValue(WATERLOGGED, false)

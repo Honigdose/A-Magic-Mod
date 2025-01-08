@@ -263,7 +263,7 @@
   "block.abyssmagicmod.alchemy_book": "Alchemy Book",
   "block.abyssmagicmod.bestiary_book": "Bestiary",
   "block.abyssmagicmod.forge_book": "Forge Book",
-  "block.abyssmagicmod.botanicum_book": "Botanicum",
+  "block.abyssmagicmod.botanica_book": "Botanica",
 
   "block.abyssmagicmod.research_table_oak": "Research Table",
   "block.abyssmagicmod.research_table_acacia": "Research Table",
@@ -275,6 +275,7 @@
   "block.abyssmagicmod.research_table_spruce": "Research Table",
   "block.abyssmagicmod.research_table_crimson": "Research Table",
   "block.abyssmagicmod.research_table_warped": "Research Table",
+  "name.abyssmagicmod.research_table": "Research Table",
 
   "item.abyssmagicmod.chalk": "Chalk",
   "item.abyssmagicmod.raw_chalk": "Raw Chalk",

@@ -1,8 +1,7 @@
-package com.honigdose.abyssmagicmod.item.custom.books;
+package com.honigdose.abyssmagicmod.item.books.Bestiary;
 
 
-import com.honigdose.abyssmagicmod.screen.custom.AlchemyBookScreen;
-import com.honigdose.abyssmagicmod.screen.custom.BotanicumBookScreen;
+import com.honigdose.abyssmagicmod.screen.custom.BestiaryBookScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -16,21 +15,24 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 
-public class BotanicumBook extends BlockItem {
+public class BestiaryBook extends BlockItem {
 
 
-    public BotanicumBook(Block pBlock, Properties pProperties) {
+    public BestiaryBook(Block pBlock, Properties pProperties) {
         super(pBlock, pProperties);
     }
+
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {
             // Menü öffnen
-            Minecraft.getInstance().setScreen(new BotanicumBookScreen(Component.literal("Botanicum Book")));
+            Minecraft.getInstance().setScreen(new BestiaryBookScreen(Component.literal("Bestiary Book")));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }
+
+
 
     @Override
     public InteractionResult useOn(UseOnContext context) {

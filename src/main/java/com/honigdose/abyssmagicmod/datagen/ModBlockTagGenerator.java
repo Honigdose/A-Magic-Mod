@@ -2,8 +2,7 @@ package com.honigdose.abyssmagicmod.datagen;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -166,5 +165,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.LUNARIUM_ORE.get())
                 .add(ModBlocks.FIRERYTE_ORE.get())
                 .add(ModBlocks.FLORASTEEL_ORE.get());
+
+        this.tag(ModTags.Blocks.RESEARCH_TABLES)
+                .add(ModBlocks.RESEARCH_TABLE_ACACIA.get())
+                .add(ModBlocks.RESEARCH_TABLE_CRIMSON.get())
+                .add(ModBlocks.RESEARCH_TABLE_SPRUCE.get())
+                .add(ModBlocks.RESEARCH_TABLE_CHERRY.get())
+                .add(ModBlocks.RESEARCH_TABLE_MANGROVE.get())
+                .add(ModBlocks.RESEARCH_TABLE_OAK.get())
+                .add(ModBlocks.RESEARCH_TABLE_JUNGLE.get())
+                .add(ModBlocks.RESEARCH_TABLE_SCARLET.get())
+                .add(ModBlocks.RESEARCH_TABLE_WARPED.get())
+                .add(ModBlocks.RESEARCH_TABLE_BIRCH.get())
+                .add(ModBlocks.RESEARCH_TABLE_DARK_OAK.get());
+
     }
 }

@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks{
+        public static final TagKey<Block> RESEARCH_TABLES = createTag("research_tables");
         public static final TagKey<Block> NEEDS_FIRERYTE_TOOL = createTag("needs_fireryte_tool");
         public static final TagKey<Block> INCORRECT_FOR_FIRERYTE_TOOL = createTag("incorrect_for_fireryte_tool");
 
