@@ -28,9 +28,6 @@ public class MagicRoundBottlesBlock extends Block {
     public static final int MAX_BOTTLES = 3;
 
     public static final IntegerProperty ROUNDBOTTLES = IntegerProperty.create("roundbottles", 1, 3);
-    public static final IntegerProperty TRIANGLEBOTTLES = IntegerProperty.create("trianglebottles", 0, 2);
-    public static final IntegerProperty QUAREBOTTLES = IntegerProperty.create("quarebottles", 0, 2);
-
     public static final VoxelShape SHAPE_ONE = Block.box(5, 0, 5, 11, 9, 11);
     public static final VoxelShape SHAPE_TWO = Block.box(3, 0, 3, 14, 9, 14);
     public static final VoxelShape SHAPE_THREE = Block.box(2, 0, 2, 14, 9, 14);
@@ -60,16 +57,6 @@ public class MagicRoundBottlesBlock extends Block {
         }
     }
 
-    protected boolean useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult, BlockPlaceContext pUseContext) {
-        if (pStack.is(ModItems.MAGIC_SQUARE_BOTTLE_ITEM.get())){
-            return !pUseContext.isSecondaryUseActive() && pUseContext.getItemInHand().getItem() == this.asItem() && pState.getValue(QUAREBOTTLES) < 2;
-        }
-        else if(pStack.is(ModItems.MAGIC_TRIANGLE_BOTTLE_ITEM.get())){
-            return !pUseContext.isSecondaryUseActive() && pUseContext.getItemInHand().getItem() == this.asItem() && pState.getValue(TRIANGLEBOTTLES) < 2;
-        } else {
-            return super.useItemOn(pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult).consumesAction();
-        }
-    }
 
     @Override
     protected BlockState rotate(BlockState pState, Rotation pRotation) {
@@ -112,7 +99,7 @@ public class MagicRoundBottlesBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(ROUNDBOTTLES,QUAREBOTTLES,TRIANGLEBOTTLES, WATERLOGGED, FACING);
+        pBuilder.add(ROUNDBOTTLES, WATERLOGGED, FACING);
     }
 
 

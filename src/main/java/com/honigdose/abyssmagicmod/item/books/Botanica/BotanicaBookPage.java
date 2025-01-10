@@ -1,19 +1,18 @@
 package com.honigdose.abyssmagicmod.item.books.Botanica;
 
-import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import net.minecraft.resources.ResourceLocation;
-
-import java.util.List;
 
 public class BotanicaBookPage {
     private final int pageIndex;
     private final String tag;
+    private boolean unlockedpage;
     private final ResourceLocation[] textures;
     private final int tickInterval;
 
-    public BotanicaBookPage(int pageIndex, String tag, int tickInterval, ResourceLocation... textures) {
+    public BotanicaBookPage(int pageIndex, String tag, Boolean unlockedpage ,int tickInterval, ResourceLocation... textures) {
         this.pageIndex = pageIndex;
         this.tag = tag;
+        this.unlockedpage = unlockedpage;
         this.tickInterval = tickInterval;
         this.textures = textures;
     }
@@ -24,6 +23,14 @@ public class BotanicaBookPage {
 
     public String getTag() {
         return tag;
+    }
+
+    public boolean isUnlockedPage() {
+        return unlockedpage;
+    }
+
+    public void setUnlockedPage(boolean unlocked) {
+        this.unlockedpage = unlocked;
     }
 
     public ResourceLocation[] getTextures() {
@@ -39,3 +46,4 @@ public class BotanicaBookPage {
     }
 
 }
+

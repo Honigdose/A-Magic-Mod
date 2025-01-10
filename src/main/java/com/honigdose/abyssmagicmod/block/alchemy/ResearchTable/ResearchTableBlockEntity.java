@@ -2,8 +2,8 @@ package com.honigdose.abyssmagicmod.block.alchemy.ResearchTable;
 
 import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
 import com.honigdose.abyssmagicmod.item.ModItems;
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookData;
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaUnlockManager;
+import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookPage;
+import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -34,9 +34,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class ResearchTableBlockEntity extends BlockEntity implements MenuProvider {
+
+    private final Map<Item, List<Integer>> item_to_pages = Map.of(
+            Items.OAK_SAPLING, List.of(1),
+            ModItems.FIRE_CRYSTAL_SHARD.get(), List.of(6)
+    );
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -189,8 +196,8 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     private void craftItem() {
         itemHandler.extractItem(PAPER_SLOT, 1, false);
 
-        ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
 
+        ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
         if (!inkStack.isEmpty() && inkStack.isDamageableItem()) {
             int currentDamage = inkStack.getDamageValue();
             int maxDamage = inkStack.getMaxDamage();
@@ -202,7 +209,22 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
             }
         }
 
-        itemHandler.extractItem(INPUT_SLOT, 1, false);
+        ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
+
+
+        // Überprüfe, ob das Item Seiten freischalten soll
+        if (!inputStack.isEmpty() && item_to_pages.containsKey(inputStack.getItem())) {
+            List<Integer> pagesToUnlock = item_to_pages.get(inputStack.getItem());
+
+            for (int pageIndex : pagesToUnlock) {
+                if (pageIndex >= 0 && pageIndex < BotanicaBookScreen.getPages().size()) {
+                    BotanicaBookPage page = BotanicaBookScreen.getPages().get(pageIndex);
+                    page.setUnlockedPage(true);
+                }
+            }
+            itemHandler.extractItem(INPUT_SLOT, 1, false);
+
+        }
 
         resetProgress();
     }
@@ -231,8 +253,9 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         ItemStack quillStack = itemHandler.getStackInSlot(QUILL_SLOT);
         ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
         ItemStack paperStack = itemHandler.getStackInSlot(PAPER_SLOT);
+        ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
 
-        return !quillStack.isEmpty() && !inkStack.isEmpty() && !paperStack.isEmpty();
+        return !quillStack.isEmpty() && !inkStack.isEmpty() && !paperStack.isEmpty() && !inputStack.isEmpty();
     }
 
     @Override
