@@ -2,7 +2,7 @@ package com.honigdose.abyssmagicmod.block.alchemy.ResearchTable;
 
 import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
 import com.honigdose.abyssmagicmod.item.ModItems;
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookPage;
+import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookPages;
 import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

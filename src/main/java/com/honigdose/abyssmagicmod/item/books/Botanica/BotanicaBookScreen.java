@@ -7,9 +7,11 @@ import com.honigdose.abyssmagicmod.recipe.ResearchTableRecipeInput;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.player.Player;
 
 
 import java.util.HashSet;
@@ -22,19 +24,19 @@ public class BotanicaBookScreen extends Screen {
     private static final int GUI_WIDTH = 256;
     private static final int GUI_HEIGHT = 256;
 
-
+    private static final List<BotanicaBookPages> pages = List.of(BotanicaBookPages.values());
     private int currentPage = 0;
     private int currentPageTickCount = 0;
-
-    private boolean unlocked = false;
+    private final Player player;
 
     private boolean isTransitioning = false;
     private TransitionsAnimations currentTransitionAnimation = null;
     private int transitionTickCount = 0;
     private static final int TRANSITION_DURATION = 11;
 
-    public BotanicaBookScreen(Component pTitle) {
-        super(pTitle);
+    public BotanicaBookScreen(Player player) {
+        super(Component.literal("Botanica Book"));
+        this.player = player;
     }
 
 
@@ -68,51 +70,11 @@ public class BotanicaBookScreen extends Screen {
             )
     );
 
-    private static final List<BotanicaBookPage> pages = List.of(
-            new BotanicaBookPage(0, "template",true, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template.png")
-            ),
-            new BotanicaBookPage(1, "uwu", false, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template_page1.png")
-            ),
-            new BotanicaBookPage(2, "owo", true, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template_page2.png")
-            ),
-            new BotanicaBookPage(3, "animatedPage", true, 3,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template_page3.1.png"),
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template_page3.2.png")
-            ),
-            new BotanicaBookPage(4, "crystal_2", true, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_crystal2.png")
-            ),
-            new BotanicaBookPage(5, "crystal", true, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_crystal.png")
-            ),
-
-            new BotanicaBookPage(6, "fire_crystal", false, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_crystal_fire.png")
-            ),
-            new BotanicaBookPage(7, "water_crystal", false, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_crystal_water.png")
-            ),
-            new BotanicaBookPage(8, "end", true, 60,
-                    ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/botanica_book_template.png")
-            )
-    );
-
-
-
     private final List<BookChapter> chapters = List.of(
             new BookChapter("Introduction", 0),
             new BookChapter("Test", 2),
             new BookChapter("Crystals", 4)
     );
-
-    public static List<BotanicaBookPage> getPages() {
-        return pages;
-    }
-
-
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
@@ -138,7 +100,7 @@ public class BotanicaBookScreen extends Screen {
     private void renderBook(GuiGraphics graphics, int mouseX, int mouseY) {
         int x = (this.width - GUI_WIDTH) / 2;
         int y = (this.height - GUI_HEIGHT) / 2;
-        BotanicaBookPage current = pages.get(currentPage);
+        BotanicaBookPages current = pages.get(currentPage);
         boolean unlocked = current.isUnlockedPage();
 
         if (unlocked){
@@ -217,7 +179,7 @@ public class BotanicaBookScreen extends Screen {
 
     private void nextPage() {
         while (currentPage < pages.size() - 1) {
-            BotanicaBookPage nextPage = pages.get(currentPage + 1);
+            BotanicaBookPages nextPage = pages.get(currentPage + 1);
             if (nextPage.isUnlockedPage()) { // Prüfe, ob die nächste Seite freigeschaltet ist
                 if (!isTransitioning) {
                     currentTransitionAnimation = transitionsAnimations.stream()
@@ -238,7 +200,7 @@ public class BotanicaBookScreen extends Screen {
 
     private void previousPage() {
         while (currentPage > 0) {
-            BotanicaBookPage prevPage = pages.get(currentPage - 1);
+            BotanicaBookPages prevPage = pages.get(currentPage - 1);
             if (prevPage.isUnlockedPage()) { // Prüfe, ob die vorherige Seite freigeschaltet ist
                 if (!isTransitioning) {
                     currentTransitionAnimation = transitionsAnimations.stream()
@@ -280,12 +242,13 @@ public class BotanicaBookScreen extends Screen {
         }
     }
 
-
-    public boolean isUnlocked() {
-        return unlocked;
+    private boolean isPageUnlocked(BotanicaBookPages page) {
+        CompoundTag playerData = player.getPersistentData();
+        return playerData.getBoolean("botanica_unlocked_" + page.name());
     }
 
-    public void setUnlocked(boolean unlocked) {
-        this.unlocked = unlocked;
+    public void unlockPage(BotanicaBookPages page) {
+        CompoundTag playerData = player.getPersistentData();
+        playerData.putBoolean("botanica_unlocked_" + page.name(), true);
     }
 }
