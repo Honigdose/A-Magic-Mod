@@ -24,7 +24,7 @@ public class BotanicaBook extends BlockItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         if (pLevel.isClientSide) {
-            Minecraft.getInstance().setScreen(new BotanicaBookScreen(Component.literal("Botanica Book")));
+            Minecraft.getInstance().setScreen(new BotanicaBookScreen(Component.literal("Botanica Book"), pPlayer));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }

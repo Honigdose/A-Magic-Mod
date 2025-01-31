@@ -40,7 +40,6 @@ import java.util.Map;
 public class ResearchTableBlockEntity extends BlockEntity implements MenuProvider {
 
     private final Map<Item, List<Integer>> item_to_pages = Map.of(
-            Items.OAK_SAPLING, List.of(1),
             ModItems.FIRE_CRYSTAL_SHARD.get(), List.of(6)
     );
 
@@ -196,7 +195,6 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     private void craftItem() {
         itemHandler.extractItem(PAPER_SLOT, 1, false);
 
-
         ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
         if (!inkStack.isEmpty() && inkStack.isDamageableItem()) {
             int currentDamage = inkStack.getDamageValue();
@@ -211,19 +209,14 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
 
         ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
 
-
-        // Überprüfe, ob das Item Seiten freischalten soll
         if (!inputStack.isEmpty() && item_to_pages.containsKey(inputStack.getItem())) {
             List<Integer> pagesToUnlock = item_to_pages.get(inputStack.getItem());
 
             for (int pageIndex : pagesToUnlock) {
-                if (pageIndex >= 0 && pageIndex < BotanicaBookScreen.getPages().size()) {
-                    BotanicaBookPage page = BotanicaBookScreen.getPages().get(pageIndex);
-                    page.setUnlockedPage(true);
-                }
+                BotanicaBookPages page = BotanicaBookPages.getByIndex(pageIndex);
+                page.setUnlockedPage(true);
             }
             itemHandler.extractItem(INPUT_SLOT, 1, false);
-
         }
 
         resetProgress();

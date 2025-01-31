@@ -1,6 +1,6 @@
 package com.honigdose.abyssmagicmod.recipe;
 
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookPage;
+
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
 
