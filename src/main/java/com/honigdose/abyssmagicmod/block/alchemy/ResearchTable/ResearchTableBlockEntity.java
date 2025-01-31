@@ -1,9 +1,14 @@
 package com.honigdose.abyssmagicmod.block.alchemy.ResearchTable;
 
+import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookPages;
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBookScreen;
+import com.honigdose.abyssmagicmod.recipe.ModRecipes;
+import com.honigdose.abyssmagicmod.recipe.ResearchTableRecipe;
+import com.honigdose.abyssmagicmod.recipe.ResearchTableRecipeInput;
+import com.honigdose.abyssmagicmod.util.ModTags;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -12,6 +17,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -22,9 +30,12 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -35,13 +46,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 
 public class ResearchTableBlockEntity extends BlockEntity implements MenuProvider {
+    private ServerPlayer player;
 
-    private final Map<Item, List<Integer>> item_to_pages = Map.of(
-            ModItems.FIRE_CRYSTAL_SHARD.get(), List.of(6)
-    );
+    private final Map<Object, List<Integer>> item_to_pages = Map.of(
+            ModTags.Items.FIRE_CRYSTALS, List.of(8),
+            ModTags.Items.WATER_CRYSTALS, List.of(9)
+            );
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
@@ -68,6 +82,7 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     private static final int QUILL_SLOT = 1;
     private static final int PAPER_SLOT = 2;
     private static final int INPUT_SLOT = 3;
+
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -110,6 +125,9 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+        if (pPlayer instanceof ServerPlayer) {
+            this.player = (ServerPlayer) pPlayer;
+        }
         return new ResearchTableMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
@@ -144,7 +162,10 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         pTag.put("inventory", itemHandler.serializeNBT(pRegistries));
         pTag.putInt("research_table.progress", progress);
         pTag.putInt("research_table.max_progress", maxProgress);
-
+        ItemStack inkStack = this.itemHandler.getStackInSlot(INK_SLOT);
+        if (!inkStack.isEmpty() && inkStack.isDamageableItem()) {
+            pTag.putInt("InkDamage", inkStack.getDamageValue());
+        }
         super.saveAdditional(pTag, pRegistries);
     }
 
@@ -160,7 +181,6 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
             inkStack.setDamageValue(pTag.getInt("InkDamage"));
         }
     }
-
 
 
     public void drops() {
@@ -208,6 +228,7 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         }
 
         ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
+        Optional<RecipeHolder<ResearchTableRecipe>> recipe = getCurrentRecipe();
 
         if (!inputStack.isEmpty() && item_to_pages.containsKey(inputStack.getItem())) {
             List<Integer> pagesToUnlock = item_to_pages.get(inputStack.getItem());
@@ -216,11 +237,28 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
                 BotanicaBookPages page = BotanicaBookPages.getByIndex(pageIndex);
                 page.setUnlockedPage(true);
             }
-            itemHandler.extractItem(INPUT_SLOT, 1, false);
         }
+
+
+        itemHandler.extractItem(INPUT_SLOT, 1, false);
+
+        if (recipe.isPresent()) {
+            RecipeHolder<ResearchTableRecipe> recipeHolder = recipe.get();
+            ResourceLocation recipeId = recipeHolder.value().getId();
+            CriteriaTriggers.RECIPE_CRAFTED.trigger(this.player, recipeId, List.of());
+        }
+
 
         resetProgress();
     }
+
+    public Optional<RecipeHolder<ResearchTableRecipe>> getCurrentRecipe() {
+        ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
+        Optional<RecipeHolder<ResearchTableRecipe>> recipe = this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.RESEARCH_TYPE.get(), new ResearchTableRecipeInput(inputStack), level);
+        return recipe;
+    }
+
 
 
     private boolean hasCraftingFinished() {
@@ -243,13 +281,12 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
 
 
     private boolean hasRecipe() {
-        ItemStack quillStack = itemHandler.getStackInSlot(QUILL_SLOT);
-        ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
-        ItemStack paperStack = itemHandler.getStackInSlot(PAPER_SLOT);
-        ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
-
-        return !quillStack.isEmpty() && !inkStack.isEmpty() && !paperStack.isEmpty() && !inputStack.isEmpty();
+        Optional<RecipeHolder<ResearchTableRecipe>> recipe = getCurrentRecipe();
+        this.level.getRecipeManager().getAllRecipesFor(ModRecipes.RESEARCH_TYPE.get());
+        return recipe.isPresent();
     }
+
+
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {

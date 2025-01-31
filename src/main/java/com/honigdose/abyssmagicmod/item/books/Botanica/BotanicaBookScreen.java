@@ -123,7 +123,7 @@ public class BotanicaBookScreen extends Screen {
         String pageText = current.getPageText();
         if (!pageText.isEmpty()) {
             pageText = replaceVariables(pageText, player);
-            drawFormattedText(graphics, pageText, x, y + 45, 100, 130, 0x6e3c31);
+            drawFormattedText(graphics, pageText, x, y + 50, 100, 130, 0x6e3c31);
         }
 
     }
@@ -234,8 +234,8 @@ public class BotanicaBookScreen extends Screen {
 
     private void renderCustomTableOfContents(GuiGraphics graphics, int x, int y, double mouseX, double mouseY, List<BookChapter> chapters) {
         int maxEntriesPerColumn = 8;
-        int leftOffsetX = x + 20;
-        int rightOffsetX = x + 140;
+        int leftOffsetX = x + 17;
+        int rightOffsetX = x + 137;
         int leftOffsetY = 40;
         int rightOffsetY = 20;
         int clickableX, clickableY;

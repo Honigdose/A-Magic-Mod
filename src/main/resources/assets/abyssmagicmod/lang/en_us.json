@@ -2,6 +2,17 @@
   "creativetab.abyssmagicmod.abyssmagic_items": "Abyss Magic Mod Tab",
   "creativetab.abyssmagicmod.alchemy_tab": "Abyss Magic Alchemy Tab",
 
+
+  "advancements.botanica.root.title": "Botanica",
+  "advancements.botanica.root.description": "Unlocke Pages!",
+  "advancements.botanica.water_crystal_page.title": "Water Crystal Page",
+  "advancements.botanica.water_crystal_page.description": "Unlocked Water Crystals",
+  "advancements.botanica.fire_crystal_page.title": "Fire Crystal Page",
+  "advancements.botanica.fire_crystal_page.description": "Unlocked Fire Crystals",
+
+  "advancements.botanica.crystal_pages.title": "Crystal Page",
+  "advancements.botanica.crystal_pages.description": "Unlocked Crystals",
+
   "item.abyssmagicmod.abysssteel": "Abysssteel Ingot",
   "tooltip.abyssmagicmod.abysssteel.tooltip.1": "Ingot with Voidmagic",
 

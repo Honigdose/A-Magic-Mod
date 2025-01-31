@@ -4,6 +4,7 @@ import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.books.AlchemyBook.AlchemyBook;
 import com.honigdose.abyssmagicmod.item.books.Bestiary.BestiaryBook;
+import com.honigdose.abyssmagicmod.item.custom.InkBottleItem;
 import com.honigdose.abyssmagicmod.item.custom.MortarAndPestleItem;
 import com.honigdose.abyssmagicmod.item.custom.TestBook;
 import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBook;
@@ -63,7 +64,7 @@ public class ModItems {
             () -> new MortarAndPestleItem(ModBlocks.MORTAR_AND_PESTLE.get() ,new Item.Properties().stacksTo(1).craftRemainder(Item.byBlock(MORTAR_AND_PESTLE.get()))));
 
     public static final RegistryObject<Item> INK_BOTTLE_ITEM = ITEMS.register("ink_bottle",
-            () -> new BlockItem(ModBlocks.INK_BOTTLE.get() ,new Item.Properties().stacksTo(1).durability(4)));
+            () -> new InkBottleItem(ModBlocks.INK_BOTTLE.get() ,new Item.Properties().stacksTo(1).durability(4).craftRemainder(Item.byBlock(EMPTY_INK_BOTTLE.get()))));
     public static final RegistryObject<Item> EMPTY_INK_BOTTLE_ITEM = ITEMS.register("empty_ink_bottle",
             () -> new BlockItem(ModBlocks.EMPTY_INK_BOTTLE.get() ,new Item.Properties().stacksTo(16)));
 

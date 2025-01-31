@@ -3,6 +3,7 @@ package com.honigdose.abyssmagicmod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableScreen;
 import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
+import com.honigdose.abyssmagicmod.recipe.ModRecipes;
 import com.honigdose.abyssmagicmod.util.ModCreativeModeTabs;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
@@ -57,6 +58,7 @@ public class AbyssMagicMod {
         ModCreativeModeTabs.register(modEventBus);
         ModBlockEntites.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
 
 

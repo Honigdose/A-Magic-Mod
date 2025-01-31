@@ -6,13 +6,11 @@ import net.minecraft.world.item.crafting.RecipeInput;
 
 public record ResearchTableRecipeInput(ItemStack input) implements RecipeInput {
     @Override
-    public ItemStack getItem(int pIndex) {
+    public ItemStack getItem(int i) {
         return input;
     }
-
     @Override
     public int size() {
-        return 0;
+        return 1;
     }
-
 }

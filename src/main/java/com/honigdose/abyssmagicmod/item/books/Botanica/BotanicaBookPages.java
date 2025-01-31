@@ -13,17 +13,17 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public enum BotanicaBookPages {
-    TEMPLATE(0, "template", true, 60, null,"botanica_book_template.png"),
-    UWU(1, "uwu", true, 60,"uwu.txt", "botanica_book_template_page1.png"),
-    OWO(2, "owo", true, 60, null,"botanica_book_template_page2.png"),
-    ANIMATED_PAGE(3, "animatedPage", true, 3,null, "botanica_book_template_page3.1.png", "botanica_book_template_page3.2.png"),
-    CRYSTAL_2(4, "crystal_2", true, 60,null, "botanica_book_crystal2.png"),
-    CRYSTAL(5, "crystal", true, 60,null, "botanica_book_crystal.png"),
-    FIRE_CRYSTAL(6, "fire_crystal", false, 60,null, "botanica_book_crystal_fire.png"),
-    WATER_CRYSTAL(7, "water_crystal", false, 60,null, "botanica_book_crystal_water.png"),
-    END(8, "end", true, 60,null, "botanica_book_template.png");
+    TABLE_OF_CONTENTS("table_of_contents", true, 60, null,"table_of_contents_image.png"),
+    INTRODUCTION("introduction", true, 60, "introduction.txt","botanica_book_template.png"),
+    UWU("uwu", true, 60,"uwu.txt", "botanica_book_template_page1.png"),
+    OWO("owo", true, 60, null,"botanica_book_template_page2.png"),
+    ANIMATED_PAGE("animatedPage", true, 3,null, "botanica_book_template_page3.1.png", "botanica_book_template_page3.2.png"),
+    CRYSTAL_2("crystal_2", true, 60,null, "botanica_book_crystal2.png"),
+    CRYSTAL("crystal", true, 60,null, "botanica_book_crystal.png"),
+    FIRE_CRYSTAL("fire_crystal", false, 60,null, "botanica_book_crystal_fire.png"),
+    WATER_CRYSTAL("water_crystal", false, 60,null, "botanica_book_crystal_water.png"),
+    END("end", true, 60,null, "botanica_book_template.png");
 
-    private final int pageIndex;
     private final String tag;
     private boolean unlockedPage;
     private final int tickInterval;
@@ -31,8 +31,7 @@ public enum BotanicaBookPages {
     private final String textFile ;
     private String cachedText = null;
 
-    BotanicaBookPages(int pageIndex, String tag, boolean unlockedPage, int tickInterval,  String textFile, String... texturePaths) {
-        this.pageIndex = pageIndex;
+    BotanicaBookPages(String tag, boolean unlockedPage, int tickInterval, String textFile, String... texturePaths) {
         this.tag = tag;
         this.unlockedPage = unlockedPage;
         this.tickInterval = tickInterval;
@@ -40,11 +39,10 @@ public enum BotanicaBookPages {
         this.textures = Arrays.stream(texturePaths)
                 .map(path -> ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/" + path))
                 .toArray(ResourceLocation[]::new);
-
     }
 
     public int getPageIndex() {
-        return pageIndex;
+        return ordinal();  // Ordinal-Wert der Enum wird als Index verwendet
     }
 
     public String getPageText() {
