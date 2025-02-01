@@ -18,27 +18,26 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public enum BotanicaBookPages {
-    TABLE_OF_CONTENTS(0, "table_of_contents", true, 60, "table_of_contents.txt","botanica_book_template.png"),
-    INTRODUCTION(1, "introduction", true, 60, "introduction.txt","botanica_book_template.png"),
-    UWU(2, "uwu", true, 60,"uwu.txt", "botanica_book_template_page1.png"),
-    OWO(3, "owo", true, 60, null,"botanica_book_template_page2.png"),
-    ANIMATED_PAGE(4, "animatedPage", true, 3,null, "botanica_book_template_page3.1.png", "botanica_book_template_page3.2.png"),
-    CRYSTAL_2(5, "crystal_2", true, 60,null, "botanica_book_crystal2.png"),
-    CRYSTAL(6, "crystal", true, 60,null, "botanica_book_crystal.png"),
-    FIRE_CRYSTAL(7, "fire_crystal", false, 60,null, "botanica_book_crystal_fire.png"),
-    WATER_CRYSTAL(8, "water_crystal", false, 60,null, "botanica_book_crystal_water.png"),
-    END(9, "end", true, 60,null, "botanica_book_template.png");
+    TABLE_OF_CONTENTS( "table_of_contents", true, 60, "table_of_contents.txt", "botanica_book_template.png"),
+    INTRODUCTION( "introduction", true, 60, "introduction.txt", "botanica_book_template.png"),
+    UWU( "uwu", true, 60, "uwu.txt", "botanica_book_template_page1.png"),
+    OWO( "owo", true, 60, null, "botanica_book_template_page2.png"),
+    ANIMATED_PAGE( "animatedPage", true, 3, null, "botanica_book_template_page3.1.png", "botanica_book_template_page3.2.png"),
+    CRYSTAL_2( "crystal_2", true, 60, null, "botanica_book_crystal2.png"),
+    CRYSTAL( "crystal", true, 60, null, "botanica_book_crystal.png"),
+    FIRE_CRYSTAL( "fire_crystal", false, 60, null, "botanica_book_crystal_fire.png"),
+    WATER_CRYSTAL("water_crystal", false, 60, null, "botanica_book_crystal_water.png"),
+    END( "end", true, 60, null, "botanica_book_template.png");
 
-    private final int pageIndex;
+
     private final String tag;
     private boolean unlockedPage;
     private final int tickInterval;
     private final ResourceLocation[] textures;
-    private final String textFile ;
+    private final String textFile;
     private String cachedText = null;
 
-    BotanicaBookPages(int pageIndex, String tag, boolean unlockedPage, int tickInterval,  String textFile, String... texturePaths) {
-        this.pageIndex = pageIndex;
+    BotanicaBookPages( String tag, boolean unlockedPage, int tickInterval, String textFile, String... texturePaths) {
         this.tag = tag;
         this.unlockedPage = unlockedPage;
         this.tickInterval = tickInterval;
@@ -50,7 +49,7 @@ public enum BotanicaBookPages {
     }
 
     public int getPageIndex() {
-        return pageIndex;
+        return ordinal();
     }
 
     public String getPageText() {
@@ -95,5 +94,13 @@ public enum BotanicaBookPages {
                 .filter(page -> page.getPageIndex() == index)
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Invalid page index: " + index));
+    }
+
+    public static BotanicaBookPages getByTag(String tag) {
+        return Arrays.stream(values())
+                .filter(page -> page.getTag().equals(tag))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid page tag: " + tag));
+
     }
 }

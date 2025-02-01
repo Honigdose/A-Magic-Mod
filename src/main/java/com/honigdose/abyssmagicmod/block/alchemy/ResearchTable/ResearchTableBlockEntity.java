@@ -44,20 +44,18 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 
 public class ResearchTableBlockEntity extends BlockEntity implements MenuProvider {
     private ServerPlayer player;
 
-    private final Map<Object, List<Integer>> item_to_pages = Map.of(
-            ModItems.FIRE_CRYSTAL_SHARD.get(), List.of(7),
-            ModTags.Items.WATER_CRYSTALS, List.of(8)
+    private final Map<Object, List<String>> item_to_pages = Map.of(
+            ModItems.FIRE_CRYSTAL_SHARD.get(), List.of("fire_crystal"),
+            ModTags.Items.WATER_CRYSTALS, List.of("water_crystal")
     );
 
-
+    private final Map<UUID, List<String>> playerUnlockedPages = new HashMap<>();
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
@@ -225,14 +223,20 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         Optional<RecipeHolder<ResearchTableRecipe>> recipe = getCurrentRecipe();
 
         if (!inputStack.isEmpty() && item_to_pages.containsKey(inputStack.getItem())) {
-            List<Integer> pagesToUnlock = item_to_pages.get(inputStack.getItem());
+            List<String> pagesToUnlock = item_to_pages.get(inputStack.getItem());
 
-            for (int pageIndex : pagesToUnlock) {
-                BotanicaBookPages page = BotanicaBookPages.getByIndex(pageIndex);
-                page.setUnlockedPage(true);
+            for (String pageTag : pagesToUnlock) {
+                // Get the list of unlocked pages for the player, or create a new list if not present
+                List<String> unlockedPages = playerUnlockedPages.getOrDefault(player.getUUID(), new ArrayList<>());
+
+                if (!unlockedPages.contains(pageTag)) {
+                    unlockedPages.add(pageTag);
+                }
+
+                // Update the player's unlocked pages
+                playerUnlockedPages.put(player.getUUID(), unlockedPages);
             }
         }
-
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
 
@@ -242,9 +246,14 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
             CriteriaTriggers.RECIPE_CRAFTED.trigger(this.player, recipeId, List.of());
         }
 
-
         resetProgress();
     }
+
+    public boolean isPageUnlockedForPlayer(UUID playerUUID, String pageTag) {
+        List<String> unlockedPages = playerUnlockedPages.getOrDefault(playerUUID, new ArrayList<>());
+        return unlockedPages.contains(pageTag);
+    }
+
 
 
     public Optional<RecipeHolder<ResearchTableRecipe>> getCurrentRecipe() {
