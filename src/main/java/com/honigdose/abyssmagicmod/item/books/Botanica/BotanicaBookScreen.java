@@ -109,10 +109,13 @@ public class BotanicaBookScreen extends Screen {
         int x = (this.width - GUI_WIDTH) / 2;
         int y = (this.height - GUI_HEIGHT) / 2;
         BotanicaBookPages current = pages.get(currentPage);
+
         boolean unlocked = current.isUnlockedPage();
+        System.out.println("Seite freigeschaltet: " + unlocked);
 
         if (unlocked) {
             ResourceLocation currentTexture = current.getCurrentTexture(this.currentPageTickCount);
+            System.out.println("Rendering Seite: " + currentTexture.toString());
             graphics.blit(currentTexture, x, y, 0, 0, GUI_WIDTH, GUI_HEIGHT);
         }
 
@@ -368,7 +371,6 @@ public class BotanicaBookScreen extends Screen {
         }
     }
 
-
     private void startPageTurnAnimation(String animationTag) {
         if (!isTransitioning) {
             currentTransitionAnimation = transitionsAnimations.stream()
@@ -381,7 +383,6 @@ public class BotanicaBookScreen extends Screen {
             playPageTurnSound();
         }
     }
-
 
     @Override
     public void tick() {
@@ -398,14 +399,11 @@ public class BotanicaBookScreen extends Screen {
         }
     }
 
-
-    private boolean isPageUnlocked(BotanicaBookPages page) {
-        CompoundTag playerData = player.getPersistentData();
-        return playerData.getBoolean("botanica_unlocked_" + page.name());
-    }
-
     public void unlockPage(BotanicaBookPages page) {
         CompoundTag playerData = player.getPersistentData();
         playerData.putBoolean("botanica_unlocked_" + page.name(), true);
+        System.out.println("Seite " + page.name() + " wurde freigeschaltet!");
     }
+
+
 }

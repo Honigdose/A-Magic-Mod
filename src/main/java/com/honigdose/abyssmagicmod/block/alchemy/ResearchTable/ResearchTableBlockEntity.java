@@ -53,9 +53,11 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     private ServerPlayer player;
 
     private final Map<Object, List<Integer>> item_to_pages = Map.of(
-            ModTags.Items.FIRE_CRYSTALS, List.of(8),
-            ModTags.Items.WATER_CRYSTALS, List.of(9)
-            );
+            ModItems.FIRE_CRYSTAL_SHARD.get(), List.of(7),
+            ModTags.Items.WATER_CRYSTALS, List.of(8)
+    );
+
+
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
@@ -139,24 +141,19 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
                 return lazyItemHandler.cast();
             }
         }
-
         return super.getCapability(cap, side);
     }
-
-
 
     @Override
     public void onLoad() {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
-
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
-
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
         pTag.put("inventory", itemHandler.serializeNBT(pRegistries));
@@ -172,7 +169,6 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     @Override
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
         super.loadAdditional(pTag, pRegistries);
-
         itemHandler.deserializeNBT(pRegistries, pTag.getCompound("inventory"));
         progress = pTag.getInt("research_table.progress");
         maxProgress = pTag.getInt("research_table.max_progress");
@@ -188,7 +184,6 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
@@ -196,7 +191,6 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         if (hasRequiredMaterials() && hasRecipe()) {
             increaseCraftingProgress();
             setChanged(level, pPos, pState);
-
             if (hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
@@ -251,6 +245,7 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
 
         resetProgress();
     }
+
 
     public Optional<RecipeHolder<ResearchTableRecipe>> getCurrentRecipe() {
         ItemStack inputStack = itemHandler.getStackInSlot(INPUT_SLOT);
