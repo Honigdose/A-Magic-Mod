@@ -2,12 +2,8 @@ package com.honigdose.abyssmagicmod.item.books.Botanica;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import net.minecraft.client.Minecraft;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,15 +14,13 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public enum BotanicaBookPages {
-    TABLE_OF_CONTENTS( "table_of_contents", true, 60, "table_of_contents.txt", "botanica_book_template.png"),
+    TABLE_OF_CONTENTS( "table_of_contents", true, 60, null, "table_of_contents_image.png"),
     INTRODUCTION( "introduction", true, 60, "introduction.txt", "botanica_book_template.png"),
-    UWU( "uwu", true, 60, "uwu.txt", "botanica_book_template_page1.png"),
-    OWO( "owo", true, 60, null, "botanica_book_template_page2.png"),
-    ANIMATED_PAGE( "animatedPage", true, 3, null, "botanica_book_template_page3.1.png", "botanica_book_template_page3.2.png"),
-    CRYSTAL_2( "crystal_2", true, 60, null, "botanica_book_crystal2.png"),
+    CRYSTAL_1( "crystal_1", true, 60,  null, "botanica_book_crystal1.png"),
+    CRYSTAL_2( "crystal_2", true, 60, "botanica_book_crystal2.txt", "botanica_book_crystal1.png"),
     CRYSTAL( "crystal", true, 60, null, "botanica_book_crystal.png"),
-    FIRE_CRYSTAL( "fire_crystal", false, 60, null, "botanica_book_crystal_fire.png"),
-    WATER_CRYSTAL("water_crystal", false, 60, null, "botanica_book_crystal_water.png"),
+    FIRE_CRYSTAL( "fire_crystal", true, 60, null, "botanica_book_crystal_fire.png"),
+    WATER_CRYSTAL("water_crystal", true, 60, null, "botanica_book_crystal_water.png"),
     END( "end", true, 60, null, "botanica_book_template.png");
 
 

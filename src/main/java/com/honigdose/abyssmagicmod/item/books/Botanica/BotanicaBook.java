@@ -1,6 +1,5 @@
 package com.honigdose.abyssmagicmod.item.books.Botanica;
 
-import com.honigdose.abyssmagicmod.screen.custom.BestiaryBookScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

@@ -3,18 +3,18 @@ package com.honigdose.abyssmagicmod.item.books.BookData;
 public class BookChapter {
 
     private final String title;
-    private final int pageIndex;
+    private final String pageTag;
 
-    public BookChapter(String title, int pageIndex) {
+    public BookChapter(String title, String pageTag) {
         this.title = title;
-        this.pageIndex = pageIndex;
+        this.pageTag = pageTag;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getPageIndex() {
-        return pageIndex;
+    public String getPageTag() {
+        return pageTag;
     }
 }
