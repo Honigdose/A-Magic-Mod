@@ -91,8 +91,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.WATER_CRYSTAL_BLOCK.get(), ModItems.WATER_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.AIR_CRYSTAL_BLOCK.get(),
                 block -> createMultipleOreDrops(ModBlocks.AIR_CRYSTAL_BLOCK.get(), ModItems.AIR_CRYSTAL_SHARD.get(),1,4));
-        this.add(ModBlocks.NATUR_CRYSTAL_BLOCK.get(),
-                block -> createMultipleOreDrops(ModBlocks.NATUR_CRYSTAL_BLOCK.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),1,4));
+        this.add(ModBlocks.NATURE_CRYSTAL_BLOCK.get(),
+                block -> createMultipleOreDrops(ModBlocks.NATURE_CRYSTAL_BLOCK.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.SOLAR_CRYSTAL_BLOCK.get(),
                 block -> createMultipleOreDrops(ModBlocks.SOLAR_CRYSTAL_BLOCK.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.LUNAR_CRYSTAL_BLOCK.get(),
@@ -112,8 +112,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.BABY_WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.BABY_AIR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.BABY_AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get(),0,1));
-        this.add(ModBlocks.BABY_NATUR_CRYSTAL.get(),
-                block -> createMultipleOreDrops(ModBlocks.BABY_NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),0,1));
+        this.add(ModBlocks.BABY_NATURE_CRYSTAL.get(),
+                block -> createMultipleOreDrops(ModBlocks.BABY_NATURE_CRYSTAL.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.BABY_SOLAR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.BABY_SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.BABY_LUNAR_CRYSTAL.get(),
@@ -133,8 +133,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.VERY_SMALL_WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.VERY_SMALL_AIR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.VERY_SMALL_AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get(),0,1));
-        this.add(ModBlocks.VERY_SMALL_NATUR_CRYSTAL.get(),
-                block -> createMultipleOreDrops(ModBlocks.VERY_SMALL_NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),0,1));
+        this.add(ModBlocks.VERY_SMALL_NATURE_CRYSTAL.get(),
+                block -> createMultipleOreDrops(ModBlocks.VERY_SMALL_NATURE_CRYSTAL.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.VERY_SMALL_SOLAR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.VERY_SMALL_SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),0,1));
         this.add(ModBlocks.VERY_SMALL_LUNAR_CRYSTAL.get(),
@@ -154,8 +154,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.SMALL_WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.SMALL_AIR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.SMALL_AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get(),1,2));
-        this.add(ModBlocks.SMALL_NATUR_CRYSTAL.get(),
-                block -> createMultipleOreDrops(ModBlocks.SMALL_NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),1,2));
+        this.add(ModBlocks.SMALL_NATURE_CRYSTAL.get(),
+                block -> createMultipleOreDrops(ModBlocks.SMALL_NATURE_CRYSTAL.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.SMALL_SOLAR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.SMALL_SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.SMALL_LUNAR_CRYSTAL.get(),
@@ -175,8 +175,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.AIR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get(),1,2));
-        this.add(ModBlocks.NATUR_CRYSTAL.get(),
-                block -> createMultipleOreDrops(ModBlocks.NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),1,2));
+        this.add(ModBlocks.NATURE_CRYSTAL.get(),
+                block -> createMultipleOreDrops(ModBlocks.NATURE_CRYSTAL.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.SOLAR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),1,2));
         this.add(ModBlocks.LUNAR_CRYSTAL.get(),
@@ -196,8 +196,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.LARGE_WATER_CRYSTAL.get(), ModItems.WATER_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.LARGE_AIR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.LARGE_AIR_CRYSTAL.get(), ModItems.AIR_CRYSTAL_SHARD.get(),1,4));
-        this.add(ModBlocks.LARGE_NATUR_CRYSTAL.get(),
-                block -> createMultipleOreDrops(ModBlocks.LARGE_NATUR_CRYSTAL.get(), ModItems.NATUR_CRYSTAL_SHARD.get(),1,4));
+        this.add(ModBlocks.LARGE_NATURE_CRYSTAL.get(),
+                block -> createMultipleOreDrops(ModBlocks.LARGE_NATURE_CRYSTAL.get(), ModItems.NATURE_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.LARGE_SOLAR_CRYSTAL.get(),
                 block -> createMultipleOreDrops(ModBlocks.LARGE_SOLAR_CRYSTAL.get(), ModItems.SOLAR_CRYSTAL_SHARD.get(),1,4));
         this.add(ModBlocks.LARGE_LUNAR_CRYSTAL.get(),
@@ -245,8 +245,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.FIRE_SILVER_ORE_STONE.get(), ModItems.RAW_FIRE_SILVER.get()));
         this.add(ModBlocks.WATER_SILVER_ORE_STONE.get(),
                 block -> createOreDrop(ModBlocks.WATER_SILVER_ORE_STONE.get(), ModItems.RAW_WATER_SILVER.get()));
-        this.add(ModBlocks.NATUR_SILVER_ORE_STONE.get(),
-                block -> createOreDrop(ModBlocks.NATUR_SILVER_ORE_STONE.get(), ModItems.RAW_NATUR_SILVER.get()));
+        this.add(ModBlocks.NATURE_SILVER_ORE_STONE.get(),
+                block -> createOreDrop(ModBlocks.NATURE_SILVER_ORE_STONE.get(), ModItems.RAW_NATURE_SILVER.get()));
         this.add(ModBlocks.AIR_SILVER_ORE_STONE.get(),
                 block -> createOreDrop(ModBlocks.AIR_SILVER_ORE_STONE.get(), ModItems.RAW_AIR_SILVER.get()));
         this.add(ModBlocks.SOLAR_SILVER_ORE_STONE.get(),
@@ -260,8 +260,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.FIRE_SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_FIRE_SILVER.get()));
         this.add(ModBlocks.WATER_SILVER_ORE_DEEPSLATE.get(),
                 block -> createOreDrop(ModBlocks.WATER_SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_WATER_SILVER.get()));
-        this.add(ModBlocks.NATUR_SILVER_ORE_DEEPSLATE.get(),
-                block -> createOreDrop(ModBlocks.NATUR_SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_NATUR_SILVER.get()));
+        this.add(ModBlocks.NATURE_SILVER_ORE_DEEPSLATE.get(),
+                block -> createOreDrop(ModBlocks.NATURE_SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_NATURE_SILVER.get()));
         this.add(ModBlocks.AIR_SILVER_ORE_DEEPSLATE.get(),
                 block -> createOreDrop(ModBlocks.AIR_SILVER_ORE_DEEPSLATE.get(), ModItems.RAW_AIR_SILVER.get()));
         this.add(ModBlocks.SOLAR_SILVER_ORE_DEEPSLATE.get(),
@@ -273,8 +273,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.FIRE_GOLD_ORE_STONE.get(), ModItems.RAW_FIRE_GOLD.get()));
         this.add(ModBlocks.WATER_GOLD_ORE_STONE.get(),
                 block -> createOreDrop(ModBlocks.WATER_GOLD_ORE_STONE.get(), ModItems.RAW_WATER_GOLD.get()));
-        this.add(ModBlocks.NATUR_GOLD_ORE_STONE.get(),
-                block -> createOreDrop(ModBlocks.NATUR_GOLD_ORE_STONE.get(), ModItems.RAW_NATUR_GOLD.get()));
+        this.add(ModBlocks.NATURE_GOLD_ORE_STONE.get(),
+                block -> createOreDrop(ModBlocks.NATURE_GOLD_ORE_STONE.get(), ModItems.RAW_NATURE_GOLD.get()));
         this.add(ModBlocks.AIR_GOLD_ORE_STONE.get(),
                 block -> createOreDrop(ModBlocks.AIR_GOLD_ORE_STONE.get(), ModItems.RAW_AIR_GOLD.get()));
         this.add(ModBlocks.SOLAR_GOLD_ORE_STONE.get(),
@@ -286,8 +286,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.FIRE_GOLD_ORE_DEEPSLATE.get(), ModItems.RAW_FIRE_GOLD.get()));
         this.add(ModBlocks.WATER_GOLD_ORE_DEEPSLATE.get(),
                 block -> createOreDrop(ModBlocks.WATER_GOLD_ORE_DEEPSLATE.get(), ModItems.RAW_WATER_GOLD.get()));
-        this.add(ModBlocks.NATUR_GOLD_ORE_DEEPSLATE.get(),
-                block -> createOreDrop(ModBlocks.NATUR_GOLD_ORE_DEEPSLATE.get(), ModItems.RAW_NATUR_GOLD.get()));
+        this.add(ModBlocks.NATURE_GOLD_ORE_DEEPSLATE.get(),
+                block -> createOreDrop(ModBlocks.NATURE_GOLD_ORE_DEEPSLATE.get(), ModItems.RAW_NATURE_GOLD.get()));
         this.add(ModBlocks.AIR_GOLD_ORE_DEEPSLATE.get(),
                 block -> createOreDrop(ModBlocks.AIR_GOLD_ORE_DEEPSLATE.get(), ModItems.RAW_AIR_GOLD.get()));
         this.add(ModBlocks.SOLAR_GOLD_ORE_DEEPSLATE.get(),

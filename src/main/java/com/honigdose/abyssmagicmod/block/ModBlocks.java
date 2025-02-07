@@ -12,7 +12,7 @@ import com.honigdose.abyssmagicmod.block.crystals.LargeMagicCrystalBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModRotatedBlock;
-import com.honigdose.abyssmagicmod.block.natur.ScarletLeavesBlock;
+import com.honigdose.abyssmagicmod.block.nature.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
@@ -70,7 +70,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_ORE_STONE = registerOreStone("silver_ore_stone", 10);
     public static final RegistryObject<Block> AIR_SILVER_ORE_STONE = registerOreStone("air_silver_ore_stone", 10);
     public static final RegistryObject<Block> FIRE_SILVER_ORE_STONE = registerOreStone("fire_silver_ore_stone", 10);
-    public static final RegistryObject<Block> NATUR_SILVER_ORE_STONE = registerOreStone("natur_silver_ore_stone", 10);
+    public static final RegistryObject<Block> NATURE_SILVER_ORE_STONE = registerOreStone("nature_silver_ore_stone", 10);
     public static final RegistryObject<Block> WATER_SILVER_ORE_STONE = registerOreStone("water_silver_ore_stone", 10);
     public static final RegistryObject<Block> SOLAR_SILVER_ORE_STONE = registerOreStone("solar_silver_ore_stone", 10);
     public static final RegistryObject<Block> LUNAR_SILVER_ORE_STONE = registerOreStone("lunar_silver_ore_stone", 10);
@@ -78,21 +78,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_ORE_DEEPSLATE = registerOreDeepslate("silver_ore_deepslate", 10);
     public static final RegistryObject<Block> AIR_SILVER_ORE_DEEPSLATE = registerOreDeepslate("air_silver_ore_deepslate", 10);
     public static final RegistryObject<Block> FIRE_SILVER_ORE_DEEPSLATE = registerOreDeepslate("fire_silver_ore_deepslate", 10);
-    public static final RegistryObject<Block> NATUR_SILVER_ORE_DEEPSLATE = registerOreDeepslate("natur_silver_ore_deepslate", 10);
+    public static final RegistryObject<Block> NATURE_SILVER_ORE_DEEPSLATE = registerOreDeepslate("nature_silver_ore_deepslate", 10);
     public static final RegistryObject<Block> WATER_SILVER_ORE_DEEPSLATE = registerOreDeepslate("water_silver_ore_deepslate", 10);
     public static final RegistryObject<Block> SOLAR_SILVER_ORE_DEEPSLATE = registerOreDeepslate("solar_silver_ore_deepslate", 10);
     public static final RegistryObject<Block> LUNAR_SILVER_ORE_DEEPSLATE = registerOreDeepslate("lunar_silver_ore_deepslate", 10);
 
     public static final RegistryObject<Block> AIR_GOLD_ORE_STONE = registerOreStone("air_gold_ore_stone", 10);
     public static final RegistryObject<Block> FIRE_GOLD_ORE_STONE = registerOreStone("fire_gold_ore_stone", 10);
-    public static final RegistryObject<Block> NATUR_GOLD_ORE_STONE = registerOreStone("natur_gold_ore_stone", 10);
+    public static final RegistryObject<Block> NATURE_GOLD_ORE_STONE = registerOreStone("nature_gold_ore_stone", 10);
     public static final RegistryObject<Block> WATER_GOLD_ORE_STONE = registerOreStone("water_gold_ore_stone", 10);
     public static final RegistryObject<Block> SOLAR_GOLD_ORE_STONE = registerOreStone("solar_gold_ore_stone", 10);
     public static final RegistryObject<Block> LUNAR_GOLD_ORE_STONE = registerOreStone("lunar_gold_ore_stone", 10);
 
     public static final RegistryObject<Block> AIR_GOLD_ORE_DEEPSLATE = registerOreDeepslate("air_gold_ore_deepslate", 10);
     public static final RegistryObject<Block> FIRE_GOLD_ORE_DEEPSLATE = registerOreDeepslate("fire_gold_ore_deepslate", 10);
-    public static final RegistryObject<Block> NATUR_GOLD_ORE_DEEPSLATE = registerOreDeepslate("natur_gold_ore_deepslate", 10);
+    public static final RegistryObject<Block> NATURE_GOLD_ORE_DEEPSLATE = registerOreDeepslate("nature_gold_ore_deepslate", 10);
     public static final RegistryObject<Block> WATER_GOLD_ORE_DEEPSLATE = registerOreDeepslate("water_gold_ore_deepslate", 10);
     public static final RegistryObject<Block> SOLAR_GOLD_ORE_DEEPSLATE = registerOreDeepslate("solar_gold_ore_deepslate", 10);
     public static final RegistryObject<Block> LUNAR_GOLD_ORE_DEEPSLATE = registerOreDeepslate("lunar_gold_ore_deepslate", 10);
@@ -107,7 +107,7 @@ public class ModBlocks {
 // CRYSTALS
     public static final RegistryObject<Block> BABY_FIRE_CRYSTAL = registerClusterCrystalBlock("baby_fire_crystal",2,1,5);
     public static final RegistryObject<Block> BABY_AIR_CRYSTAL = registerClusterCrystalBlock("baby_air_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_NATUR_CRYSTAL = registerClusterCrystalBlock("baby_natur_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_NATURE_CRYSTAL = registerClusterCrystalBlock("baby_nature_crystal",2,1,5);
     public static final RegistryObject<Block> BABY_WATER_CRYSTAL = registerClusterCrystalBlock("baby_water_crystal",2,1,5);
     public static final RegistryObject<Block> BABY_SOLAR_CRYSTAL = registerClusterCrystalBlock("baby_solar_crystal",2,1,5);
     public static final RegistryObject<Block> BABY_LUNAR_CRYSTAL = registerClusterCrystalBlock("baby_lunar_crystal",2,1,5);
@@ -118,7 +118,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> VERY_SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("very_small_fire_crystal",2,2,5);
     public static final RegistryObject<Block> VERY_SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("very_small_air_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("very_small_natur_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_NATURE_CRYSTAL = registerClusterCrystalBlock("very_small_nature_crystal",2,2,5);
     public static final RegistryObject<Block> VERY_SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("very_small_water_crystal",2,2,5);
     public static final RegistryObject<Block> VERY_SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("very_small_solar_crystal",2,2,5);
     public static final RegistryObject<Block> VERY_SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("very_small_lunar_crystal",2,2,5);
@@ -129,7 +129,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("small_fire_crystal",4,2,5);
     public static final RegistryObject<Block> SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("small_air_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_NATUR_CRYSTAL = registerClusterCrystalBlock("small_natur_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_NATURE_CRYSTAL = registerClusterCrystalBlock("small_nature_crystal",4,2,5);
     public static final RegistryObject<Block> SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("small_water_crystal",4,2,5);
     public static final RegistryObject<Block> SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("small_solar_crystal",4,2,5);
     public static final RegistryObject<Block> SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("small_lunar_crystal",4,2,5);
@@ -140,7 +140,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FIRE_CRYSTAL = registerClusterCrystalBlock("fire_crystal",6,4,5);
     public static final RegistryObject<Block> AIR_CRYSTAL = registerClusterCrystalBlock("air_crystal",6,4,5);
-    public static final RegistryObject<Block> NATUR_CRYSTAL = registerClusterCrystalBlock("natur_crystal",6,4,5);
+    public static final RegistryObject<Block> NATURE_CRYSTAL = registerClusterCrystalBlock("nature_crystal",6,4,5);
     public static final RegistryObject<Block> WATER_CRYSTAL = registerClusterCrystalBlock("water_crystal",6,4,5);
     public static final RegistryObject<Block> SOLAR_CRYSTAL = registerClusterCrystalBlock("solar_crystal",6,4,5);
     public static final RegistryObject<Block> LUNAR_CRYSTAL = registerClusterCrystalBlock("lunar_crystal",6,4,5);
@@ -152,7 +152,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LARGE_ARCANA_CRYSTAL = registerLargeClusterCrystalBlock("large_arcana_crystal",4);
     public static final RegistryObject<Block> LARGE_FIRE_CRYSTAL = registerLargeClusterCrystalBlock("large_fire_crystal",4);
     public static final RegistryObject<Block> LARGE_AIR_CRYSTAL = registerLargeClusterCrystalBlock("large_air_crystal",4);
-    public static final RegistryObject<Block> LARGE_NATUR_CRYSTAL = registerLargeClusterCrystalBlock("large_natur_crystal",4);
+    public static final RegistryObject<Block> LARGE_NATURE_CRYSTAL = registerLargeClusterCrystalBlock("large_nature_crystal",4);
     public static final RegistryObject<Block> LARGE_WATER_CRYSTAL = registerLargeClusterCrystalBlock("large_water_crystal",4);
     public static final RegistryObject<Block> LARGE_SOLAR_CRYSTAL = registerLargeClusterCrystalBlock("large_solar_crystal",4);
     public static final RegistryObject<Block> LARGE_LUNAR_CRYSTAL = registerLargeClusterCrystalBlock("large_lunar_crystal",4);
@@ -163,7 +163,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerCrystalBlock("fire_crystal_block",4, 11);
     public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerCrystalBlock("air_crystal_block",4, 11);
-    public static final RegistryObject<Block> NATUR_CRYSTAL_BLOCK = registerCrystalBlock("natur_crystal_block",4, 11);
+    public static final RegistryObject<Block> NATURE_CRYSTAL_BLOCK = registerCrystalBlock("nature_crystal_block",4, 11);
     public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerCrystalBlock("water_crystal_block",4, 11);
     public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerCrystalBlock("solar_crystal_block",4, 11);
     public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerCrystalBlock("lunar_crystal_block",4, 11);

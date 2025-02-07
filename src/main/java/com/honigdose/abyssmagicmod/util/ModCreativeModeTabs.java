@@ -100,10 +100,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WATER_SILVER_ORE_STONE.get());
                         output.accept(ModBlocks.WATER_SILVER_ORE_DEEPSLATE.get());
 
-                        output.accept(ModItems.NATUR_SILVER.get());
-                        output.accept(ModItems.RAW_NATUR_SILVER.get());
-                        output.accept(ModBlocks.NATUR_SILVER_ORE_STONE.get());
-                        output.accept(ModBlocks.NATUR_SILVER_ORE_DEEPSLATE.get());
+                        output.accept(ModItems.NATURE_SILVER.get());
+                        output.accept(ModItems.RAW_NATURE_SILVER.get());
+                        output.accept(ModBlocks.NATURE_SILVER_ORE_STONE.get());
+                        output.accept(ModBlocks.NATURE_SILVER_ORE_DEEPSLATE.get());
 
                         output.accept(ModItems.AIR_SILVER.get());
                         output.accept(ModItems.RAW_AIR_SILVER.get());
@@ -132,10 +132,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.WATER_GOLD_ORE_STONE.get());
                         output.accept(ModBlocks.WATER_GOLD_ORE_DEEPSLATE.get());
 
-                        output.accept(ModItems.NATUR_GOLD.get());
-                        output.accept(ModItems.RAW_NATUR_GOLD.get());
-                        output.accept(ModBlocks.NATUR_GOLD_ORE_STONE.get());
-                        output.accept(ModBlocks.NATUR_GOLD_ORE_DEEPSLATE.get());
+                        output.accept(ModItems.NATURE_GOLD.get());
+                        output.accept(ModItems.RAW_NATURE_GOLD.get());
+                        output.accept(ModBlocks.NATURE_GOLD_ORE_STONE.get());
+                        output.accept(ModBlocks.NATURE_GOLD_ORE_DEEPSLATE.get());
 
                         output.accept(ModItems.AIR_GOLD.get());
                         output.accept(ModItems.RAW_AIR_GOLD.get());
@@ -202,13 +202,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.LARGE_WATER_CRYSTAL.get());
                         output.accept(ModBlocks.WATER_CRYSTAL_BLOCK.get());
 
-                        output.accept(ModItems.NATUR_CRYSTAL_SHARD.get());
-                        output.accept(ModBlocks.BABY_NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.VERY_SMALL_NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.SMALL_NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.LARGE_NATUR_CRYSTAL.get());
-                        output.accept(ModBlocks.NATUR_CRYSTAL_BLOCK.get());
+                        output.accept(ModItems.NATURE_CRYSTAL_SHARD.get());
+                        output.accept(ModBlocks.BABY_NATURE_CRYSTAL.get());
+                        output.accept(ModBlocks.VERY_SMALL_NATURE_CRYSTAL.get());
+                        output.accept(ModBlocks.SMALL_NATURE_CRYSTAL.get());
+                        output.accept(ModBlocks.NATURE_CRYSTAL.get());
+                        output.accept(ModBlocks.LARGE_NATURE_CRYSTAL.get());
+                        output.accept(ModBlocks.NATURE_CRYSTAL_BLOCK.get());
 
                         output.accept(ModItems.AIR_CRYSTAL_SHARD.get());
                         output.accept(ModBlocks.BABY_AIR_CRYSTAL.get());
@@ -338,36 +338,36 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGIC_SQUARE_BOTTLE.get());
                         output.accept(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get());
 
-                        output.accept(ModItems.ROUND_ARCANA_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_ARCANA_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_ARCANA_ESSENZ.get());
-                        output.accept(ModItems.ROUND_VOID_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_VOID_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_VOID_ESSENZ.get());
-                        output.accept(ModItems.ROUND_CELESTIAL_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_CELESTIAL_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_CELESTIAL_ESSENZ.get());
-                        output.accept(ModItems.ROUND_DEMONIC_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_DEMONIC_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_DEMONIC_ESSENZ.get());
-                        output.accept(ModItems.ROUND_FIRE_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_FIRE_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_FIRE_ESSENZ.get());
-                        output.accept(ModItems.ROUND_WATER_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_WATER_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_WATER_ESSENZ.get());
-                        output.accept(ModItems.ROUND_NATUR_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_NATUR_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_NATUR_ESSENZ.get());
-                        output.accept(ModItems.ROUND_AIR_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_AIR_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_AIR_ESSENZ.get());
-                        output.accept(ModItems.ROUND_SOLAR_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_SOLAR_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_SOLAR_ESSENZ.get());
-                        output.accept(ModItems.ROUND_LUNAR_ESSENZ.get());
-                        output.accept(ModItems.SQUARE_LUNAR_ESSENZ.get());
-                        output.accept(ModItems.TRIANGLE_LUNAR_ESSENZ.get());
+                        output.accept(ModItems.ROUND_ARCANA_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_ARCANA_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_ARCANA_ESSENCE.get());
+                        output.accept(ModItems.ROUND_VOID_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_VOID_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_VOID_ESSENCE.get());
+                        output.accept(ModItems.ROUND_CELESTIAL_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_CELESTIAL_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_CELESTIAL_ESSENCE.get());
+                        output.accept(ModItems.ROUND_DEMONIC_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_DEMONIC_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_DEMONIC_ESSENCE.get());
+                        output.accept(ModItems.ROUND_FIRE_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_FIRE_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_FIRE_ESSENCE.get());
+                        output.accept(ModItems.ROUND_WATER_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_WATER_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_WATER_ESSENCE.get());
+                        output.accept(ModItems.ROUND_NATURE_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_NATURE_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_NATURE_ESSENCE.get());
+                        output.accept(ModItems.ROUND_AIR_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_AIR_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_AIR_ESSENCE.get());
+                        output.accept(ModItems.ROUND_SOLAR_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_SOLAR_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_SOLAR_ESSENCE.get());
+                        output.accept(ModItems.ROUND_LUNAR_ESSENCE.get());
+                        output.accept(ModItems.SQUARE_LUNAR_ESSENCE.get());
+                        output.accept(ModItems.TRIANGLE_LUNAR_ESSENCE.get());
 
                     }).build());
 

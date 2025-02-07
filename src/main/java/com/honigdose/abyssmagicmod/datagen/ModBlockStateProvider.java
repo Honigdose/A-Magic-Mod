@@ -38,7 +38,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SILVER_ORE_STONE);
         blockWithItem(ModBlocks.AIR_SILVER_ORE_STONE);
         blockWithItem(ModBlocks.FIRE_SILVER_ORE_STONE);
-        blockWithItem(ModBlocks.NATUR_SILVER_ORE_STONE);
+        blockWithItem(ModBlocks.NATURE_SILVER_ORE_STONE);
         blockWithItem(ModBlocks.WATER_SILVER_ORE_STONE);
         blockWithItem(ModBlocks.SOLAR_SILVER_ORE_STONE);
         blockWithItem(ModBlocks.LUNAR_SILVER_ORE_STONE);
@@ -47,13 +47,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.AIR_SILVER_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.FIRE_SILVER_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.WATER_SILVER_ORE_DEEPSLATE);
-        blockWithItem(ModBlocks.NATUR_SILVER_ORE_DEEPSLATE);
+        blockWithItem(ModBlocks.NATURE_SILVER_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.LUNAR_SILVER_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.SOLAR_SILVER_ORE_DEEPSLATE);
 
         blockWithItem(ModBlocks.AIR_GOLD_ORE_STONE);
         blockWithItem(ModBlocks.FIRE_GOLD_ORE_STONE);
-        blockWithItem(ModBlocks.NATUR_GOLD_ORE_STONE);
+        blockWithItem(ModBlocks.NATURE_GOLD_ORE_STONE);
         blockWithItem(ModBlocks.WATER_GOLD_ORE_STONE);
         blockWithItem(ModBlocks.SOLAR_GOLD_ORE_STONE);
         blockWithItem(ModBlocks.LUNAR_GOLD_ORE_STONE);
@@ -61,7 +61,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.AIR_GOLD_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.FIRE_GOLD_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.WATER_GOLD_ORE_DEEPSLATE);
-        blockWithItem(ModBlocks.NATUR_GOLD_ORE_DEEPSLATE);
+        blockWithItem(ModBlocks.NATURE_GOLD_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.LUNAR_GOLD_ORE_DEEPSLATE);
         blockWithItem(ModBlocks.SOLAR_GOLD_ORE_DEEPSLATE);
 
@@ -97,7 +97,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         crystalBlock(ModBlocks.FIRE_CRYSTAL_BLOCK);
         crystalBlock(ModBlocks.WATER_CRYSTAL_BLOCK);
-        crystalBlock(ModBlocks.NATUR_CRYSTAL_BLOCK);
+        crystalBlock(ModBlocks.NATURE_CRYSTAL_BLOCK);
         crystalBlock(ModBlocks.ARCANA_CRYSTAL_BLOCK);
         crystalBlock(ModBlocks.AIR_CRYSTAL_BLOCK);
         crystalBlock(ModBlocks.LUNAR_CRYSTAL_BLOCK);
@@ -114,7 +114,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.LUNAR_CRYSTAL_BLOCK);
         blockItem(ModBlocks.AIR_CRYSTAL_BLOCK);
         blockItem(ModBlocks.ARCANA_CRYSTAL_BLOCK);
-        blockItem(ModBlocks.NATUR_CRYSTAL_BLOCK);
+        blockItem(ModBlocks.NATURE_CRYSTAL_BLOCK);
         blockItem(ModBlocks.WATER_CRYSTAL_BLOCK);
 
         crystalclusterBlock(ModBlocks.VERY_SMALL_DEMONIC_CRYSTAL);
@@ -126,7 +126,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crystalclusterBlock(ModBlocks.VERY_SMALL_ARCANA_CRYSTAL);
         crystalclusterBlock(ModBlocks.VERY_SMALL_FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.VERY_SMALL_WATER_CRYSTAL);
-        crystalclusterBlock(ModBlocks.VERY_SMALL_NATUR_CRYSTAL);
+        crystalclusterBlock(ModBlocks.VERY_SMALL_NATURE_CRYSTAL);
 
         crystalclusterBlock(ModBlocks.SMALL_DEMONIC_CRYSTAL);
         crystalclusterBlock(ModBlocks.SMALL_SOLAR_CRYSTAL);
@@ -137,7 +137,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crystalclusterBlock(ModBlocks.SMALL_ARCANA_CRYSTAL);
         crystalclusterBlock(ModBlocks.SMALL_FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.SMALL_WATER_CRYSTAL);
-        crystalclusterBlock(ModBlocks.SMALL_NATUR_CRYSTAL);
+        crystalclusterBlock(ModBlocks.SMALL_NATURE_CRYSTAL);
 
         crystalclusterBlock(ModBlocks.DEMONIC_CRYSTAL);
         crystalclusterBlock(ModBlocks.SOLAR_CRYSTAL);
@@ -148,7 +148,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crystalclusterBlock(ModBlocks.ARCANA_CRYSTAL);
         crystalclusterBlock(ModBlocks.FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.WATER_CRYSTAL);
-        crystalclusterBlock(ModBlocks.NATUR_CRYSTAL);
+        crystalclusterBlock(ModBlocks.NATURE_CRYSTAL);
 
         crystalclusterBlock(ModBlocks.BABY_DEMONIC_CRYSTAL);
         crystalclusterBlock(ModBlocks.BABY_SOLAR_CRYSTAL);
@@ -159,7 +159,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crystalclusterBlock(ModBlocks.BABY_ARCANA_CRYSTAL);
         crystalclusterBlock(ModBlocks.BABY_FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.BABY_WATER_CRYSTAL);
-        crystalclusterBlock(ModBlocks.BABY_NATUR_CRYSTAL);
+        crystalclusterBlock(ModBlocks.BABY_NATURE_CRYSTAL);
 
 
 

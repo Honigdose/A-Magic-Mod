@@ -83,36 +83,36 @@ public class ModItems {
     public static final RegistryObject<Item> BOTANICA_BOOK_ITEM = ITEMS.register("botanica_book",
             () -> new BotanicaBook(BOTANICA_BOOK.get() ,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> ROUND_FIRE_ESSENZ = registerEssenceItem("round_fire_essenz");
-    public static final RegistryObject<Item> SQUARE_FIRE_ESSENZ = registerEssenceItem("square_fire_essenz");
-    public static final RegistryObject<Item> TRIANGLE_FIRE_ESSENZ = registerEssenceItem("triangle_fire_essenz");
-    public static final RegistryObject<Item> ROUND_WATER_ESSENZ = registerEssenceItem("round_water_essenz");
-    public static final RegistryObject<Item> SQUARE_WATER_ESSENZ = registerEssenceItem("square_water_essenz");
-    public static final RegistryObject<Item> TRIANGLE_WATER_ESSENZ = registerEssenceItem("triangle_water_essenz");
-    public static final RegistryObject<Item> ROUND_NATUR_ESSENZ = registerEssenceItem("round_natur_essenz");
-    public static final RegistryObject<Item> SQUARE_NATUR_ESSENZ = registerEssenceItem("square_natur_essenz");
-    public static final RegistryObject<Item> TRIANGLE_NATUR_ESSENZ = registerEssenceItem("triangle_natur_essenz");
-    public static final RegistryObject<Item> ROUND_AIR_ESSENZ = registerEssenceItem("round_air_essenz");
-    public static final RegistryObject<Item> SQUARE_AIR_ESSENZ = registerEssenceItem("square_air_essenz");
-    public static final RegistryObject<Item> TRIANGLE_AIR_ESSENZ = registerEssenceItem("triangle_air_essenz");
-    public static final RegistryObject<Item> ROUND_SOLAR_ESSENZ = registerEssenceItem("round_solar_essenz");
-    public static final RegistryObject<Item> SQUARE_SOLAR_ESSENZ = registerEssenceItem("square_solar_essenz");
-    public static final RegistryObject<Item> TRIANGLE_SOLAR_ESSENZ = registerEssenceItem("triangle_solar_essenz");
-    public static final RegistryObject<Item> ROUND_LUNAR_ESSENZ = registerEssenceItem("round_lunar_essenz");
-    public static final RegistryObject<Item> SQUARE_LUNAR_ESSENZ = registerEssenceItem("square_lunar_essenz");
-    public static final RegistryObject<Item> TRIANGLE_LUNAR_ESSENZ = registerEssenceItem("triangle_lunar_essenz");
-    public static final RegistryObject<Item> ROUND_DEMONIC_ESSENZ = registerEssenceItem("round_demonic_essenz");
-    public static final RegistryObject<Item> SQUARE_DEMONIC_ESSENZ = registerEssenceItem("square_demonic_essenz");
-    public static final RegistryObject<Item> TRIANGLE_DEMONIC_ESSENZ = registerEssenceItem("triangle_demonic_essenz");
-    public static final RegistryObject<Item> ROUND_CELESTIAL_ESSENZ = registerEssenceItem("round_celestial_essenz");
-    public static final RegistryObject<Item> SQUARE_CELESTIAL_ESSENZ = registerEssenceItem("square_celestial_essenz");
-    public static final RegistryObject<Item> TRIANGLE_CELESTIAL_ESSENZ = registerEssenceItem("triangle_celestial_essenz");
-    public static final RegistryObject<Item> ROUND_VOID_ESSENZ = registerEssenceItem("round_void_essenz");
-    public static final RegistryObject<Item> SQUARE_VOID_ESSENZ = registerEssenceItem("square_void_essenz");
-    public static final RegistryObject<Item> TRIANGLE_VOID_ESSENZ = registerEssenceItem("triangle_void_essenz");
-    public static final RegistryObject<Item> ROUND_ARCANA_ESSENZ = registerEssenceItem("round_arcana_essenz");
-    public static final RegistryObject<Item> SQUARE_ARCANA_ESSENZ = registerEssenceItem("square_arcana_essenz");
-    public static final RegistryObject<Item> TRIANGLE_ARCANA_ESSENZ = registerEssenceItem("triangle_arcana_essenz");
+    public static final RegistryObject<Item> ROUND_FIRE_ESSENCE = registerEssenceItem("round_fire_essence");
+    public static final RegistryObject<Item> SQUARE_FIRE_ESSENCE = registerEssenceItem("square_fire_essence");
+    public static final RegistryObject<Item> TRIANGLE_FIRE_ESSENCE = registerEssenceItem("triangle_fire_essence");
+    public static final RegistryObject<Item> ROUND_WATER_ESSENCE = registerEssenceItem("round_water_essence");
+    public static final RegistryObject<Item> SQUARE_WATER_ESSENCE = registerEssenceItem("square_water_essence");
+    public static final RegistryObject<Item> TRIANGLE_WATER_ESSENCE = registerEssenceItem("triangle_water_essence");
+    public static final RegistryObject<Item> ROUND_NATURE_ESSENCE = registerEssenceItem("round_nature_essence");
+    public static final RegistryObject<Item> SQUARE_NATURE_ESSENCE = registerEssenceItem("square_nature_essence");
+    public static final RegistryObject<Item> TRIANGLE_NATURE_ESSENCE = registerEssenceItem("triangle_nature_essence");
+    public static final RegistryObject<Item> ROUND_AIR_ESSENCE = registerEssenceItem("round_air_essence");
+    public static final RegistryObject<Item> SQUARE_AIR_ESSENCE = registerEssenceItem("square_air_essence");
+    public static final RegistryObject<Item> TRIANGLE_AIR_ESSENCE = registerEssenceItem("triangle_air_essence");
+    public static final RegistryObject<Item> ROUND_SOLAR_ESSENCE = registerEssenceItem("round_solar_essence");
+    public static final RegistryObject<Item> SQUARE_SOLAR_ESSENCE = registerEssenceItem("square_solar_essence");
+    public static final RegistryObject<Item> TRIANGLE_SOLAR_ESSENCE = registerEssenceItem("triangle_solar_essence");
+    public static final RegistryObject<Item> ROUND_LUNAR_ESSENCE = registerEssenceItem("round_lunar_essence");
+    public static final RegistryObject<Item> SQUARE_LUNAR_ESSENCE = registerEssenceItem("square_lunar_essence");
+    public static final RegistryObject<Item> TRIANGLE_LUNAR_ESSENCE = registerEssenceItem("triangle_lunar_essence");
+    public static final RegistryObject<Item> ROUND_DEMONIC_ESSENCE = registerEssenceItem("round_demonic_essence");
+    public static final RegistryObject<Item> SQUARE_DEMONIC_ESSENCE = registerEssenceItem("square_demonic_essence");
+    public static final RegistryObject<Item> TRIANGLE_DEMONIC_ESSENCE = registerEssenceItem("triangle_demonic_essence");
+    public static final RegistryObject<Item> ROUND_CELESTIAL_ESSENCE = registerEssenceItem("round_celestial_essence");
+    public static final RegistryObject<Item> SQUARE_CELESTIAL_ESSENCE = registerEssenceItem("square_celestial_essence");
+    public static final RegistryObject<Item> TRIANGLE_CELESTIAL_ESSENCE = registerEssenceItem("triangle_celestial_essence");
+    public static final RegistryObject<Item> ROUND_VOID_ESSENCE = registerEssenceItem("round_void_essence");
+    public static final RegistryObject<Item> SQUARE_VOID_ESSENCE = registerEssenceItem("square_void_essence");
+    public static final RegistryObject<Item> TRIANGLE_VOID_ESSENCE = registerEssenceItem("triangle_void_essence");
+    public static final RegistryObject<Item> ROUND_ARCANA_ESSENCE = registerEssenceItem("round_arcana_essence");
+    public static final RegistryObject<Item> SQUARE_ARCANA_ESSENCE = registerEssenceItem("square_arcana_essence");
+    public static final RegistryObject<Item> TRIANGLE_ARCANA_ESSENCE = registerEssenceItem("triangle_arcana_essence");
 
     //INGOTS AND RAW ORE
     public static final RegistryObject<Item> ASTRATHYL = registerItem("astrathyl");
@@ -151,7 +151,7 @@ public class ModItems {
     public static final RegistryObject<Item> AIR_SILVER  = registerItem("air_silver");
     public static final RegistryObject<Item> FIRE_SILVER  = registerItem("fire_silver");
     public static final RegistryObject<Item> WATER_SILVER  = registerItem("water_silver");
-    public static final RegistryObject<Item> NATUR_SILVER  = registerItem("natur_silver");
+    public static final RegistryObject<Item> NATURE_SILVER  = registerItem("nature_silver");
     public static final RegistryObject<Item> SOLAR_SILVER  = registerItem("solar_silver");
     public static final RegistryObject<Item> LUNAR_SILVER  = registerItem("lunar_silver");
 
@@ -159,7 +159,7 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_AIR_SILVER  = registerItem("raw_air_silver");
     public static final RegistryObject<Item> RAW_FIRE_SILVER  = registerItem("raw_fire_silver");
     public static final RegistryObject<Item> RAW_WATER_SILVER  = registerItem("raw_water_silver");
-    public static final RegistryObject<Item> RAW_NATUR_SILVER  = registerItem("raw_natur_silver");
+    public static final RegistryObject<Item> RAW_NATURE_SILVER  = registerItem("raw_nature_silver");
     public static final RegistryObject<Item> RAW_SOLAR_SILVER  = registerItem("raw_solar_silver");
     public static final RegistryObject<Item> RAW_LUNAR_SILVER  = registerItem("raw_lunar_silver");
 
@@ -168,14 +168,14 @@ public class ModItems {
     public static final RegistryObject<Item> AIR_GOLD  = registerItem("air_gold");
     public static final RegistryObject<Item> FIRE_GOLD  = registerItem("fire_gold");
     public static final RegistryObject<Item> WATER_GOLD  = registerItem("water_gold");
-    public static final RegistryObject<Item> NATUR_GOLD  = registerItem("natur_gold");
+    public static final RegistryObject<Item> NATURE_GOLD  = registerItem("nature_gold");
     public static final RegistryObject<Item> SOLAR_GOLD  = registerItem("solar_gold");
     public static final RegistryObject<Item> LUNAR_GOLD  = registerItem("lunar_gold");
 
     public static final RegistryObject<Item> RAW_AIR_GOLD  = registerItem("raw_air_gold");
     public static final RegistryObject<Item> RAW_FIRE_GOLD  = registerItem("raw_fire_gold");
     public static final RegistryObject<Item> RAW_WATER_GOLD  = registerItem("raw_water_gold");
-    public static final RegistryObject<Item> RAW_NATUR_GOLD  = registerItem("raw_natur_gold");
+    public static final RegistryObject<Item> RAW_NATURE_GOLD  = registerItem("raw_nature_gold");
     public static final RegistryObject<Item> RAW_SOLAR_GOLD  = registerItem("raw_solar_gold");
     public static final RegistryObject<Item> RAW_LUNAR_GOLD  = registerItem("raw_lunar_gold");
 
@@ -184,7 +184,7 @@ public class ModItems {
     //CRYSTAL SHARD
     public static final RegistryObject<Item> FIRE_CRYSTAL_SHARD = registerItem("fire_crystal_shard");
     public static final RegistryObject<Item> WATER_CRYSTAL_SHARD = registerItem("water_crystal_shard");
-    public static final RegistryObject<Item> NATUR_CRYSTAL_SHARD = registerItem("natur_crystal_shard");
+    public static final RegistryObject<Item> NATURE_CRYSTAL_SHARD = registerItem("nature_crystal_shard");
     public static final RegistryObject<Item> AIR_CRYSTAL_SHARD = registerItem("air_crystal_shard");
     public static final RegistryObject<Item> SOLAR_CRYSTAL_SHARD = registerItem("solar_crystal_shard");
     public static final RegistryObject<Item> LUNAR_CRYSTAL_SHARD = registerItem("lunar_crystal_shard");

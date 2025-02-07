@@ -71,14 +71,18 @@ public class BotanicaBookScreen extends Screen {
         // Kapitel, die auf Seite "introduction" erscheinen:
         chapters.put("table_of_contents", new ArrayList<>(List.of(
                 new BookChapter("Introduction", "introduction"),
-                new BookChapter("Crystals", "crystal_1")
+                new BookChapter("Crystals", "crystal")
         )));
 
         // Kapitel, die auf Seite "crystal" erscheinen:
-        chapters.put("crystal_1", new ArrayList<>(List.of(
+        chapters.put("crystal", new ArrayList<>(List.of(
                 new BookChapter("Crystals Info", "crystal_2"),
                 new BookChapter("Fire Crystals", "fire_crystal"),
-                new BookChapter("Water Crystals", "water_crystal")
+                new BookChapter("Water Crystals", "water_crystal"),
+                new BookChapter("Air Crystals", "air_crystal"),
+                new BookChapter("Nature Crystals", "nature_crystal"),
+                new BookChapter("Solar Crystals", "solar_crystal"),
+                new BookChapter("Lunar Crystals", "lunar_crystal")
         )));
     }
 
@@ -125,7 +129,6 @@ public class BotanicaBookScreen extends Screen {
         String pageText = current.getPageText();
         if (!pageText.isEmpty()) {
             pageText = replaceVariables(pageText, player);
-            // Falls die Textebene zu tief startet, kannst du hier den Offset (y + 50) anpassen
             drawFormattedText(graphics, pageText, x, y + 46, 50, 120, 0x6e3c31);
         }
     }
@@ -142,63 +145,50 @@ public class BotanicaBookScreen extends Screen {
         int lineHeight = 4;
         int maxLinesPerPage = maxHeight / lineHeight;
 
-
         int currentX = leftPageX;
         int currentY = y;
         boolean isLeftPage = true;
 
         for (String line : lines) {
-            int imageWidth = 32, imageHeight = 32; // Standardgröße
+            int imageWidth = 32, imageHeight = 32;
+            boolean isImageLine = false;
 
-            // Prüfen, ob die Zeile ein Bild einleitet und ggf. die Bildgröße anpassen
             if (line.startsWith("[image64:")) {
                 imageWidth = 64;
                 imageHeight = 64;
                 line = line.substring(9, line.length() - 1);
+                isImageLine = true;
             } else if (line.startsWith("[image16:")) {
                 imageWidth = 16;
                 imageHeight = 16;
                 line = line.substring(9, line.length() - 1);
+                isImageLine = true;
             } else if (line.startsWith("[image80:")) {
                 imageWidth = 80;
                 imageHeight = 80;
                 line = line.substring(9, line.length() - 1);
+                isImageLine = true;
             } else if (line.startsWith("[image:")) {
                 line = line.substring(7, line.length() - 1);
+                isImageLine = true;
             } else {
                 line = parseTextFormatting(line);
             }
 
-            if (line.contains("/")) {
-                ResourceLocation image = ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, line);
-                ResourceLocation frame = ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/page_accessories/botanica_image_frame.png");
-                // ResourceLocation background = ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/page_accessories/botanica_image_backround.png");
+            if (isImageLine && line.contains("/")) {
+                ResourceLocation image =  ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/" + line);
 
                 if (imageWidth == 80) {
                     currentX = isLeftPage ? leftPageX + 10 : rightPageX + 10;
                     currentY += lineHeight;
-                } else if (currentX + imageWidth > (isLeftPage ? (leftPageX + maxWidth) : (rightPageX + maxWidth))) {
-                    currentX = isLeftPage ? leftPageX : rightPageX;
+                } else {
+                    currentX = isLeftPage ? leftPageX + 2 : rightPageX + 2;
                     currentY += lineHeight;
                 }
 
-                graphics.fill(currentX - 2, currentY - 2, currentX + imageWidth + 2, currentY + imageHeight + 2, 0x406e3c31);
+                drawImageWithFrame(graphics, image, currentX, currentY, imageWidth, imageHeight);
 
-                RenderSystem.setShaderTexture(0, image);
-                graphics.blit(image, currentX, currentY, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
-
-                if (imageWidth == 80 || imageWidth == 64) {
-                    RenderSystem.setShaderTexture(0, frame);
-                    graphics.blit(frame, currentX - 5, currentY - 5, 0, 0, imageWidth + 10, imageHeight + 10, imageWidth + 10, imageHeight + 10);
-                } else if (imageWidth == 16) {
-                    RenderSystem.setShaderTexture(0, frame);
-                    graphics.blit(frame, currentX - 3, currentY - 3, 0, 0, imageWidth + 6, imageHeight + 6, imageWidth + 6, imageHeight + 6);
-                } else {
-                    RenderSystem.setShaderTexture(0, frame);
-                    graphics.blit(frame, currentX - 4, currentY - 4, 0, 0, imageWidth + 8, imageHeight + 8, imageWidth + 8, imageHeight + 8);
-                }
-
-                currentX += imageWidth + 5;
+                currentX += imageWidth + 10;
                 continue;
             }
 
@@ -217,6 +207,32 @@ public class BotanicaBookScreen extends Screen {
             }
         }
     }
+
+    private void drawImageWithFrame(GuiGraphics graphics, ResourceLocation image, int x, int y, int imageWidth, int imageHeight) {
+        ResourceLocation frame =  ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "textures/gui/botanica_book/page_accessories/botanica_image_frame.png");
+
+        graphics.fill(x - 2, y - 2, x + imageWidth + 2, y + imageHeight + 2, 0x406e3c31);
+
+        RenderSystem.setShaderTexture(0, image);
+        graphics.blit(image, x, y, 0, 0, imageWidth, imageHeight, imageWidth, imageHeight);
+
+        int offset;
+        int extraSize;
+        if (imageWidth == 80 || imageWidth == 64) {
+            offset = 5;
+            extraSize = 10;
+        } else if (imageWidth == 16) {
+            offset = 3;
+            extraSize = 6;
+        } else {
+            offset = 4;
+            extraSize = 8;
+        }
+
+        RenderSystem.setShaderTexture(0, frame);
+        graphics.blit(frame, x - offset, y - offset, 0, 0, imageWidth + extraSize, imageHeight + extraSize, imageWidth + extraSize, imageHeight + extraSize);
+    }
+
 
     private String parseTextFormatting(String text) {
         return text.replace("[b]", "§l").replace("[/b]", "§r")

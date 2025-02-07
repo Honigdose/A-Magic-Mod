@@ -16,11 +16,21 @@ import java.util.stream.Collectors;
 public enum BotanicaBookPages {
     TABLE_OF_CONTENTS( "table_of_contents", true, 60, null, "table_of_contents_image.png"),
     INTRODUCTION( "introduction", true, 60, "introduction.txt", "botanica_book_template.png"),
-    CRYSTAL_1( "crystal_1", true, 60,  null, "botanica_book_crystal1.png"),
-    CRYSTAL_2( "crystal_2", true, 60, "botanica_book_crystal2.txt", "botanica_book_crystal1.png"),
-    CRYSTAL( "crystal", true, 60, null, "botanica_book_crystal.png"),
+    TOOLS( "tools", true, 60, "introduction.txt", "botanica_book_template.png"),
+    RARITIES( "rarities", true, 60, "introduction.txt", "botanica_book_template.png"),
+    MAGIC_INFO( "magic_info", true, 60, "introduction.txt", "botanica_book_template.png"),
+    BIOM_INFO( "biom_info", true, 60, "introduction.txt", "botanica_book_template.png"),
+    WARNINGS( "warnings", true, 60, "introduction.txt", "botanica_book_template.png"),
+    CRYSTAL_CHAPTER( "crystal_chapter", true, 60, null, "botanica_crystal_chapter_template.png"),
+    CRYSTAL( "crystal", true, 60,  null, "botanica_book_crystal1.png"),
+    CRYSTAL_1( "crystal_1", true, 60, "botanica_book_crystals.txt", "botanica_book_crystal1.png"),
+    CRYSTALS( "crystals", true, 60, null, "botanica_book_crystals.png"),
     FIRE_CRYSTAL( "fire_crystal", true, 60, null, "botanica_book_crystal_fire.png"),
     WATER_CRYSTAL("water_crystal", true, 60, null, "botanica_book_crystal_water.png"),
+    AIR_CRYSTAL("air_crystal", true, 60, null, "botanica_book_crystal_air.png"),
+    NATURE_CRYSTAL("nature_crystal", true, 60, null, "botanica_book_crystal_natur.png"),
+    SOLAR_CRYSTAL("solar_crystal", true, 60, null, "botanica_book_crystal_solar.png"),
+    LUNAR_CRYSTAL("lunar_crystal", true, 60, null, "botanica_book_crystal_lunar.png"),
     END( "end", true, 60, null, "botanica_book_template.png");
 
 

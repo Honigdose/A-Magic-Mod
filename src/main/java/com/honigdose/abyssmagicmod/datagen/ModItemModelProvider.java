@@ -35,36 +35,36 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.MAGIC_ROUND_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_TRIANGLE_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_SQUARE_BOTTLE);
-        basicItem(ModItems.ROUND_FIRE_ESSENZ.get());
-        basicItem(ModItems.SQUARE_FIRE_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_FIRE_ESSENZ.get());
-        basicItem(ModItems.ROUND_SOLAR_ESSENZ.get());
-        basicItem(ModItems.SQUARE_SOLAR_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_SOLAR_ESSENZ.get());
-        basicItem(ModItems.ROUND_LUNAR_ESSENZ.get());
-        basicItem(ModItems.SQUARE_LUNAR_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_LUNAR_ESSENZ.get());
-        basicItem(ModItems.ROUND_WATER_ESSENZ.get());
-        basicItem(ModItems.SQUARE_WATER_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_WATER_ESSENZ.get());
-        basicItem(ModItems.ROUND_NATUR_ESSENZ.get());
-        basicItem(ModItems.SQUARE_NATUR_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_NATUR_ESSENZ.get());
-        basicItem(ModItems.ROUND_AIR_ESSENZ.get());
-        basicItem(ModItems.SQUARE_AIR_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_AIR_ESSENZ.get());
-        basicItem(ModItems.ROUND_DEMONIC_ESSENZ.get());
-        basicItem(ModItems.SQUARE_DEMONIC_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_DEMONIC_ESSENZ.get());
-        basicItem(ModItems.ROUND_CELESTIAL_ESSENZ.get());
-        basicItem(ModItems.SQUARE_CELESTIAL_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_CELESTIAL_ESSENZ.get());
-        basicItem(ModItems.ROUND_VOID_ESSENZ.get());
-        basicItem(ModItems.SQUARE_VOID_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_VOID_ESSENZ.get());
-        basicItem(ModItems.ROUND_ARCANA_ESSENZ.get());
-        basicItem(ModItems.SQUARE_ARCANA_ESSENZ.get());
-        basicItem(ModItems.TRIANGLE_ARCANA_ESSENZ.get());
+        basicItem(ModItems.ROUND_FIRE_ESSENCE.get());
+        basicItem(ModItems.SQUARE_FIRE_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_FIRE_ESSENCE.get());
+        basicItem(ModItems.ROUND_SOLAR_ESSENCE.get());
+        basicItem(ModItems.SQUARE_SOLAR_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_SOLAR_ESSENCE.get());
+        basicItem(ModItems.ROUND_LUNAR_ESSENCE.get());
+        basicItem(ModItems.SQUARE_LUNAR_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_LUNAR_ESSENCE.get());
+        basicItem(ModItems.ROUND_WATER_ESSENCE.get());
+        basicItem(ModItems.SQUARE_WATER_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_WATER_ESSENCE.get());
+        basicItem(ModItems.ROUND_NATURE_ESSENCE.get());
+        basicItem(ModItems.SQUARE_NATURE_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_NATURE_ESSENCE.get());
+        basicItem(ModItems.ROUND_AIR_ESSENCE.get());
+        basicItem(ModItems.SQUARE_AIR_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_AIR_ESSENCE.get());
+        basicItem(ModItems.ROUND_DEMONIC_ESSENCE.get());
+        basicItem(ModItems.SQUARE_DEMONIC_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_DEMONIC_ESSENCE.get());
+        basicItem(ModItems.ROUND_CELESTIAL_ESSENCE.get());
+        basicItem(ModItems.SQUARE_CELESTIAL_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_CELESTIAL_ESSENCE.get());
+        basicItem(ModItems.ROUND_VOID_ESSENCE.get());
+        basicItem(ModItems.SQUARE_VOID_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_VOID_ESSENCE.get());
+        basicItem(ModItems.ROUND_ARCANA_ESSENCE.get());
+        basicItem(ModItems.SQUARE_ARCANA_ESSENCE.get());
+        basicItem(ModItems.TRIANGLE_ARCANA_ESSENCE.get());
 
         basicItem(ModItems.ASTRATHYL.get());
         basicItem(ModItems.ABYSSSTEEL.get());
@@ -95,7 +95,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.SILVER.get());
         basicItem(ModItems.AIR_SILVER.get());
-        basicItem(ModItems.NATUR_SILVER.get());
+        basicItem(ModItems.NATURE_SILVER.get());
         basicItem(ModItems.FIRE_SILVER.get());
         basicItem(ModItems.WATER_SILVER.get());
         basicItem(ModItems.SOLAR_SILVER.get());
@@ -107,12 +107,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_AIR_SILVER.get());
         basicItem(ModItems.RAW_WATER_SILVER.get());
         basicItem(ModItems.RAW_FIRE_SILVER.get());
-        basicItem(ModItems.RAW_NATUR_SILVER.get());
+        basicItem(ModItems.RAW_NATURE_SILVER.get());
 
         basicItem(ModItems.PURE_GOLD.get());
 
         basicItem(ModItems.AIR_GOLD.get());
-        basicItem(ModItems.NATUR_GOLD.get());
+        basicItem(ModItems.NATURE_GOLD.get());
         basicItem(ModItems.FIRE_GOLD.get());
         basicItem(ModItems.WATER_GOLD.get());
         basicItem(ModItems.SOLAR_GOLD.get());
@@ -123,10 +123,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_AIR_GOLD.get());
         basicItem(ModItems.RAW_WATER_GOLD.get());
         basicItem(ModItems.RAW_FIRE_GOLD.get());
-        basicItem(ModItems.RAW_NATUR_GOLD.get());
+        basicItem(ModItems.RAW_NATURE_GOLD.get());
 
         basicItem(ModItems.AIR_CRYSTAL_SHARD.get());
-        basicItem(ModItems.NATUR_CRYSTAL_SHARD.get());
+        basicItem(ModItems.NATURE_CRYSTAL_SHARD.get());
         basicItem(ModItems.WATER_CRYSTAL_SHARD.get());
         basicItem(ModItems.FIRE_CRYSTAL_SHARD.get());
         basicItem(ModItems.SOLAR_CRYSTAL_SHARD.get());
@@ -139,7 +139,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleBlockItem(ModBlocks.LARGE_ARCANA_CRYSTAL);
         simpleBlockItem(ModBlocks.LARGE_AIR_CRYSTAL);
         simpleBlockItem(ModBlocks.LARGE_FIRE_CRYSTAL);
-        simpleBlockItem(ModBlocks.LARGE_NATUR_CRYSTAL);
+        simpleBlockItem(ModBlocks.LARGE_NATURE_CRYSTAL);
         simpleBlockItem(ModBlocks.LARGE_WATER_CRYSTAL);
         simpleBlockItem(ModBlocks.LARGE_LUNAR_CRYSTAL);
         simpleBlockItem(ModBlocks.LARGE_SOLAR_CRYSTAL);
@@ -150,7 +150,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.BABY_FIRE_CRYSTAL);
         saplingItem(ModBlocks.BABY_WATER_CRYSTAL);
         saplingItem(ModBlocks.BABY_AIR_CRYSTAL);
-        saplingItem(ModBlocks.BABY_NATUR_CRYSTAL);
+        saplingItem(ModBlocks.BABY_NATURE_CRYSTAL);
         saplingItem(ModBlocks.BABY_LUNAR_CRYSTAL);
         saplingItem(ModBlocks.BABY_SOLAR_CRYSTAL);
         saplingItem(ModBlocks.BABY_DEMONIC_CRYSTAL);
@@ -161,7 +161,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.FIRE_CRYSTAL);
         saplingItem(ModBlocks.WATER_CRYSTAL);
         saplingItem(ModBlocks.AIR_CRYSTAL);
-        saplingItem(ModBlocks.NATUR_CRYSTAL);
+        saplingItem(ModBlocks.NATURE_CRYSTAL);
         saplingItem(ModBlocks.LUNAR_CRYSTAL);
         saplingItem(ModBlocks.SOLAR_CRYSTAL);
         saplingItem(ModBlocks.DEMONIC_CRYSTAL);
@@ -172,7 +172,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.SMALL_FIRE_CRYSTAL);
         saplingItem(ModBlocks.SMALL_WATER_CRYSTAL);
         saplingItem(ModBlocks.SMALL_AIR_CRYSTAL);
-        saplingItem(ModBlocks.SMALL_NATUR_CRYSTAL);
+        saplingItem(ModBlocks.SMALL_NATURE_CRYSTAL);
         saplingItem(ModBlocks.SMALL_LUNAR_CRYSTAL);
         saplingItem(ModBlocks.SMALL_SOLAR_CRYSTAL);
         saplingItem(ModBlocks.SMALL_DEMONIC_CRYSTAL);
@@ -183,7 +183,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.VERY_SMALL_FIRE_CRYSTAL);
         saplingItem(ModBlocks.VERY_SMALL_WATER_CRYSTAL);
         saplingItem(ModBlocks.VERY_SMALL_AIR_CRYSTAL);
-        saplingItem(ModBlocks.VERY_SMALL_NATUR_CRYSTAL);
+        saplingItem(ModBlocks.VERY_SMALL_NATURE_CRYSTAL);
         saplingItem(ModBlocks.VERY_SMALL_LUNAR_CRYSTAL);
         saplingItem(ModBlocks.VERY_SMALL_SOLAR_CRYSTAL);
         saplingItem(ModBlocks.VERY_SMALL_DEMONIC_CRYSTAL);
