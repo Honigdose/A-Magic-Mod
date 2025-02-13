@@ -81,8 +81,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_scarlet_tree_plank", has(ModBlocks.SCARLET_TREE_PLANKS.get())).save(recipeOutput);
 
         // LIFE TREE
-        woodFromLogs(recipeOutput, ModBlocks.LIFE_TREE_WOOD.get(), ModBlocks.LIFE_TREE_LOG.get());
-        planksFromLog(recipeOutput, ModBlocks.LIFE_TREE_PLANKS.get(), ModBlocks.LIFE_TREE_LOG.get());
+        woodFromLogs(recipeOutput, ModBlocks.BLIFE_TREE_WOOD.get(), ModBlocks.BLIFE_TREE_LOG.get());
+        planksFromLog(recipeOutput, ModBlocks.BLIFE_TREE_PLANKS.get(), ModBlocks.BLIFE_TREE_LOG.get());
+        stairBuilder(ModBlocks.BLIFE_TREE_STAIR.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLIFE_TREE_SLAB.get(), ModBlocks.BLIFE_TREE_PLANKS.get());
+        buttonBuilder(ModBlocks.BLIFE_TREE_BUTTON.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.BLIFE_TREE_PRESSURE_PLATE.get(), ModBlocks.SCARLET_TREE_PRESSURE_PLATE.get());
+        fenceBuilder(ModBlocks.BLIFE_TREE_FENCE.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.BLIFE_TREE_FENCE_GATE.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        doorBuilder(ModBlocks.BLIFE_TREE_DOOR.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.BLIFE_TREE_TRAPDOOR.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
+                .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
     }
 
 

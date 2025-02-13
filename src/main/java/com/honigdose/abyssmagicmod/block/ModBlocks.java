@@ -12,10 +12,13 @@ import com.honigdose.abyssmagicmod.block.crystals.LargeMagicCrystalBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModRotatedBlock;
+import com.honigdose.abyssmagicmod.block.nature.BLTFHLeaves;
+import com.honigdose.abyssmagicmod.block.nature.BLTFHLeavesPlant;
 import com.honigdose.abyssmagicmod.block.nature.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -283,7 +286,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCARLET_TREE_TRAPDOOR = registerTrapDoor("scarlet_tree_trapdoor");
 
     public static final RegistryObject<Block> RESEARCH_TABLE_SCARLET = registerBlock("research_table_scarlet",
-            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().lightLevel(value -> 3)));
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
 
     public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_JAR = registerShelfBlock("scarlet_alchemy_shelf_jar");
     public static final RegistryObject<Block> SCARLET_ALCHEMY_SHELF_MIX = registerShelfBlock("scarlet_alchemy_shelf_mix");
@@ -292,25 +295,51 @@ public class ModBlocks {
 
 
     // Life Tree
-    public static final RegistryObject<Block> LIFE_TREE_LOG = registerBlock("life_tree_log",
+    public static final RegistryObject<Block> BLIFE_TREE_LOG = registerBlock("blife_tree_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
-    public static final RegistryObject<Block> LIFE_TREE_WOOD = registerBlock("life_tree_wood",
+    public static final RegistryObject<Block> BLIFE_TREE_WOOD = registerBlock("blife_tree_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
-    public static final RegistryObject<Block> STRIPPED_LIFE_TREE_LOG = registerBlock("stripped_life_tree_log",
+    public static final RegistryObject<Block> STRIPPED_BLIFE_TREE_LOG = registerBlock("stripped_blife_tree_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
-    public static final RegistryObject<Block> STRIPPED_LIFE_TREE_WOOD = registerBlock("stripped_life_tree_wood",
+    public static final RegistryObject<Block> STRIPPED_BLIFE_TREE_WOOD = registerBlock("stripped_blife_tree_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> BLIFE_TREE_PLANKS = registerBlock("blife_tree_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final RegistryObject<Block> BLIFE_TREE_DOOR = registerBlock("blife_tree_door",
+            () -> new DoorBlock(BlockSetType.OAK ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
+    public static final RegistryObject<Block> BLIFE_TREE_TRAPDOOR = registerTrapDoor("blife_tree_trapdoor");
+    public static final RegistryObject<Block> BLIFE_TREE_SLAB = registerSlab("blife_tree_slab");
+    public static final RegistryObject<Block> BLIFE_TREE_STAIR = registerBlock("blife_tree_stair",
+            () -> new StairBlock(ModBlocks.BLIFE_TREE_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<Block> BLIFE_TREE_PRESSURE_PLATE = registerPressurePlate("blife_tree_pressure_plate");
+    public static final RegistryObject<Block> BLIFE_TREE_BUTTON = registerButton("blife_tree_button");
+    public static final RegistryObject<Block> BLIFE_TREE_FENCE = registerFence("blife_tree_fence");
+    public static final RegistryObject<Block> BLIFE_TREE_FENCE_GATE = registerFenceGate("blife_tree_fence_gate");
+
+    public static final RegistryObject<Block> RESEARCH_TABLE_BLIFE_TREE = registerBlock("research_table_blife_tree",
+            () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()));
+
+    public static final RegistryObject<Block> BLT_ALCHEMY_SHELF_JAR = registerShelfBlock("blt_alchemy_shelf_jar");
+    public static final RegistryObject<Block> BLT_ALCHEMY_SHELF_MIX = registerShelfBlock("blt_alchemy_shelf_mix");
+
+    //FIRE
+    public static final RegistryObject<Block> BLIFE_TREE_FIRE_LEAVES = registerBlock("blife_tree_fire_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> BLT_FIRE_HLEAVES = registerBlock("blt_fire_hleaves",
+            () -> new BLTFHLeaves(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).noCollission()));
+    public static final RegistryObject<Block> BLT_FIRE_HLEAVES_PLANT = registerBlock("blt_fire_hleaves_plant",
+            () -> new BLTFHLeavesPlant(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).noCollission()));
+    public static final RegistryObject<Block> BLIFE_TREE_FIRE_SAPLING = registerBlock("blife_tree_fire_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> BLIFE_TREE_FIRE_RESIN = registerBlock("blife_tree_fire_resin",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK)));
+
+
     public static final RegistryObject<Block> LIFE_TREE_LEAVES = registerBlock("life_tree_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).lightLevel(value -> 8)));
+            () -> new ScarletLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> LIFE_TREE_SAPLING = registerBlock("life_tree_sapling",
             () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).lightLevel(value -> 6)));
-
-    public static final RegistryObject<Block> LIFE_TREE_PLANKS = registerBlock("life_tree_planks",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-
-    public static final RegistryObject<Block> LIFE_TREE_FIRETYP_DOOR = registerBlock("life_tree_firetyp_door",
-            () -> new DoorBlock(BlockSetType.OAK ,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
-
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

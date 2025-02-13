@@ -131,7 +131,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SCARLET_TREE_SLAB.get())
                 .add(ModBlocks.SCARLET_TREE_STAIR.get())
                 .add(ModBlocks.SCARLET_TREE_BUTTON.get())
-                .add(ModBlocks.SCARLET_TREE_PRESSURE_PLATE.get());
+                .add(ModBlocks.SCARLET_TREE_PRESSURE_PLATE.get())
+                .add(ModBlocks.BLIFE_TREE_PLANKS.get())
+                .add(ModBlocks.BLIFE_TREE_SLAB.get())
+                .add(ModBlocks.BLIFE_TREE_STAIR.get())
+                .add(ModBlocks.BLIFE_TREE_BUTTON.get())
+                .add(ModBlocks.BLIFE_TREE_PRESSURE_PLATE.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.SCARLET_TREE_LOG.get())
@@ -139,16 +144,18 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SCARLET_TREE_WOOD.get())
                 .add(ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get())
 
-                .add(ModBlocks.LIFE_TREE_LOG.get())
-                .add(ModBlocks.STRIPPED_LIFE_TREE_LOG.get())
-                .add(ModBlocks.LIFE_TREE_WOOD.get())
-                .add(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
+                .add(ModBlocks.BLIFE_TREE_LOG.get())
+                .add(ModBlocks.STRIPPED_BLIFE_TREE_LOG.get())
+                .add(ModBlocks.BLIFE_TREE_WOOD.get())
+                .add(ModBlocks.STRIPPED_BLIFE_TREE_WOOD.get());
 
         this.tag(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.SCARLET_TREE_FENCE.get());
+                .add(ModBlocks.SCARLET_TREE_FENCE.get())
+                .add(ModBlocks.BLIFE_TREE_FENCE.get());
 
         this.tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.SCARLET_TREE_FENCE_GATE.get());
+                .add(ModBlocks.SCARLET_TREE_FENCE_GATE.get())
+                .add(ModBlocks.BLIFE_TREE_FENCE_GATE.get());
 
         this.tag(BlockTags.WALLS)
                 .add(ModBlocks.SCARLET_TREE_WALL.get());
@@ -177,7 +184,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.RESEARCH_TABLE_SCARLET.get())
                 .add(ModBlocks.RESEARCH_TABLE_WARPED.get())
                 .add(ModBlocks.RESEARCH_TABLE_BIRCH.get())
-                .add(ModBlocks.RESEARCH_TABLE_DARK_OAK.get());
+                .add(ModBlocks.RESEARCH_TABLE_DARK_OAK.get())
+                .add(ModBlocks.RESEARCH_TABLE_SCARLET.get())
+                .add(ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get());
 
     }
 }

@@ -327,19 +327,36 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RESEARCH_TABLE_SCARLET.get());
 
         // Life Tree
-        this.dropSelf(ModBlocks.LIFE_TREE_LOG.get());
-        this.dropSelf(ModBlocks.LIFE_TREE_SAPLING.get());
-        this.dropSelf(ModBlocks.STRIPPED_LIFE_TREE_LOG.get());
-        this.dropSelf(ModBlocks.LIFE_TREE_WOOD.get());
-        this.dropSelf(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
         this.add(ModBlocks.LIFE_TREE_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.LIFE_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-        this.dropSelf(ModBlocks.LIFE_TREE_PLANKS.get());
-        // FIRETYP
-        this.add(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get(),
-                block -> createDoorTable(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get()));
+        this.dropSelf(ModBlocks.BLIFE_TREE_PLANKS.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.LIFE_TREE_SAPLING.get());
+        this.dropSelf(ModBlocks.STRIPPED_BLIFE_TREE_LOG.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_BLIFE_TREE_WOOD.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_STAIR.get());
+        this.add(ModBlocks.BLIFE_TREE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.BLIFE_TREE_SLAB.get()));
+        this.dropSelf(ModBlocks.BLIFE_TREE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_BUTTON.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_FENCE.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_TRAPDOOR.get());
+        this.add(ModBlocks.BLIFE_TREE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.BLIFE_TREE_DOOR.get()));
+        this.dropSelf(ModBlocks.BLT_ALCHEMY_SHELF_JAR.get());
+        this.dropSelf(ModBlocks.BLT_ALCHEMY_SHELF_MIX.get());
+        this.dropSelf(ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get());
 
-
+        // FIRE
+        this.add(ModBlocks.BLIFE_TREE_FIRE_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.BLIFE_TREE_FIRE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(ModBlocks.BLIFE_TREE_FIRE_SAPLING.get());
+        this.dropSelf(ModBlocks.BLT_FIRE_HLEAVES.get());
+        this.dropSelf(ModBlocks.BLT_FIRE_HLEAVES_PLANT.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_FIRE_RESIN.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_FIRE_SAPLING.get());
 
     }
 

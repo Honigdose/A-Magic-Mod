@@ -44,11 +44,11 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
                 return ModBlocks.STRIPPED_SCARLET_TREE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
-            if(state.is(ModBlocks.LIFE_TREE_LOG.get())) {
-                return ModBlocks.STRIPPED_LIFE_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(ModBlocks.BLIFE_TREE_LOG.get())) {
+                return ModBlocks.STRIPPED_BLIFE_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
-            if(state.is(ModBlocks.LIFE_TREE_WOOD.get())) {
-                return ModBlocks.STRIPPED_LIFE_TREE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(ModBlocks.BLIFE_TREE_WOOD.get())) {
+                return ModBlocks.STRIPPED_BLIFE_TREE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 

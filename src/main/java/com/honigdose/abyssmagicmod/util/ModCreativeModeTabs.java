@@ -279,14 +279,27 @@ public class ModCreativeModeTabs {
 
                         // Life Tree
                         output.accept(ModBlocks.LIFE_TREE_SAPLING.get());
-                        output.accept(ModBlocks.LIFE_TREE_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_LIFE_TREE_LOG.get());
-                        output.accept(ModBlocks.LIFE_TREE_WOOD.get());
-                        output.accept(ModBlocks.STRIPPED_LIFE_TREE_WOOD.get());
-                        output.accept(ModBlocks.LIFE_TREE_LEAVES.get());
-                        output.accept(ModBlocks.LIFE_TREE_PLANKS.get());
+                        output.accept(ModBlocks.BLIFE_TREE_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_BLIFE_TREE_LOG.get());
+                        output.accept(ModBlocks.BLIFE_TREE_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_BLIFE_TREE_WOOD.get());
+                        output.accept(ModBlocks.BLIFE_TREE_PLANKS.get());
+                        output.accept(ModBlocks.BLIFE_TREE_STAIR.get());
+                        output.accept(ModBlocks.BLIFE_TREE_SLAB.get());
+                        output.accept(ModBlocks.BLIFE_TREE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.BLIFE_TREE_BUTTON.get());
+                        output.accept(ModBlocks.BLIFE_TREE_FENCE.get());
+                        output.accept(ModBlocks.BLIFE_TREE_FENCE_GATE.get());
+                        output.accept(ModBlocks.BLIFE_TREE_DOOR.get());
+                        output.accept(ModBlocks.BLIFE_TREE_TRAPDOOR.get());
+                        output.accept(ModBlocks.BLT_ALCHEMY_SHELF_JAR.get());
+                        output.accept(ModBlocks.BLT_ALCHEMY_SHELF_MIX.get());
                         //FIRE TYP
-                        output.accept(ModBlocks.LIFE_TREE_FIRETYP_DOOR.get());
+                        output.accept(ModBlocks.BLIFE_TREE_FIRE_SAPLING.get());
+                        output.accept(ModBlocks.BLIFE_TREE_FIRE_LEAVES.get());
+                        output.accept(ModBlocks.BLT_FIRE_HLEAVES.get());
+                        output.accept(ModBlocks.BLIFE_TREE_FIRE_RESIN.get());
+
 
 
                         //Tools
@@ -316,6 +329,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RESEARCH_TABLE_WARPED.get());
 
                         output.accept(ModBlocks.RESEARCH_TABLE_SCARLET.get());
+                        output.accept(ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get());
 
 
                         output.accept(ModBlocks.ALCHEMY_BOOK.get());

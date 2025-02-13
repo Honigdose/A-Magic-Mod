@@ -201,7 +201,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Life Tree
         saplingItem(ModBlocks.LIFE_TREE_SAPLING);
-        simpleBlockItem(ModBlocks.LIFE_TREE_FIRETYP_DOOR);
+        buttonItem(ModBlocks.BLIFE_TREE_BUTTON, ModBlocks.BLIFE_TREE_PLANKS);
+        fenceItem(ModBlocks.BLIFE_TREE_FENCE, ModBlocks.BLIFE_TREE_PLANKS);
+        simpleBlockItem(ModBlocks.BLIFE_TREE_DOOR);
+
+        //FIRE
+        saplingItem(ModBlocks.BLT_FIRE_HLEAVES);
+        saplingItem(ModBlocks.BLT_FIRE_HLEAVES_PLANT);
+        saplingItem(ModBlocks.BLIFE_TREE_FIRE_SAPLING);
         //Tools
         //Stage 1
         handheldItem(ModItems.FIRERYTE_PICKAXE_STAGE1);

@@ -21,9 +21,9 @@ public class LifeTree {
     public static void registerTree(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         ModConfiguredFeatures.register(context, LIFE_TREE_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(ModBlocks.LIFE_TREE_LOG.get()),
+                        BlockStateProvider.simple(ModBlocks.BLIFE_TREE_LOG.get()),
                         new LifeTreeTrunkPlacer(20, 0, 0),
-                        BlockStateProvider.simple(ModBlocks.LIFE_TREE_LEAVES.get()),
+                        BlockStateProvider.simple(ModBlocks.BLIFE_TREE_FIRE_LEAVES.get()),
                         new ScarletFoliagePlacer(ConstantInt.of(6), ConstantInt.of(4)),
                         new TwoLayersFeatureSize(1, 0, 1)
                 ).build()

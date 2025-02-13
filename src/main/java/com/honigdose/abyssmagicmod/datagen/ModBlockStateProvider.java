@@ -194,20 +194,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.SCARLET_TREE_TRAPDOOR, "_bottom");
 
         //Life Tree
-        blockItem(ModBlocks.LIFE_TREE_LOG);
-        blockItem(ModBlocks.LIFE_TREE_WOOD);
-        blockItem(ModBlocks.STRIPPED_LIFE_TREE_LOG);
-        blockItem(ModBlocks.LIFE_TREE_WOOD);
-        blockItem(ModBlocks.STRIPPED_LIFE_TREE_WOOD);
-        blockWithItem(ModBlocks.LIFE_TREE_PLANKS);
-        leavesBlock(ModBlocks.LIFE_TREE_LEAVES);
         saplingBlock(ModBlocks.LIFE_TREE_SAPLING);
-        logBlock(((RotatedPillarBlock) ModBlocks.LIFE_TREE_LOG.get()));
-        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_LIFE_TREE_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.LIFE_TREE_WOOD.get()), blockTexture(ModBlocks.LIFE_TREE_LOG.get()), blockTexture(ModBlocks.LIFE_TREE_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_LIFE_TREE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_LIFE_TREE_LOG.get()), blockTexture(ModBlocks.STRIPPED_LIFE_TREE_LOG.get()));
 
-        doorBlockWithRenderType(((DoorBlock) ModBlocks.LIFE_TREE_FIRETYP_DOOR.get()),modLoc("block/life_tree_firetyp_door_bottom"),modLoc("block/life_tree_firetyp_door_top"), "translucent");
+        blockWithItem(ModBlocks.BLIFE_TREE_PLANKS);
+        logBlock(((RotatedPillarBlock) ModBlocks.BLIFE_TREE_LOG.get()));
+        logBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BLIFE_TREE_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.BLIFE_TREE_WOOD.get()), blockTexture(ModBlocks.BLIFE_TREE_LOG.get()), blockTexture(ModBlocks.BLIFE_TREE_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_BLIFE_TREE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_BLIFE_TREE_LOG.get()), blockTexture(ModBlocks.STRIPPED_BLIFE_TREE_LOG.get()));
+        slabBlock(((SlabBlock) ModBlocks.BLIFE_TREE_SLAB.get()), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        stairsBlock(((StairBlock) ModBlocks.BLIFE_TREE_STAIR.get()), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        buttonBlock((ButtonBlock) ModBlocks.BLIFE_TREE_BUTTON.get(), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.BLIFE_TREE_PRESSURE_PLATE.get(), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.BLIFE_TREE_FENCE.get(), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.BLIFE_TREE_FENCE_GATE.get(), blockTexture(ModBlocks.BLIFE_TREE_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.BLIFE_TREE_DOOR.get()),modLoc("block/blife_tree_door_bottom"),modLoc("block/blife_tree_door_top"), "translucent");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.BLIFE_TREE_TRAPDOOR.get()),modLoc("block/blife_tree_trapdoor"), true, "translucent");
+        blockItem(ModBlocks.BLIFE_TREE_LOG);
+        blockItem(ModBlocks.STRIPPED_BLIFE_TREE_LOG);
+        blockItem(ModBlocks.BLIFE_TREE_WOOD);
+        blockItem(ModBlocks.STRIPPED_BLIFE_TREE_WOOD);
+        blockItem(ModBlocks.BLIFE_TREE_SLAB);
+        blockItem(ModBlocks.BLIFE_TREE_STAIR);
+        blockItem(ModBlocks.BLIFE_TREE_PRESSURE_PLATE);
+        blockItem(ModBlocks.BLIFE_TREE_FENCE_GATE);
+        blockItem(ModBlocks.BLIFE_TREE_TRAPDOOR, "_bottom");
+
+        //FIRE
+        leavesBlock(ModBlocks.BLIFE_TREE_FIRE_LEAVES);
+        saplingBlock(ModBlocks.BLIFE_TREE_FIRE_SAPLING);
+        saplingBlock(ModBlocks.BLT_FIRE_HLEAVES);
+        saplingBlock(ModBlocks.BLT_FIRE_HLEAVES_PLANT);
+        blockWithItem(ModBlocks.BLIFE_TREE_FIRE_RESIN);
 
     }
 
