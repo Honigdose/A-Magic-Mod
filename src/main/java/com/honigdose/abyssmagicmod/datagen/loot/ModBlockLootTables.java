@@ -357,6 +357,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BLT_FIRE_HLEAVES_PLANT.get());
         this.dropSelf(ModBlocks.BLIFE_TREE_FIRE_RESIN.get());
         this.dropSelf(ModBlocks.BLIFE_TREE_FIRE_SAPLING.get());
+        // WATER
+        this.add(ModBlocks.BLIFE_TREE_WATER_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.BLIFE_TREE_FIRE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(ModBlocks.BLT_WATER_HLEAVES.get());
+        this.dropSelf(ModBlocks.BLT_WATER_HLEAVES_PLANT.get());
+        this.dropSelf(ModBlocks.BLIFE_TREE_WATER_RESIN.get());
 
     }
 

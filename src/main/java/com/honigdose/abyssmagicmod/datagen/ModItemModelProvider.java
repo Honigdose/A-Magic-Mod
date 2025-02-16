@@ -209,6 +209,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.BLT_FIRE_HLEAVES);
         saplingItem(ModBlocks.BLT_FIRE_HLEAVES_PLANT);
         saplingItem(ModBlocks.BLIFE_TREE_FIRE_SAPLING);
+        //Water
+        saplingItem(ModBlocks.BLT_WATER_HLEAVES);
+        saplingItem(ModBlocks.BLT_WATER_HLEAVES_PLANT);
         //Tools
         //Stage 1
         handheldItem(ModItems.FIRERYTE_PICKAXE_STAGE1);

@@ -299,6 +299,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BLIFE_TREE_FIRE_LEAVES.get());
                         output.accept(ModBlocks.BLT_FIRE_HLEAVES.get());
                         output.accept(ModBlocks.BLIFE_TREE_FIRE_RESIN.get());
+                        // WATER
+                        output.accept(ModBlocks.BLIFE_TREE_WATER_LEAVES.get());
+                        output.accept(ModBlocks.BLT_WATER_HLEAVES.get());
+                        output.accept(ModBlocks.BLIFE_TREE_WATER_RESIN.get());
 
 
 

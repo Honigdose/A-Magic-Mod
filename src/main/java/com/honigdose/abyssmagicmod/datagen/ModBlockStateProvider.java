@@ -225,6 +225,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(ModBlocks.BLT_FIRE_HLEAVES);
         saplingBlock(ModBlocks.BLT_FIRE_HLEAVES_PLANT);
         blockWithItem(ModBlocks.BLIFE_TREE_FIRE_RESIN);
+        //WATER
+        leavesBlock(ModBlocks.BLIFE_TREE_WATER_LEAVES);
+        saplingBlock(ModBlocks.BLT_WATER_HLEAVES);
+        saplingBlock(ModBlocks.BLT_WATER_HLEAVES_PLANT);
+        blockWithItem(ModBlocks.BLIFE_TREE_WATER_RESIN);
 
     }
 

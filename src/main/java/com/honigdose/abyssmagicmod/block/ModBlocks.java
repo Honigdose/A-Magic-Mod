@@ -12,13 +12,14 @@ import com.honigdose.abyssmagicmod.block.crystals.LargeMagicCrystalBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModRotatedBlock;
-import com.honigdose.abyssmagicmod.block.nature.BLTFHLeaves;
-import com.honigdose.abyssmagicmod.block.nature.BLTFHLeavesPlant;
+import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFHLeaves;
+import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFHLeavesPlant;
 import com.honigdose.abyssmagicmod.block.nature.ScarletLeavesBlock;
+import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFWLeavesPlant;
+import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTWHLeaves;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -334,7 +335,15 @@ public class ModBlocks {
             () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> BLIFE_TREE_FIRE_RESIN = registerBlock("blife_tree_fire_resin",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK)));
-
+    //WATER
+    public static final RegistryObject<Block> BLIFE_TREE_WATER_LEAVES = registerBlock("blife_tree_water_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> BLT_WATER_HLEAVES = registerBlock("blt_water_hleaves",
+            () -> new BLTWHLeaves(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).noCollission()));
+    public static final RegistryObject<Block> BLT_WATER_HLEAVES_PLANT = registerBlock("blt_water_hleaves_plant",
+            () -> new BLTFWLeavesPlant(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).noCollission()));
+    public static final RegistryObject<Block> BLIFE_TREE_WATER_RESIN = registerBlock("blife_tree_water_resin",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK)));
 
     public static final RegistryObject<Block> LIFE_TREE_LEAVES = registerBlock("life_tree_leaves",
             () -> new ScarletLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
