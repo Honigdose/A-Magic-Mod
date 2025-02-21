@@ -61,7 +61,6 @@ public class AbyssMagicMod {
         ModRecipes.register(modEventBus);
 
 
-
         SCARLET_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);
         SCARLET_FOLIAGE_PLACER_TYPE_REGISTER.register(modEventBus);
         LIFE_TREE_TRUNK_PLACER_TYPE_REGISTER.register(modEventBus);

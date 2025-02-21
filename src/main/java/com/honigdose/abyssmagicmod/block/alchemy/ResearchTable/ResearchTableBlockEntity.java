@@ -12,7 +12,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -26,7 +26,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -44,6 +46,9 @@ import java.util.*;
 
 public class ResearchTableBlockEntity extends BlockEntity implements MenuProvider {
     private ServerPlayer player;
+
+    private final Set<String> unlockedPages = new HashSet<>();
+
 
     private final Map<Object, List<String>> item_to_pages = Map.of(
             ModItems.FIRE_CRYSTAL_SHARD.get(), List.of("fire_crystal"),
@@ -64,15 +69,22 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
             return switch (slot) {
                 case INK_SLOT -> stack.getItem() == ModItems.INK_BOTTLE_ITEM.get();
                 case QUILL_SLOT -> stack.getItem() == ModItems.QUILL.get();
-                case BOOK_SLOT -> stack.getItem() instanceof BotanicaBook;
+                case PAPER_SLOT -> stack.getItem() == Items.PAPER;
                 default -> true;
             };
+        }
+        @Override
+        public int getSlotLimit(int slot) {
+            if (slot == INPUT_SLOT) {
+                return 1;
+            }
+            return super.getSlotLimit(slot);
         }
     };
 
     private static final int INK_SLOT = 0;
     private static final int QUILL_SLOT = 1;
-    private static final int BOOK_SLOT = 2;  // Updated here
+    private static final int PAPER_SLOT = 2;  // Updated here
     private static final int INPUT_SLOT = 3;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -152,8 +164,17 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         if (!inkStack.isEmpty() && inkStack.isDamageableItem()) {
             pTag.putInt("InkDamage", inkStack.getDamageValue());
         }
+
+        // Speichere die freigeschalteten Seiten
+        ListTag pagesTag = new ListTag();
+        for (String page : unlockedPages) {
+            pagesTag.add(StringTag.valueOf(page));
+        }
+        pTag.put("research_table.unlockedPages", pagesTag);
+
         super.saveAdditional(pTag, pRegistries);
     }
+
 
     @Override
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
@@ -165,7 +186,19 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         if (!inkStack.isEmpty()) {
             inkStack.setDamageValue(pTag.getInt("InkDamage"));
         }
+
+        // Lade die freigeschalteten Seiten
+        if (pTag.contains("research_table.unlockedPages")) {
+            ListTag pagesTag = pTag.getList("research_table.unlockedPages", 8); // 8 steht für String
+            for (int i = 0; i < pagesTag.size(); i++) {
+                String pageTag = pagesTag.getString(i);
+                BotanicaBookPages page = BotanicaBookPages.getByTag(pageTag);
+                page.setUnlockedPage(true);
+                unlockedPages.add(pageTag);
+            }
+        }
     }
+
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
@@ -176,7 +209,7 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     public void tick(Level level, BlockPos pPos, BlockState pState) {
-        if (hasRequiredMaterials() && hasRecipe()) {
+        if (hasRequiredMaterials()) {
             increaseCraftingProgress();
             setChanged(level, pPos, pState);
             if (hasCraftingFinished()) {
@@ -194,6 +227,7 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private void craftItem() {
+        itemHandler.extractItem(PAPER_SLOT, 1, false);
         ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
         if (!inkStack.isEmpty() && inkStack.isDamageableItem()) {
             int currentDamage = inkStack.getDamageValue();
@@ -207,10 +241,15 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
         Optional<RecipeHolder<ResearchTableRecipe>> recipe = getCurrentRecipe();
         if (!inputStack.isEmpty() && item_to_pages.containsKey(inputStack.getItem())) {
             List<String> pagesToUnlock = item_to_pages.get(inputStack.getItem());
-            for (String pageTag : pagesToUnlock) { BotanicaBookPages page = BotanicaBookPages.getByTag(pageTag);
-                page.setUnlockedPage(true);
+            for (String pageTag : pagesToUnlock) {
+                BotanicaBookPages page = BotanicaBookPages.getByTag(pageTag);
+                if (!page.isUnlockedPage()) {
+                    page.setUnlockedPage(true);
+                    unlockedPages.add(pageTag);
+                }
             }
         }
+
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         if (recipe.isPresent()) {
             RecipeHolder<ResearchTableRecipe> recipeHolder = recipe.get();
@@ -237,11 +276,11 @@ public class ResearchTableBlockEntity extends BlockEntity implements MenuProvide
     private boolean hasRequiredMaterials() {
         ItemStack inkStack = itemHandler.getStackInSlot(INK_SLOT);
         ItemStack quillStack = itemHandler.getStackInSlot(QUILL_SLOT);
-        ItemStack bookStack = itemHandler.getStackInSlot(BOOK_SLOT);
+        ItemStack paperStack = itemHandler.getStackInSlot(PAPER_SLOT);
 
         return !inkStack.isEmpty() && inkStack.getItem() == ModItems.INK_BOTTLE_ITEM.get() &&
                 !quillStack.isEmpty() && quillStack.getItem() == ModItems.QUILL.get() &&
-                !bookStack.isEmpty() && bookStack.getItem() instanceof BotanicaBook;
+                !paperStack.isEmpty() && paperStack.getItem() == Items.PAPER;
     }
 
     private boolean hasRecipe() {

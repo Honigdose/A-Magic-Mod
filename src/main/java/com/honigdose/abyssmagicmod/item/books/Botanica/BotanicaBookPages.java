@@ -1,9 +1,9 @@
 package com.honigdose.abyssmagicmod.item.books.Botanica;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+
 public enum BotanicaBookPages {
     TABLE_OF_CONTENTS( "table_of_contents", true, 60, null, "table_of_contents_image.png"),
     INTRODUCTION( "introduction", true, 60, "introduction.txt", "botanica_book_template.png"),
@@ -21,16 +22,22 @@ public enum BotanicaBookPages {
     MAGIC_INFO( "magic_info", true, 60, "introduction.txt", "botanica_book_template.png"),
     BIOM_INFO( "biom_info", true, 60, "introduction.txt", "botanica_book_template.png"),
     WARNINGS( "warnings", true, 60, "introduction.txt", "botanica_book_template.png"),
+    ORES_CHAPTER( "ores_chapter", true, 60, null, "botanica_book_template.png"),
+    PLANTS_CHAPTER( "plants_chapter", true, 60, null, "botanica_book_template.png"),
+    TREES_CHAPTER( "trees_chapter", true, 60, null, "botanica_book_template.png"),
+    BIOMES_CHAPTER( "biomes_chapter", true, 60, null, "botanica_book_template.png"),
+
+
     CRYSTAL_CHAPTER( "crystal_chapter", true, 60, null, "botanica_crystal_chapter_template.png"),
     CRYSTAL( "crystal", true, 60,  null, "botanica_book_crystal1.png"),
     CRYSTAL_1( "crystal_1", true, 60, "botanica_book_crystals.txt", "botanica_book_crystal1.png"),
     CRYSTALS( "crystals", true, 60, null, "botanica_book_crystals.png"),
-    FIRE_CRYSTAL( "fire_crystal", true, 60, null, "botanica_book_crystal_fire.png"),
-    WATER_CRYSTAL("water_crystal", true, 60, null, "botanica_book_crystal_water.png"),
-    AIR_CRYSTAL("air_crystal", true, 60, null, "botanica_book_crystal_air.png"),
-    NATURE_CRYSTAL("nature_crystal", true, 60, null, "botanica_book_crystal_natur.png"),
-    SOLAR_CRYSTAL("solar_crystal", true, 60, null, "botanica_book_crystal_solar.png"),
-    LUNAR_CRYSTAL("lunar_crystal", true, 60, null, "botanica_book_crystal_lunar.png"),
+    FIRE_CRYSTAL( "fire_crystal", false, 60, null, "botanica_book_crystal_fire.png"),
+    WATER_CRYSTAL("water_crystal", false, 60, null, "botanica_book_crystal_water.png"),
+    AIR_CRYSTAL("air_crystal", false, 60, null, "botanica_book_crystal_air.png"),
+    NATURE_CRYSTAL("nature_crystal", false, 60, null, "botanica_book_crystal_natur.png"),
+    SOLAR_CRYSTAL("solar_crystal", false, 60, null, "botanica_book_crystal_solar.png"),
+    LUNAR_CRYSTAL("lunar_crystal", false, 60, null, "botanica_book_crystal_lunar.png"),
     END( "end", true, 60, null, "botanica_book_template.png");
 
 
