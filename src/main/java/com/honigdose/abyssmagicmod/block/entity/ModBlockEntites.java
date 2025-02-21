@@ -29,7 +29,8 @@ public class ModBlockEntites {
                     ModBlocks.RESEARCH_TABLE_JUNGLE.get(),
                     ModBlocks.RESEARCH_TABLE_SCARLET.get(),
                     ModBlocks.RESEARCH_TABLE_WARPED.get(),
-                    ModBlocks.RESEARCH_TABLE_DARK_OAK.get()
+                    ModBlocks.RESEARCH_TABLE_DARK_OAK.get(),
+                    ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get()
             ).build(null));
 
 

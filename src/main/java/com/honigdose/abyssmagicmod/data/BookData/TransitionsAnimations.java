@@ -1,4 +1,4 @@
-package com.honigdose.abyssmagicmod.item.books.BookData;
+package com.honigdose.abyssmagicmod.data.BookData;
 
 import net.minecraft.resources.ResourceLocation;
 

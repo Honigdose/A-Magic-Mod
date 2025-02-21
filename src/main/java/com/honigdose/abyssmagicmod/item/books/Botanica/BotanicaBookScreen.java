@@ -1,20 +1,22 @@
 package com.honigdose.abyssmagicmod.item.books.Botanica;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
-import com.honigdose.abyssmagicmod.item.books.BookData.BookChapter;
-import com.honigdose.abyssmagicmod.item.books.BookData.TransitionsAnimations;
+import com.honigdose.abyssmagicmod.data.BookData.BookChapter;
+import com.honigdose.abyssmagicmod.data.BookData.TransitionsAnimations;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import java.util.HashMap;
 
-import java.util.*;
 
 public class BotanicaBookScreen extends Screen {
 
@@ -71,6 +73,10 @@ public class BotanicaBookScreen extends Screen {
         // Kapitel, die auf Seite "introduction" erscheinen:
         chapters.put("table_of_contents", new ArrayList<>(List.of(
                 new BookChapter("Introduction", "introduction"),
+                new BookChapter("Metals and Ores", "ores_chapter"),
+                new BookChapter("Plants", "plants_chapter"),
+                new BookChapter("Trees", "trees_chapter"),
+                new BookChapter("Biomes", "biomes_chapter"),
                 new BookChapter("Crystals", "crystal")
         )));
 
@@ -416,12 +422,6 @@ public class BotanicaBookScreen extends Screen {
         } else {
             currentPageTickCount++;
         }
-    }
-
-    public void unlockPage(BotanicaBookPages page) {
-        CompoundTag playerData = player.getPersistentData();
-        playerData.putBoolean("botanica_unlocked_" + page.name(), true);
-        System.out.println("Seite " + page.name() + " wurde freigeschaltet!");
     }
 
     @Override
