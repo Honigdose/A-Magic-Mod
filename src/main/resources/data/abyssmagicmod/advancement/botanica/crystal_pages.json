@@ -1,0 +1,37 @@
+{
+  "parent": "abyssmagicmod:botanica/root",
+  "criteria": {
+    "crystal_pages": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "abyssmagicmod:crystals"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.botanica.crystal_pages.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "abyssmagicmod:fire_crystal"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "frame": "goal",
+    "title": {
+      "translate": "advancements.botanica.crystal_pages.title"
+    }
+  },
+  "requirements": [
+    [
+      "crystal_pages"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

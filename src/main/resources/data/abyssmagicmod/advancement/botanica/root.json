@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "botanica": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "abyssmagicmod:botanica_book"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "background": "abyssmagicmod:textures/gui/advancements/backgrounds/botanica_backround.png",
+    "description": {
+      "translate": "advancements.botanica.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "abyssmagicmod:botanica_book"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "frame": "goal",
+    "title": {
+      "translate": "advancements.botanica.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "botanica"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

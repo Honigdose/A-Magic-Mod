@@ -1,0 +1,7 @@
+{
+  "id": "abyssmagicmod:water_crystal_page",
+  "type": "abyssmagicmod:researching",
+  "ingredient": {
+    "tag": "abyssmagicmod:water_crystals"
+  }
+}

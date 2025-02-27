@@ -1,0 +1,32 @@
+{
+  "parent": "abyssmagicmod:botanica/crystal_pages",
+  "criteria": {
+    "water_crystal_page": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "abyssmagicmod:water_crystal_page"
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.botanica.water_crystal_page.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "abyssmagicmod:water_crystal"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "title": {
+      "translate": "advancements.botanica.water_crystal_page.title"
+    }
+  },
+  "requirements": [
+    [
+      "water_crystal_page"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

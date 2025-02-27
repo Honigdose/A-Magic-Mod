@@ -1,0 +1,7 @@
+{
+  "id": "abyssmagicmod:fire_crystal_page",
+  "type": "abyssmagicmod:researching",
+  "ingredient": {
+    "tag": "abyssmagicmod:fire_crystals"
+  }
+}
