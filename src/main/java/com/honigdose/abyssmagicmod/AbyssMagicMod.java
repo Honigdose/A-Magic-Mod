@@ -3,6 +3,10 @@ package com.honigdose.abyssmagicmod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableScreen;
 import com.honigdose.abyssmagicmod.block.entity.ModBlockEntites;
+import com.honigdose.abyssmagicmod.particle.custom.crystals.CuteCrystalParticle;
+import com.honigdose.abyssmagicmod.particle.custom.crystals.LunarCrystalParticle;
+import com.honigdose.abyssmagicmod.particle.custom.ScarletLeavesParticle;
+import com.honigdose.abyssmagicmod.particle.custom.crystals.VoidCrystalParticle;
 import com.honigdose.abyssmagicmod.recipe.ModRecipes;
 import com.honigdose.abyssmagicmod.util.ModCreativeModeTabs;
 import com.honigdose.abyssmagicmod.item.ModItems;
@@ -17,6 +21,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -85,6 +90,15 @@ public class AbyssMagicMod {
 
             MenuScreens.register(ModMenuTypes.RESEARCH_TABLE_MENU.get(), ResearchTableScreen::new);
         }
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.CUTE_CRYSTAL_PARTICLE.get(), CuteCrystalParticle.Provider::new);
+            event.registerSpriteSet(ModParticles.VOID_CRYSTAL_PARTICLE.get(), VoidCrystalParticle.Provider::new);
+            event.registerSpriteSet(ModParticles.LUNAR_CRYSTAL_PARTICLE.get(), LunarCrystalParticle.Provider::new);
+            event.registerSpriteSet(ModParticles.SCARLET_LEAVES_PARTICLE.get(), ScarletLeavesParticle.Provider::new);
+        }
     }
+
 }
 

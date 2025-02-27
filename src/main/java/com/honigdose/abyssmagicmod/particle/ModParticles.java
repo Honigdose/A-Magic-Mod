@@ -17,6 +17,10 @@ public class ModParticles {
 
     public static final RegistryObject<SimpleParticleType> CUTE_CRYSTAL_PARTICLE = PARTICLES
             .register("cute_crystal_particle", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> VOID_CRYSTAL_PARTICLE = PARTICLES
+            .register("void_crystal_particle", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> LUNAR_CRYSTAL_PARTICLE = PARTICLES
+            .register("lunar_crystal_particle", () -> new SimpleParticleType(true));
 
 
     public static void register(IEventBus eventBus) {

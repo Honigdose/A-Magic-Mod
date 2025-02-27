@@ -1,8 +1,16 @@
 package com.honigdose.abyssmagicmod.block.crystals;
 
 
+import com.honigdose.abyssmagicmod.block.ModBlocks;
+import com.honigdose.abyssmagicmod.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.ParticleUtils;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -120,6 +128,52 @@ public class LargeMagicCrystalBlock extends Block {
             }
         }
     }
+
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (state.getValue(HALF) == DoubleBlockHalf.LOWER && random.nextFloat() < 0.15f) {
+            double offsetFactor = 2;
+            double xOffset = (random.nextDouble() - 0.5) * offsetFactor;
+            double yOffset = (random.nextDouble() - 0.5) * 0.7;
+            double zOffset = (random.nextDouble() - 0.5) * offsetFactor;
+            double xPos = pos.getX() + 0.5 + xOffset;
+            double yPos = pos.getY() + 1.0 + yOffset;
+            double zPos = pos.getZ() + 0.5 + zOffset;
+
+            ParticleType<?> particleType;
+            // Vergleich anhand der Blockinstanz
+            if (this == ModBlocks.LARGE_ARCANA_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_FIRE_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_AIR_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_NATURE_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_WATER_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_SOLAR_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_LUNAR_CRYSTAL.get()) {
+                particleType = ModParticles.LUNAR_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_VOID_CRYSTAL.get()) {
+                particleType = ModParticles.VOID_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_DEMONIC_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else if (this == ModBlocks.LARGE_CELESTIAL_CRYSTAL.get()) {
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            } else {
+                // Fallback, falls keiner passt
+                particleType = ModParticles.CUTE_CRYSTAL_PARTICLE.get();
+            }
+
+            level.addParticle((ParticleOptions) particleType, xPos, yPos, zPos, 0.0, 0.0, 0.0);
+        }
+    }
+
+
+
+
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {

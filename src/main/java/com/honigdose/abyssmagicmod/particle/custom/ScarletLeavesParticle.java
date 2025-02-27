@@ -19,9 +19,9 @@ public class ScarletLeavesParticle extends TextureSheetParticle {
         this.zd *= 0;
 
         this.gravity = 0.05F;
-        this.quadSize = 0.3F;
+        this.quadSize = 0.2F;
         this.lifetime = 120;
-        this.setSpriteFromAge(spriteSet);
+        this.setSprite(spriteSet.get(this.random.nextInt(12), 12));
 
         this.rCol = 1.0f;
         this.gCol = 1.0f;

@@ -3,6 +3,7 @@ package com.honigdose.abyssmagicmod.block.nature;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
@@ -47,6 +48,7 @@ public class ScarletLeavesBlock extends LeavesBlock {
             }
         }
     }
+
 
     @Override
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {

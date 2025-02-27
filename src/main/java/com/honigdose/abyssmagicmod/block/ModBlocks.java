@@ -411,7 +411,7 @@ public class ModBlocks {
                 new AmethystClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
                         .noOcclusion()
-                        .lightLevel(value -> 10)
+                        .lightLevel(value -> 8)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
@@ -423,7 +423,7 @@ public class ModBlocks {
                 new LargeMagicCrystalBlock(BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
                         .noOcclusion()
-                        .lightLevel(value -> 10)
+                        .lightLevel(value -> 4)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
