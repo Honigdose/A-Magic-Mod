@@ -17,6 +17,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -47,6 +48,25 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.ASTRATHYL_BLOCK.get());
         dropSelf(ModBlocks.CELESTIUM_BLOCK.get());
         dropSelf(ModBlocks.BLOODGOLD_BLOCK.get());
+
+
+        add(ModBlocks.ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.FIRE_ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.AIR_ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.WATER_ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.NATURE_ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.SOLAR_ESSENCE.get(), LootTable.lootTable());
+        add(ModBlocks.LUNAR_ESSENCE.get(), LootTable.lootTable());
+
+        add(ModBlocks.FIRE_CIRCLE.get(), LootTable.lootTable());
+        add(ModBlocks.WATER_CIRCLE.get(), LootTable.lootTable());
+
+        dropSelf(ModBlocks.FIRE_ESSENCE_BOTTLE.get());
+        dropSelf(ModBlocks.WATER_ESSENCE_BOTTLE.get());
+        dropSelf(ModBlocks.NATURE_ESSENCE_BOTTLE.get());
+        dropSelf(ModBlocks.LUNAR_ESSENCE_BOTTLE.get());
+        dropSelf(ModBlocks.SOLAR_ESSENCE_BOTTLE.get());
+        dropSelf(ModBlocks.AIR_ESSENCE_BOTTLE.get());
 
         dropSelf(ModBlocks.MAGIC_ROUND_BOTTLE.get());
         dropSelf(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get());
@@ -363,6 +383,38 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BLT_WATER_HLEAVES.get());
         this.dropSelf(ModBlocks.BLT_WATER_HLEAVES_PLANT.get());
         this.dropSelf(ModBlocks.BLIFE_TREE_WATER_RESIN.get());
+
+
+        this.dropSelf(ModBlocks.WHITE_BLACK_FLOWER.get());
+        this.add(ModBlocks.POTTED_WHITE_BLACK_FLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.WHITE_BLACK_FLOWER.get()));
+        this.dropSelf(ModBlocks.TALL_WHITE_BLACK_FLOWER.get());
+        this.add(ModBlocks.POTTED_TALL_WHITE_BLACK_FLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.TALL_WHITE_BLACK_FLOWER.get()));
+        this.dropSelf(ModBlocks.VOID_FLOWER.get());
+        this.add(ModBlocks.POTTED_VOID_FLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.VOID_FLOWER.get()));
+        this.dropSelf(ModBlocks.WHITE_VOID_FLOWER.get());
+        this.add(ModBlocks.POTTED_WHITE_VOID_FLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.VOID_FLOWER.get()));
+        this.dropSelf(ModBlocks.PURE_VOID_FLOWER.get());
+        this.add(ModBlocks.POTTED_PURE_VOID_FLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.PURE_VOID_FLOWER.get()));
+
+        this.add(ModBlocks.VOID_VINE.get(), createSilkTouchOnlyTable(ModBlocks.VOID_VINE.get()));
+        this.add(ModBlocks.SMALL_VOID_VINE.get(), createSilkTouchOnlyTable(ModBlocks.SMALL_VOID_VINE.get()));
+        this.add(ModBlocks.TALL_VOID_VINE.get(), createSilkTouchOnlyTable(ModBlocks.TALL_VOID_VINE.get()));
+        this.add(ModBlocks.SCARLET_FOREST_GRASS.get(), createSilkTouchOnlyTable(ModBlocks.SCARLET_FOREST_GRASS.get()));
+        this.dropSelf(ModBlocks.SCARLET_FOREST_DIRT.get());
+        this.dropSelf(ModBlocks.INK_CAP.get());
+        this.add(ModBlocks.POTTED_INK_CAP.get(),
+                createPotFlowerItemTable(ModBlocks.INK_CAP.get()));
+
+        this.dropSelf(ModBlocks.BROWN_TREE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.GLOWING_BROWN_MUSHROOM.get());
+        this.dropSelf(ModBlocks.GLOWING_DARK_BLUE_MUSHROOM.get());
+        this.dropSelf(ModBlocks.GLOWING_WHITE_RED_MUSHROOM.get());
+        this.dropSelf(ModBlocks.GLOWING_RED_MUSHROOM.get());
 
     }
 

@@ -9,26 +9,28 @@ import java.util.Random;
 
 public class VoidCrystalParticle extends TextureSheetParticle {
     private static final Random RANDOM = new Random();
+
     private final int startHex;
     private final int endHex;
 
-
     protected VoidCrystalParticle(ClientLevel level, double x, double y, double z,
-                                  SpriteSet pSprites, double dx, double dy, double dz,
-                                  int startHex, int endHex) {
+                                   SpriteSet pSprites, double dx, double dy, double dz,
+                                   int startHex, int endHex) {
         super(level, x, y, z, dx, dy, dz);
+
+
+        this.setSprite(pSprites.get(this.random.nextInt(4), 4));
 
         this.startHex = startHex;
         this.endHex = endHex;
 
-        this.setSpriteFromAge(pSprites);
         this.xd = 0;
         this.yd = 0;
         this.zd = 0;
         this.hasPhysics = false;
         this.gravity = 0.0f;
-        this.quadSize = 0.04F + RANDOM.nextFloat(0.09F);
-        this.lifetime = 200 + RANDOM.nextInt(40);
+        this.quadSize = 0.02F + RANDOM.nextFloat(0.1F);
+        this.lifetime = 140 + RANDOM.nextInt(40);
         this.alpha = 0.0f;
     }
 
@@ -38,12 +40,14 @@ public class VoidCrystalParticle extends TextureSheetParticle {
 
         float fadeInDuration = 0.2f * this.lifetime;
         float fadeOutDuration = 0.8f * this.lifetime;
+        float maxAlpha = 0.5f;
+
         if (this.age < fadeInDuration) {
-            this.alpha = (float) this.age / fadeInDuration;
+            this.alpha = ((float) this.age / fadeInDuration) * maxAlpha;
         } else if (this.age > fadeOutDuration) {
-            this.alpha = 1.0f - ((float) (this.age - fadeOutDuration) / (this.lifetime - fadeOutDuration));
+            this.alpha = maxAlpha - ((float) (this.age - fadeOutDuration) / (this.lifetime - fadeOutDuration)) * maxAlpha;
         } else {
-            this.alpha = 1.0f;
+            this.alpha = maxAlpha;
         }
 
         float t = (float) this.age / (float) this.lifetime;
@@ -63,12 +67,14 @@ public class VoidCrystalParticle extends TextureSheetParticle {
         double hoverAmplitude = 0.007;
         this.yd = Math.sin(this.age * 0.04) * hoverAmplitude;
     }
-
-
-
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    }
+
+    @Override
+    protected int getLightColor(float partialTick) {
+        return 0xF000F0;
     }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
@@ -82,8 +88,8 @@ public class VoidCrystalParticle extends TextureSheetParticle {
         public Particle createParticle(SimpleParticleType type, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
-            int startHex = 0x180F29; // Farbe A (Rot:24, Grün:15, Blau:41)
-            int endHex   = 0x0A0A13; // Farbe B (Rot:10, Grün:10, Blau:19)
+            int startHex = 0x180F29;
+            int endHex   = 0x0A0A13;
             return new VoidCrystalParticle(level, x, y, z, this.sprite, dx, dy, dz, startHex, endHex);
         }
     }

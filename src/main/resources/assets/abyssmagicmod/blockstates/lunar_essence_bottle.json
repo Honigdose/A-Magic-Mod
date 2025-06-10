@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,waterlogged=false": { "model": "abyssmagicmod:block/lunar_essence_bottle" },
+    "facing=south,waterlogged=false": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 180 },
+    "facing=east,waterlogged=false": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 90 },
+    "facing=west,waterlogged=false": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 270 },
+
+    "facing=north,waterlogged=true": { "model": "abyssmagicmod:block/lunar_essence_bottle" },
+    "facing=south,waterlogged=true": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 180 },
+    "facing=east,waterlogged=true": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 90 },
+    "facing=west,waterlogged=true": { "model": "abyssmagicmod:block/lunar_essence_bottle", "y": 270 }
+  }
+}

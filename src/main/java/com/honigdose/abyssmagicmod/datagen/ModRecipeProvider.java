@@ -4,6 +4,7 @@ import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
+import com.honigdose.abyssmagicmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -60,6 +62,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // TREE
         // Minecraft Wood Typs
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.OAK_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_OAK_LOG, Blocks.OAK_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.OAK_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_OAK_LOG, Blocks.OAK_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.BIRCH_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.BIRCH_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.SPRUCE_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.SPRUCE_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.DARK_OAK_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.DARK_OAK_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.JUNGLE_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.JUNGLE_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.ACACIA_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.ACACIA_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.CHERRY_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_CHERRY_LOG, Blocks.CHERRY_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.CHERRY_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_CHERRY_LOG, Blocks.CHERRY_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.MANGROVE_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_MANGROVE_LOG, Blocks.MANGROVE_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.MANGROVE_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_MANGROVE_LOG, Blocks.MANGROVE_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.CRIMSON_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.CRIMSON_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_PLANKS);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.WARPED_ALCHEMY_SHELF_JAR.get(), Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_PLANKS);
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.WARPED_ALCHEMY_SHELF_MIX.get(), Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_PLANKS);
+
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_OAK.get(), Blocks.STRIPPED_OAK_LOG, Blocks.OAK_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_BIRCH.get(), Blocks.STRIPPED_BIRCH_LOG, Blocks.BIRCH_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_SPRUCE.get(), Blocks.STRIPPED_SPRUCE_LOG, Blocks.SPRUCE_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_DARK_OAK.get(), Blocks.STRIPPED_DARK_OAK_LOG, Blocks.DARK_OAK_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_JUNGLE.get(), Blocks.STRIPPED_JUNGLE_LOG, Blocks.JUNGLE_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_ACACIA.get(), Blocks.STRIPPED_ACACIA_LOG, Blocks.ACACIA_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_CHERRY.get(), Blocks.STRIPPED_CHERRY_LOG, Blocks.CHERRY_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_MANGROVE.get(), Blocks.STRIPPED_MANGROVE_LOG, Blocks.MANGROVE_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_CRIMSON.get(), Blocks.STRIPPED_CRIMSON_STEM, Blocks.CRIMSON_PLANKS);
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_WARPED.get(), Blocks.STRIPPED_WARPED_STEM, Blocks.WARPED_PLANKS);
 
         // SCARLET TREE
         woodFromLogs(recipeOutput, ModBlocks.SCARLET_TREE_WOOD.get(), ModBlocks.SCARLET_TREE_LOG.get());
@@ -79,6 +112,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_scarlet_tree_plank", has(ModBlocks.SCARLET_TREE_PLANKS.get())).save(recipeOutput);
         trapdoorBuilder(ModBlocks.SCARLET_TREE_TRAPDOOR.get(), Ingredient.of(ModBlocks.SCARLET_TREE_PLANKS.get())).group("scarlet_tree_plank")
                 .unlockedBy("has_scarlet_tree_plank", has(ModBlocks.SCARLET_TREE_PLANKS.get())).save(recipeOutput);
+        AlchemyShelfJarBlock(recipeOutput,  ModBlocks.SCARLET_ALCHEMY_SHELF_JAR.get(), ModBlocks.STRIPPED_SCARLET_TREE_LOG.get(), ModBlocks.SCARLET_TREE_PLANKS.get());
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.SCARLET_ALCHEMY_SHELF_MIX.get(), ModBlocks.STRIPPED_SCARLET_TREE_LOG.get(), ModBlocks.SCARLET_TREE_PLANKS.get());
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_SCARLET.get(), ModBlocks.STRIPPED_SCARLET_TREE_LOG.get(), ModBlocks.SCARLET_TREE_PLANKS.get());
 
         // LIFE TREE
         woodFromLogs(recipeOutput, ModBlocks.BLIFE_TREE_WOOD.get(), ModBlocks.BLIFE_TREE_LOG.get());
@@ -97,6 +133,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
         trapdoorBuilder(ModBlocks.BLIFE_TREE_TRAPDOOR.get(), Ingredient.of(ModBlocks.BLIFE_TREE_PLANKS.get())).group("blife_tree_plank")
                 .unlockedBy("has_blife_tree_plank", has(ModBlocks.BLIFE_TREE_PLANKS.get())).save(recipeOutput);
+        AlchemyShelfJarBlock(recipeOutput, ModBlocks.BLT_ALCHEMY_SHELF_JAR.get(), ModBlocks.STRIPPED_BLIFE_TREE_LOG.get(), ModBlocks.BLIFE_TREE_PLANKS.get());
+        AlchemyShelfMixBlock(recipeOutput, ModBlocks.BLT_ALCHEMY_SHELF_MIX.get(), ModBlocks.STRIPPED_BLIFE_TREE_LOG.get(), ModBlocks.BLIFE_TREE_PLANKS.get());
+        ResearchTableBlock(recipeOutput, ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get(), ModBlocks.STRIPPED_BLIFE_TREE_LOG.get(), ModBlocks.BLIFE_TREE_PLANKS.get());
     }
 
 
@@ -132,6 +171,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.CALCITE)
                 .unlockedBy("has_raw_chalk", has(ModItems.RAW_CHALK.get())).save(recipeOutput);
 
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.INK_SAC, 1)
+                .requires(ModBlocks.INK_CAP.get())
+                .unlockedBy("has_ink_cap", has(Items.INK_SAC)).save(recipeOutput);
 
     }
 
@@ -174,15 +217,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
-    private void AlchemyShelfBlock(RecipeOutput recipeOutput, Block shelf, Block planks, Block strippedlogs) {
+    private void AlchemyShelfJarBlock(RecipeOutput recipeOutput, Block shelf, Block strippedlogs, Block planks) {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, shelf)
                 .pattern("BAB")
-                .pattern("A A")
+                .pattern("ACA")
                 .pattern("BAB")
                 .define('A', planks)
                 .define('B', strippedlogs)
-                .unlockedBy("has_planks", has(planks))
+                .define('C', ModTags.Items.BOTTLES)
+                .unlockedBy("has_planksa", has(planks))
+                .save(recipeOutput);
+
+    }
+
+    private void AlchemyShelfMixBlock(RecipeOutput recipeOutput, Block shelf, Block strippedlogs, Block planks) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, shelf)
+                .pattern("BAB")
+                .pattern("ACA")
+                .pattern("BAB")
+                .define('A', planks)
+                .define('B', strippedlogs)
+                .define('C', Items.BOOK)
+                .unlockedBy("has_planksb", has(planks))
+                .save(recipeOutput);
+
+    }
+
+    private void ResearchTableBlock(RecipeOutput recipeOutput, Block shelf, Block strippedlogs, Block planks) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, shelf)
+                .pattern("DCE")
+                .pattern("AAA")
+                .pattern("B B")
+                .define('A', planks)
+                .define('B', strippedlogs)
+                .define('C', Items.BOOK)
+                .define('D', ModBlocks.MORTAR_AND_PESTLE.get())
+                .define('E', ModTags.Items.BOTTLES)
+                .unlockedBy("has_planksc", has(planks))
                 .save(recipeOutput);
 
     }

@@ -4,6 +4,7 @@ import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.books.AlchemyBook.AlchemyBook;
 import com.honigdose.abyssmagicmod.item.books.Bestiary.BestiaryBook;
+import com.honigdose.abyssmagicmod.item.custom.ChalkItem;
 import com.honigdose.abyssmagicmod.item.custom.InkBottleItem;
 import com.honigdose.abyssmagicmod.item.custom.MortarAndPestleItem;
 import com.honigdose.abyssmagicmod.item.custom.TestBook;
@@ -46,14 +47,18 @@ public class ModItems {
         });
     }
 
+    public static final RegistryObject<Item> FIRE_CIRCLE_PAPER = registerItem("fire_circle_paper");
+    public static final RegistryObject<Item> WATER_CIRCLE_PAPER = registerItem("water_circle_paper");
 
+    public static final RegistryObject<Item> CHALK = ITEMS.register("chalk",
+            () -> new ChalkItem(new Item.Properties()));
 
-    public static final RegistryObject<Item> CHALK = registerItemStacks("chalk", 3);
     public static final RegistryObject<Item> RAW_CHALK = registerItem("raw_chalk");
 
     public static final RegistryObject<Item> QUILL = registerItem("quill");
 
-    public static final RegistryObject<Item> MAGIC_ROUND_BOTTLE_ITEM = ITEMS.register("magic_round_bottle",
+
+    public static final RegistryObject<Item> MAGIC_BOTTLE_ITEM = ITEMS.register("magic_round_bottle",
             () -> new BlockItem(ModBlocks.MAGIC_ROUND_BOTTLE.get() ,new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> MAGIC_TRIANGLE_BOTTLE_ITEM = ITEMS.register("magic_triangle_bottle",
             () -> new BlockItem(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get() ,new Item.Properties().stacksTo(16)));
@@ -83,36 +88,31 @@ public class ModItems {
     public static final RegistryObject<Item> BOTANICA_BOOK_ITEM = ITEMS.register("botanica_book",
             () -> new BotanicaBook(BOTANICA_BOOK.get() ,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> ROUND_FIRE_ESSENCE = registerEssenceItem("round_fire_essence");
-    public static final RegistryObject<Item> SQUARE_FIRE_ESSENCE = registerEssenceItem("square_fire_essence");
-    public static final RegistryObject<Item> TRIANGLE_FIRE_ESSENCE = registerEssenceItem("triangle_fire_essence");
-    public static final RegistryObject<Item> ROUND_WATER_ESSENCE = registerEssenceItem("round_water_essence");
-    public static final RegistryObject<Item> SQUARE_WATER_ESSENCE = registerEssenceItem("square_water_essence");
-    public static final RegistryObject<Item> TRIANGLE_WATER_ESSENCE = registerEssenceItem("triangle_water_essence");
-    public static final RegistryObject<Item> ROUND_NATURE_ESSENCE = registerEssenceItem("round_nature_essence");
-    public static final RegistryObject<Item> SQUARE_NATURE_ESSENCE = registerEssenceItem("square_nature_essence");
-    public static final RegistryObject<Item> TRIANGLE_NATURE_ESSENCE = registerEssenceItem("triangle_nature_essence");
-    public static final RegistryObject<Item> ROUND_AIR_ESSENCE = registerEssenceItem("round_air_essence");
-    public static final RegistryObject<Item> SQUARE_AIR_ESSENCE = registerEssenceItem("square_air_essence");
-    public static final RegistryObject<Item> TRIANGLE_AIR_ESSENCE = registerEssenceItem("triangle_air_essence");
-    public static final RegistryObject<Item> ROUND_SOLAR_ESSENCE = registerEssenceItem("round_solar_essence");
-    public static final RegistryObject<Item> SQUARE_SOLAR_ESSENCE = registerEssenceItem("square_solar_essence");
-    public static final RegistryObject<Item> TRIANGLE_SOLAR_ESSENCE = registerEssenceItem("triangle_solar_essence");
-    public static final RegistryObject<Item> ROUND_LUNAR_ESSENCE = registerEssenceItem("round_lunar_essence");
-    public static final RegistryObject<Item> SQUARE_LUNAR_ESSENCE = registerEssenceItem("square_lunar_essence");
-    public static final RegistryObject<Item> TRIANGLE_LUNAR_ESSENCE = registerEssenceItem("triangle_lunar_essence");
-    public static final RegistryObject<Item> ROUND_DEMONIC_ESSENCE = registerEssenceItem("round_demonic_essence");
-    public static final RegistryObject<Item> SQUARE_DEMONIC_ESSENCE = registerEssenceItem("square_demonic_essence");
-    public static final RegistryObject<Item> TRIANGLE_DEMONIC_ESSENCE = registerEssenceItem("triangle_demonic_essence");
-    public static final RegistryObject<Item> ROUND_CELESTIAL_ESSENCE = registerEssenceItem("round_celestial_essence");
-    public static final RegistryObject<Item> SQUARE_CELESTIAL_ESSENCE = registerEssenceItem("square_celestial_essence");
-    public static final RegistryObject<Item> TRIANGLE_CELESTIAL_ESSENCE = registerEssenceItem("triangle_celestial_essence");
-    public static final RegistryObject<Item> ROUND_VOID_ESSENCE = registerEssenceItem("round_void_essence");
-    public static final RegistryObject<Item> SQUARE_VOID_ESSENCE = registerEssenceItem("square_void_essence");
-    public static final RegistryObject<Item> TRIANGLE_VOID_ESSENCE = registerEssenceItem("triangle_void_essence");
-    public static final RegistryObject<Item> ROUND_ARCANA_ESSENCE = registerEssenceItem("round_arcana_essence");
-    public static final RegistryObject<Item> SQUARE_ARCANA_ESSENCE = registerEssenceItem("square_arcana_essence");
-    public static final RegistryObject<Item> TRIANGLE_ARCANA_ESSENCE = registerEssenceItem("triangle_arcana_essence");
+    public static final RegistryObject<Item> FIRE_ESSENCE_BOTTLE_ITEM = ITEMS.register("fire_essence_bottle",
+            () -> new BlockItem(ModBlocks.FIRE_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> WATER_ESSENCE_BOTTLE_ITEM = ITEMS.register("water_essence_bottle",
+            () -> new BlockItem(ModBlocks.WATER_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> NATURE_ESSENCE_BOTTLE_ITEM = ITEMS.register("nature_essence_bottle",
+            () -> new BlockItem(ModBlocks.NATURE_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> AIR_ESSENCE_BOTTLE_ITEM = ITEMS.register("air_essence_bottle",
+            () -> new BlockItem(ModBlocks.AIR_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> SOLAR_ESSENCE_BOTTLE_ITEM = ITEMS.register("solar_essence_bottle",
+            () -> new BlockItem(ModBlocks.SOLAR_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> LUNAR_ESSENCE_BOTTLE_ITEM = ITEMS.register("lunar_essence_bottle",
+            () -> new BlockItem(ModBlocks.LUNAR_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> DEMONIC_ESSENCE_BOTTLE = registerEssenceItem("demonic_essence_bottle");
+
+    public static final RegistryObject<Item> CELESTIAL_ESSENCE_BOTTLE = registerEssenceItem("celestial_essence_bottle");
+
+    public static final RegistryObject<Item> VOID_ESSENCE_BOTTLE = registerEssenceItem("void_essence_bottle");
+
+    public static final RegistryObject<Item> ARCANA_ESSENCE_BOTTLE = registerEssenceItem("arcana_essence_bottle");
 
     //INGOTS AND RAW ORE
     public static final RegistryObject<Item> ASTRATHYL = registerItem("astrathyl");

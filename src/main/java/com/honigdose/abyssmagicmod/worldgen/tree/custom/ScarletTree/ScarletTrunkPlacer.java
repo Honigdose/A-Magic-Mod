@@ -43,6 +43,21 @@ public class ScarletTrunkPlacer extends TrunkPlacer {
             }
         }
 
+        // Fundament unter jedem Stammblock auf Y = 0
+        for (int x = -1; x <= 1; x++) {
+            for (int z = -1; z <= 1; z++) {
+                for (int dy = -1; dy >= -5; dy--) {
+                    BlockPos supportPos = pPos.offset(x, dy, z);
+                    if (pLevel.isStateAtPosition(supportPos, state -> state.isAir())) {
+                        pBlockSetter.accept(supportPos, pConfig.trunkProvider.getState(pRandom, supportPos));
+                    } else {
+                        break; // Stoppe, wenn kein Luftblock mehr
+                    }
+                }
+            }
+        }
+
+
         BlockPos LogPos = pPos.offset(0, 10, 0);
         BlockPos LogPos2 = pPos.offset(-1, 10, 0);
         BlockPos LogPos3 = pPos.offset(0, 10, 1);
@@ -61,19 +76,49 @@ public class ScarletTrunkPlacer extends TrunkPlacer {
                         BlockPos rootPos = pPos.offset(x, 0, z);
                         pBlockSetter.accept(rootPos, rootBlock);
 
+                        // Fundament unter der Wurzel
+                        for (int dy = -1; dy >= -5; dy--) {
+                            BlockPos supportPos = rootPos.offset(0, dy, 0);
+                            if (pLevel.isStateAtPosition(supportPos, state -> state.isAir() || state.getFluidState().isSource())) {
+                                pBlockSetter.accept(supportPos, rootBlock);
+                            } else {
+                                break;
+                            }
+                        }
+
                         if (pRandom.nextFloat() < 0.4F) {
                             BlockPos secondRootPos = rootPos.above();
                             pBlockSetter.accept(secondRootPos, rootBlock);
 
+                            // Fundament auch unter dieser Wurzelverlängerung
+                            for (int dy = -1; dy >= -10; dy--) {
+                                BlockPos supportPos = secondRootPos.offset(0, dy, 0);
+                                if (pLevel.isStateAtPosition(supportPos, state -> state.isAir() || state.getFluidState().isSource())) {
+                                    pBlockSetter.accept(supportPos, rootBlock);
+                                } else {
+                                    break;
+                                }
+                            }
+
                             if (pRandom.nextFloat() < 0.2F) {
                                 BlockPos thirdRootPos = secondRootPos.above();
                                 pBlockSetter.accept(thirdRootPos, rootBlock);
+
+                                for (int dy = -1; dy >= -10; dy--) {
+                                    BlockPos supportPos = thirdRootPos.offset(0, dy, 0);
+                                    if (pLevel.isStateAtPosition(supportPos, state -> state.isAir() || state.getFluidState().isSource())) {
+                                        pBlockSetter.accept(supportPos, rootBlock);
+                                    } else {
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
+
 
         // Äste
         //North

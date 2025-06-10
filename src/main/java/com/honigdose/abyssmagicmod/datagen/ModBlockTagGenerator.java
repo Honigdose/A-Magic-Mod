@@ -164,6 +164,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SCARLET_TREE_LEAVES.get())
                 .add(ModBlocks.LIFE_TREE_LEAVES.get());
 
+        this.tag(BlockTags.DIRT)
+                .add(ModBlocks.SCARLET_FOREST_DIRT.get())
+                .add(ModBlocks.SCARLET_FOREST_GRASS.get());
+
+        this.tag(BlockTags.AZALEA_GROWS_ON)
+                .add(ModBlocks.SCARLET_FOREST_GRASS.get());
+
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.ABYSSSTEEL_ORE.get())
                 .add(ModBlocks.SYLPHTHYL_ORE.get())

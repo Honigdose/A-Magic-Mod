@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "wall_mounted=true,facing=north":  { "model": "abyssmagicmod:block/small_void_vine_wall", "y": 180 },
+    "wall_mounted=true,facing=south":  { "model": "abyssmagicmod:block/small_void_vine_wall" },
+    "wall_mounted=true,facing=west":   { "model": "abyssmagicmod:block/small_void_vine_wall", "y": 90 },
+    "wall_mounted=true,facing=east":   { "model": "abyssmagicmod:block/small_void_vine_wall", "y": 270 },
+    "wall_mounted=false":               { "model": "abyssmagicmod:block/small_void_vine_floor" }
+  }
+}

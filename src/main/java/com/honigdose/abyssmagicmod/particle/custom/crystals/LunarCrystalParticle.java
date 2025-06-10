@@ -29,7 +29,7 @@ public class LunarCrystalParticle extends TextureSheetParticle {
         this.zd = 0;
         this.hasPhysics = false;
         this.gravity = 0.0f;
-        this.quadSize = 0.04F + RANDOM.nextFloat(0.09F);
+        this.quadSize = 0.02F + RANDOM.nextFloat(0.1F);
         this.lifetime = 140 + RANDOM.nextInt(40);
         this.alpha = 0.0f;
     }
@@ -40,12 +40,14 @@ public class LunarCrystalParticle extends TextureSheetParticle {
 
         float fadeInDuration = 0.2f * this.lifetime;
         float fadeOutDuration = 0.8f * this.lifetime;
+        float maxAlpha = 0.5f;
+
         if (this.age < fadeInDuration) {
-            this.alpha = (float) this.age / fadeInDuration;
+            this.alpha = ((float) this.age / fadeInDuration) * maxAlpha;
         } else if (this.age > fadeOutDuration) {
-            this.alpha = 1.0f - ((float) (this.age - fadeOutDuration) / (this.lifetime - fadeOutDuration));
+            this.alpha = maxAlpha - ((float) (this.age - fadeOutDuration) / (this.lifetime - fadeOutDuration)) * maxAlpha;
         } else {
-            this.alpha = 1.0f;
+            this.alpha = maxAlpha;
         }
 
         float t = (float) this.age / (float) this.lifetime;

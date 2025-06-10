@@ -2,8 +2,6 @@ package com.honigdose.abyssmagicmod.datagen;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.ModBlocks;
 import com.honigdose.abyssmagicmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -14,6 +12,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -26,45 +25,39 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.CHALK.get());
         basicItem(ModItems.RAW_CHALK.get());
 
+        circlePaperFireItem(ModItems.FIRE_CIRCLE_PAPER);
+        circlePaperWaterItem(ModItems.WATER_CIRCLE_PAPER);
+
         basicItem(ModItems.QUILL.get());
 
         simpleBlockItem(ModBlocks.MORTAR_AND_PESTLE);
         simpleBlockItem(ModBlocks.INK_BOTTLE);
         simpleBlockItem(ModBlocks.EMPTY_INK_BOTTLE);
 
+        simpleBlockItem(ModBlocks.ESSENCE);
+        simpleBlockItem(ModBlocks.FIRE_ESSENCE);
+        simpleBlockItem(ModBlocks.AIR_ESSENCE);
+        simpleBlockItem(ModBlocks.WATER_ESSENCE);
+        simpleBlockItem(ModBlocks.NATURE_ESSENCE);
+        simpleBlockItem(ModBlocks.SOLAR_ESSENCE);
+        simpleBlockItem(ModBlocks.LUNAR_ESSENCE);
+
         simpleBlockItem(ModBlocks.MAGIC_ROUND_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_TRIANGLE_BOTTLE);
         simpleBlockItem(ModBlocks.MAGIC_SQUARE_BOTTLE);
-        basicItem(ModItems.ROUND_FIRE_ESSENCE.get());
-        basicItem(ModItems.SQUARE_FIRE_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_FIRE_ESSENCE.get());
-        basicItem(ModItems.ROUND_SOLAR_ESSENCE.get());
-        basicItem(ModItems.SQUARE_SOLAR_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_SOLAR_ESSENCE.get());
-        basicItem(ModItems.ROUND_LUNAR_ESSENCE.get());
-        basicItem(ModItems.SQUARE_LUNAR_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_LUNAR_ESSENCE.get());
-        basicItem(ModItems.ROUND_WATER_ESSENCE.get());
-        basicItem(ModItems.SQUARE_WATER_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_WATER_ESSENCE.get());
-        basicItem(ModItems.ROUND_NATURE_ESSENCE.get());
-        basicItem(ModItems.SQUARE_NATURE_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_NATURE_ESSENCE.get());
-        basicItem(ModItems.ROUND_AIR_ESSENCE.get());
-        basicItem(ModItems.SQUARE_AIR_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_AIR_ESSENCE.get());
-        basicItem(ModItems.ROUND_DEMONIC_ESSENCE.get());
-        basicItem(ModItems.SQUARE_DEMONIC_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_DEMONIC_ESSENCE.get());
-        basicItem(ModItems.ROUND_CELESTIAL_ESSENCE.get());
-        basicItem(ModItems.SQUARE_CELESTIAL_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_CELESTIAL_ESSENCE.get());
-        basicItem(ModItems.ROUND_VOID_ESSENCE.get());
-        basicItem(ModItems.SQUARE_VOID_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_VOID_ESSENCE.get());
-        basicItem(ModItems.ROUND_ARCANA_ESSENCE.get());
-        basicItem(ModItems.SQUARE_ARCANA_ESSENCE.get());
-        basicItem(ModItems.TRIANGLE_ARCANA_ESSENCE.get());
+
+
+        simpleBlockItem(ModBlocks.FIRE_ESSENCE_BOTTLE);
+        simpleBlockItem(ModBlocks.WATER_ESSENCE_BOTTLE);
+        simpleBlockItem(ModBlocks.NATURE_ESSENCE_BOTTLE);
+        simpleBlockItem(ModBlocks.LUNAR_ESSENCE_BOTTLE);
+        simpleBlockItem(ModBlocks.SOLAR_ESSENCE_BOTTLE);
+        simpleBlockItem(ModBlocks.AIR_ESSENCE_BOTTLE);
+
+        basicItem(ModItems.DEMONIC_ESSENCE_BOTTLE.get());
+        basicItem(ModItems.CELESTIAL_ESSENCE_BOTTLE.get());
+        basicItem(ModItems.VOID_ESSENCE_BOTTLE.get());
+        basicItem(ModItems.ARCANA_ESSENCE_BOTTLE.get());
 
         basicItem(ModItems.ASTRATHYL.get());
         basicItem(ModItems.ABYSSSTEEL.get());
@@ -205,6 +198,22 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.BLIFE_TREE_FENCE, ModBlocks.BLIFE_TREE_PLANKS);
         simpleBlockItem(ModBlocks.BLIFE_TREE_DOOR);
 
+        saplingItem(ModBlocks.VOID_FLOWER);
+        saplingItem(ModBlocks.WHITE_VOID_FLOWER);
+        saplingItem(ModBlocks.WHITE_BLACK_FLOWER);
+        saplingItem(ModBlocks.TALL_WHITE_BLACK_FLOWER);
+        saplingItem(ModBlocks.PURE_VOID_FLOWER);
+        saplingItem(ModBlocks.VOID_VINE);
+        saplingItem(ModBlocks.SMALL_VOID_VINE);
+        saplingItem(ModBlocks.TALL_VOID_VINE);
+        saplingItem(ModBlocks.INK_CAP);
+        simpleBlockItem(ModBlocks.GLOWING_BROWN_MUSHROOM);
+        simpleBlockItem(ModBlocks.GLOWING_DARK_BLUE_MUSHROOM);
+        simpleBlockItem(ModBlocks.GLOWING_RED_MUSHROOM);
+        simpleBlockItem(ModBlocks.GLOWING_WHITE_RED_MUSHROOM);
+        simpleBlockItem(ModBlocks.BROWN_TREE_MUSHROOM);
+
+
         //FIRE
         saplingItem(ModBlocks.BLT_FIRE_HLEAVES);
         saplingItem(ModBlocks.BLT_FIRE_HLEAVES_PLANT);
@@ -255,4 +264,14 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID,"item/" + item.getId().getPath()));
     }
+
+    private ItemModelBuilder circlePaperFireItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0",ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "item/circle_paper_fire"));
+    }
+    private ItemModelBuilder circlePaperWaterItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0",ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, "item/circle_paper_water"));
+    }
+
 }

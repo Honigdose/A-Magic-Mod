@@ -277,6 +277,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SCARLET_ALCHEMY_SHELF_JAR.get());
                         output.accept(ModBlocks.SCARLET_ALCHEMY_SHELF_MIX.get());
 
+                        output.accept(ModBlocks.INK_CAP.get());
+                        output.accept(ModBlocks.WHITE_BLACK_FLOWER.get());
+                        output.accept(ModBlocks.TALL_WHITE_BLACK_FLOWER.get());
+                        output.accept(ModBlocks.VOID_FLOWER.get());
+                        output.accept(ModBlocks.WHITE_VOID_FLOWER.get());
+                        output.accept(ModBlocks.PURE_VOID_FLOWER.get());
+                        output.accept(ModBlocks.SMALL_VOID_VINE.get());
+                        output.accept(ModBlocks.VOID_VINE.get());
+                        output.accept(ModBlocks.TALL_VOID_VINE.get());
+                        output.accept(ModBlocks.SCARLET_FOREST_GRASS.get());
+                        output.accept(ModBlocks.SCARLET_FOREST_DIRT.get());
+                        output.accept(ModBlocks.BROWN_TREE_MUSHROOM.get());
+                        output.accept(ModBlocks.GLOWING_BROWN_MUSHROOM.get());
+                        output.accept(ModBlocks.GLOWING_DARK_BLUE_MUSHROOM.get());
+                        output.accept(ModBlocks.GLOWING_RED_MUSHROOM.get());
+                        output.accept(ModBlocks.GLOWING_WHITE_RED_MUSHROOM.get());
+
                         // Life Tree
                         output.accept(ModBlocks.LIFE_TREE_SAPLING.get());
                         output.accept(ModBlocks.BLIFE_TREE_LOG.get());
@@ -356,36 +373,30 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGIC_SQUARE_BOTTLE.get());
                         output.accept(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get());
 
-                        output.accept(ModItems.ROUND_ARCANA_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_ARCANA_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_ARCANA_ESSENCE.get());
-                        output.accept(ModItems.ROUND_VOID_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_VOID_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_VOID_ESSENCE.get());
-                        output.accept(ModItems.ROUND_CELESTIAL_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_CELESTIAL_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_CELESTIAL_ESSENCE.get());
-                        output.accept(ModItems.ROUND_DEMONIC_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_DEMONIC_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_DEMONIC_ESSENCE.get());
-                        output.accept(ModItems.ROUND_FIRE_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_FIRE_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_FIRE_ESSENCE.get());
-                        output.accept(ModItems.ROUND_WATER_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_WATER_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_WATER_ESSENCE.get());
-                        output.accept(ModItems.ROUND_NATURE_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_NATURE_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_NATURE_ESSENCE.get());
-                        output.accept(ModItems.ROUND_AIR_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_AIR_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_AIR_ESSENCE.get());
-                        output.accept(ModItems.ROUND_SOLAR_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_SOLAR_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_SOLAR_ESSENCE.get());
-                        output.accept(ModItems.ROUND_LUNAR_ESSENCE.get());
-                        output.accept(ModItems.SQUARE_LUNAR_ESSENCE.get());
-                        output.accept(ModItems.TRIANGLE_LUNAR_ESSENCE.get());
+
+                        output.accept(ModBlocks.ESSENCE.get());
+                        output.accept(ModBlocks.FIRE_ESSENCE.get());
+                        output.accept(ModBlocks.AIR_ESSENCE.get());
+                        output.accept(ModBlocks.NATURE_ESSENCE.get());
+                        output.accept(ModBlocks.WATER_ESSENCE.get());
+                        output.accept(ModBlocks.LUNAR_ESSENCE.get());
+                        output.accept(ModBlocks.SOLAR_ESSENCE.get());
+
+                        output.accept(ModItems.ARCANA_ESSENCE_BOTTLE.get());
+                        output.accept(ModItems.VOID_ESSENCE_BOTTLE.get());
+                        output.accept(ModItems.CELESTIAL_ESSENCE_BOTTLE.get());
+                        output.accept(ModItems.DEMONIC_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.FIRE_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.WATER_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.NATURE_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.AIR_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.SOLAR_ESSENCE_BOTTLE.get());
+                        output.accept(ModBlocks.LUNAR_ESSENCE_BOTTLE.get());
+
+
+                        output.accept(ModItems.FIRE_CIRCLE_PAPER.get());
+                        output.accept(ModItems.WATER_CIRCLE_PAPER.get());
+
 
                     }).build());
 

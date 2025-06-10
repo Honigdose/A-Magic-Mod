@@ -22,9 +22,11 @@ public class ModTags {
     }
     public static class Items{
         public static final TagKey<Item> MOD_WOOD = createTag("mod_wood");
+        public static final TagKey<Item> BOTTLES = createTag("bottles");
         public static final TagKey<Item> CRYSTALS = createTag("crystals");
         public static final TagKey<Item> WATER_CRYSTALS = createTag("water_crystals");
         public static final TagKey<Item> FIRE_CRYSTALS = createTag("fire_crystals");
+        public static final TagKey<Item> FUEL = createTag("fuel");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AbyssMagicMod.MOD_ID, name));

@@ -4,31 +4,57 @@ import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.alchemy.MortarAndPestleBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.ShelfDekoBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.alchemy_circle.FireCircle;
+import com.honigdose.abyssmagicmod.block.alchemy.alchemy_circle.WaterCircle;
+import com.honigdose.abyssmagicmod.block.essence.bottle.air.AirEssenceBottle;
+import com.honigdose.abyssmagicmod.block.essence.bottle.fire.FireEssenceBottle;
+import com.honigdose.abyssmagicmod.block.crystals.*;
 import com.honigdose.abyssmagicmod.block.custom.*;
 import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicRoundBottlesBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicSquareBottlesBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.bottles.MagicTriangleBottlesBlock;
-import com.honigdose.abyssmagicmod.block.crystals.LargeMagicCrystalBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableRotatedPillarBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModFlammableWoodBlock;
 import com.honigdose.abyssmagicmod.block.custom.ModRotatedBlock;
+import com.honigdose.abyssmagicmod.block.essence.block.air.AirEssence;
+import com.honigdose.abyssmagicmod.block.essence.block.fire.FireEssence;
+import com.honigdose.abyssmagicmod.block.essence.block.lunar.LunarEssence;
+import com.honigdose.abyssmagicmod.block.essence.block.natur.NatureEssence;
+import com.honigdose.abyssmagicmod.block.essence.block.solar.SolarEssence;
+import com.honigdose.abyssmagicmod.block.essence.block.test.Essence;
+import com.honigdose.abyssmagicmod.block.essence.block.water.WaterEssence;
+import com.honigdose.abyssmagicmod.block.essence.bottle.lunar.LunarEssenceBottle;
+import com.honigdose.abyssmagicmod.block.essence.bottle.nature.NatureEssenceBottle;
+import com.honigdose.abyssmagicmod.block.essence.bottle.solar.SolarEssenceBottle;
+import com.honigdose.abyssmagicmod.block.essence.bottle.water.WaterEssenceBottle;
+import com.honigdose.abyssmagicmod.block.nature.CustomVineBlock;
+import com.honigdose.abyssmagicmod.block.nature.ScarletGrassBlock;
+import com.honigdose.abyssmagicmod.block.nature.TreeMushroom;
+import com.honigdose.abyssmagicmod.block.nature.glowingmushroom.GlowingTreeMushroom;
 import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFHLeaves;
 import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFHLeavesPlant;
 import com.honigdose.abyssmagicmod.block.nature.ScarletLeavesBlock;
 import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTFWLeavesPlant;
 import com.honigdose.abyssmagicmod.block.nature.hleaves.BLTWHLeaves;
 import com.honigdose.abyssmagicmod.item.ModItems;
+import com.honigdose.abyssmagicmod.particle.ModParticles;
 import com.honigdose.abyssmagicmod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -109,38 +135,38 @@ public class ModBlocks {
 
 
 // CRYSTALS
-    public static final RegistryObject<Block> BABY_FIRE_CRYSTAL = registerClusterCrystalBlock("baby_fire_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_AIR_CRYSTAL = registerClusterCrystalBlock("baby_air_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_NATURE_CRYSTAL = registerClusterCrystalBlock("baby_nature_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_WATER_CRYSTAL = registerClusterCrystalBlock("baby_water_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_SOLAR_CRYSTAL = registerClusterCrystalBlock("baby_solar_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_LUNAR_CRYSTAL = registerClusterCrystalBlock("baby_lunar_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_VOID_CRYSTAL = registerClusterCrystalBlock("baby_void_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_DEMONIC_CRYSTAL = registerClusterCrystalBlock("baby_demonic_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("baby_celestial_crystal",2,1,5);
-    public static final RegistryObject<Block> BABY_ARCANA_CRYSTAL = registerClusterCrystalBlock("baby_arcana_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_FIRE_CRYSTAL = registerBabyClusterCrystalBlock("baby_fire_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_AIR_CRYSTAL = registerBabyClusterCrystalBlock("baby_air_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_NATURE_CRYSTAL = registerBabyClusterCrystalBlock("baby_nature_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_WATER_CRYSTAL = registerBabyClusterCrystalBlock("baby_water_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_SOLAR_CRYSTAL = registerBabyClusterCrystalBlock("baby_solar_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_LUNAR_CRYSTAL = registerBabyClusterCrystalBlock("baby_lunar_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_VOID_CRYSTAL = registerBabyClusterCrystalBlock("baby_void_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_DEMONIC_CRYSTAL = registerBabyClusterCrystalBlock("baby_demonic_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_CELESTIAL_CRYSTAL = registerBabyClusterCrystalBlock("baby_celestial_crystal",2,1,5);
+    public static final RegistryObject<Block> BABY_ARCANA_CRYSTAL = registerBabyClusterCrystalBlock("baby_arcana_crystal",2,1,5);
 
-    public static final RegistryObject<Block> VERY_SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("very_small_fire_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("very_small_air_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_NATURE_CRYSTAL = registerClusterCrystalBlock("very_small_nature_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("very_small_water_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("very_small_solar_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("very_small_lunar_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("very_small_void_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("very_small_demonic_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("very_small_celestial_crystal",2,2,5);
-    public static final RegistryObject<Block> VERY_SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("very_small_arcana_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_FIRE_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_fire_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_AIR_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_air_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_NATURE_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_nature_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_WATER_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_water_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_SOLAR_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_solar_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_LUNAR_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_lunar_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_VOID_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_void_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_DEMONIC_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_demonic_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_CELESTIAL_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_celestial_crystal",2,2,5);
+    public static final RegistryObject<Block> VERY_SMALL_ARCANA_CRYSTAL = registerVerySmallClusterCrystalBlock("very_small_arcana_crystal",2,2,5);
 
-    public static final RegistryObject<Block> SMALL_FIRE_CRYSTAL = registerClusterCrystalBlock("small_fire_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_AIR_CRYSTAL = registerClusterCrystalBlock("small_air_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_NATURE_CRYSTAL = registerClusterCrystalBlock("small_nature_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_WATER_CRYSTAL = registerClusterCrystalBlock("small_water_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_SOLAR_CRYSTAL = registerClusterCrystalBlock("small_solar_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_LUNAR_CRYSTAL = registerClusterCrystalBlock("small_lunar_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_VOID_CRYSTAL = registerClusterCrystalBlock("small_void_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_DEMONIC_CRYSTAL = registerClusterCrystalBlock("small_demonic_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_CELESTIAL_CRYSTAL = registerClusterCrystalBlock("small_celestial_crystal",4,2,5);
-    public static final RegistryObject<Block> SMALL_ARCANA_CRYSTAL = registerClusterCrystalBlock("small_arcana_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_FIRE_CRYSTAL = registerSmallClusterCrystalBlock("small_fire_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_AIR_CRYSTAL = registerSmallClusterCrystalBlock("small_air_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_NATURE_CRYSTAL = registerSmallClusterCrystalBlock("small_nature_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_WATER_CRYSTAL = registerSmallClusterCrystalBlock("small_water_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_SOLAR_CRYSTAL = registerSmallClusterCrystalBlock("small_solar_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_LUNAR_CRYSTAL = registerSmallClusterCrystalBlock("small_lunar_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_VOID_CRYSTAL = registerSmallClusterCrystalBlock("small_void_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_DEMONIC_CRYSTAL = registerSmallClusterCrystalBlock("small_demonic_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_CELESTIAL_CRYSTAL = registerSmallClusterCrystalBlock("small_celestial_crystal",4,2,5);
+    public static final RegistryObject<Block> SMALL_ARCANA_CRYSTAL = registerSmallClusterCrystalBlock("small_arcana_crystal",4,2,5);
 
     public static final RegistryObject<Block> FIRE_CRYSTAL = registerClusterCrystalBlock("fire_crystal",6,4,5);
     public static final RegistryObject<Block> AIR_CRYSTAL = registerClusterCrystalBlock("air_crystal",6,4,5);
@@ -165,17 +191,49 @@ public class ModBlocks {
     public static final RegistryObject<Block> LARGE_CELESTIAL_CRYSTAL = registerLargeClusterCrystalBlock("large_celestial_crystal",4);
 
 
-    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerCrystalBlock("fire_crystal_block",4, 11);
-    public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerCrystalBlock("air_crystal_block",4, 11);
-    public static final RegistryObject<Block> NATURE_CRYSTAL_BLOCK = registerCrystalBlock("nature_crystal_block",4, 11);
-    public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerCrystalBlock("water_crystal_block",4, 11);
-    public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerCrystalBlock("solar_crystal_block",4, 11);
-    public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerCrystalBlock("lunar_crystal_block",4, 11);
-    public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerCrystalBlock("void_crystal_block",4,11);
-    public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerCrystalBlock("demonic_crystal_block",4, 11);
-    public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerCrystalBlock("celestial_crystal_block",4, 11);
-    public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerCrystalBlock("arcana_crystal_block",4, 15);
+    public static final RegistryObject<Block> FIRE_CRYSTAL_BLOCK = registerCrystalBlock("fire_crystal_block",4);
+    public static final RegistryObject<Block> AIR_CRYSTAL_BLOCK = registerCrystalBlock("air_crystal_block",4);
+    public static final RegistryObject<Block> NATURE_CRYSTAL_BLOCK = registerCrystalBlock("nature_crystal_block",4);
+    public static final RegistryObject<Block> WATER_CRYSTAL_BLOCK = registerCrystalBlock("water_crystal_block",4);
+    public static final RegistryObject<Block> SOLAR_CRYSTAL_BLOCK = registerCrystalBlock("solar_crystal_block",4);
+    public static final RegistryObject<Block> LUNAR_CRYSTAL_BLOCK = registerCrystalBlock("lunar_crystal_block",4);
+    public static final RegistryObject<Block> VOID_CRYSTAL_BLOCK = registerCrystalBlock("void_crystal_block",4);
+    public static final RegistryObject<Block> DEMONIC_CRYSTAL_BLOCK = registerCrystalBlock("demonic_crystal_block",4);
+    public static final RegistryObject<Block> CELESTIAL_CRYSTAL_BLOCK = registerCrystalBlock("celestial_crystal_block",4);
+    public static final RegistryObject<Block> ARCANA_CRYSTAL_BLOCK = registerCrystalBlock("arcana_crystal_block",4);
 
+    //ESSENCE
+    public static final RegistryObject<Block> ESSENCE = registerBlock("essence",
+            () -> new Essence(BlockBehaviour.Properties.of()));
+
+    public static final RegistryObject<Block> FIRE_ESSENCE = registerBlock("fire_essence",
+            () -> new FireEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> FIRE_ESSENCE_BOTTLE = BLOCKS.register("fire_essence_bottle",
+            () -> new FireEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> WATER_ESSENCE = registerBlock("water_essence",
+            () -> new WaterEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> WATER_ESSENCE_BOTTLE = BLOCKS.register("water_essence_bottle",
+            () -> new WaterEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> AIR_ESSENCE = registerBlock("air_essence",
+            () -> new AirEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> AIR_ESSENCE_BOTTLE = BLOCKS.register("air_essence_bottle",
+            () -> new AirEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> NATURE_ESSENCE = registerBlock("nature_essence",
+            () -> new NatureEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> NATURE_ESSENCE_BOTTLE = BLOCKS.register("nature_essence_bottle",
+            () -> new NatureEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> LUNAR_ESSENCE = registerBlock("lunar_essence",
+            () -> new LunarEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> LUNAR_ESSENCE_BOTTLE = BLOCKS.register("lunar_essence_bottle",
+            () -> new LunarEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> SOLAR_ESSENCE = registerBlock("solar_essence",
+            () -> new SolarEssence(BlockBehaviour.Properties.of()));
+    public static final RegistryObject<Block> SOLAR_ESSENCE_BOTTLE = BLOCKS.register("solar_essence_bottle",
+            () -> new SolarEssenceBottle(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
 
     // Alchemy
     public static final RegistryObject<Block> RESEARCH_TABLE_OAK = registerBlock("research_table_oak",
@@ -211,6 +269,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BOTANICA_BOOK = BLOCKS.register("botanica_book",
             () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
 
+
     public static final RegistryObject<Block> MAGIC_ROUND_BOTTLE = BLOCKS.register("magic_round_bottle",
             () -> new MagicRoundBottlesBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion().sound(SoundType.GLASS)));
     public static final RegistryObject<Block> MAGIC_TRIANGLE_BOTTLE = BLOCKS.register("magic_triangle_bottle",
@@ -238,6 +297,13 @@ public class ModBlocks {
                     return SHAPE;
                 }
             });
+    //CIRCLE
+    public static final RegistryObject<Block> FIRE_CIRCLE = BLOCKS.register("fire_circle",
+            () -> new FireCircle(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
+    public static final RegistryObject<Block> WATER_CIRCLE = BLOCKS.register("water_circle",
+            () -> new WaterCircle(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
     // WOOD / TREE
     //Minecraft Wood Typs
     public static final RegistryObject<Block> OAK_ALCHEMY_SHELF_JAR = registerShelfBlock("oak_alchemy_shelf_jar");
@@ -350,6 +416,286 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIFE_TREE_SAPLING = registerBlock("life_tree_sapling",
             () -> new SaplingBlock(ModTreeGrowers.LIFE_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).lightLevel(value -> 6)));
 
+    //Plants
+    public static final RegistryObject<Block> VOID_FLOWER = registerBlock("void_flower",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.2F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            }
+    );
+    public static final RegistryObject<Block> POTTED_VOID_FLOWER = BLOCKS.register("potted_void_flower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, VOID_FLOWER,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> WHITE_VOID_FLOWER = registerBlock("white_void_flower",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.2F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            }
+    );
+    public static final RegistryObject<Block> POTTED_WHITE_VOID_FLOWER = BLOCKS.register("potted_white_void_flower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_VOID_FLOWER,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> WHITE_BLACK_FLOWER = registerBlock("white_black_flower",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.05F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            }
+    );
+    public static final RegistryObject<Block> POTTED_WHITE_BLACK_FLOWER = BLOCKS.register("potted_white_black_flower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_BLACK_FLOWER,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> TALL_WHITE_BLACK_FLOWER = registerBlock("tall_white_black_flower",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.05F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            }
+    );
+    public static final RegistryObject<Block> POTTED_TALL_WHITE_BLACK_FLOWER = BLOCKS.register("potted_tall_white_black_flower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, WHITE_BLACK_FLOWER,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+
+    public static final RegistryObject<Block> PURE_VOID_FLOWER = registerBlock("pure_void_flower",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.2F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            });
+    public static final RegistryObject<Block> POTTED_PURE_VOID_FLOWER = BLOCKS.register("potted_pure_void_flower",
+            () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT), PURE_VOID_FLOWER, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> TALL_VOID_VINE = registerBlock("tall_void_vine",
+            () -> new CustomVineBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.VINE).noOcclusion().noCollission()) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.2F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            });
+    public static final RegistryObject<Block> VOID_VINE = registerBlock("void_vine",
+            () -> new CustomVineBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.VINE).noOcclusion().noCollission()) {
+                @Override
+                public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+                    super.animateTick(state, level, pos, random);
+
+                    if (random.nextFloat() < 0.2F) {
+                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
+                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+
+                        double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
+                        double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
+                        double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
+
+                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dy = (random.nextFloat() - 0.5);
+                        double dz = (random.nextFloat() - 0.5);
+
+                        level.addParticle(ModParticles.VOID_PARTICLE.get(), x, y, z, dx, dy, dz);
+                    }
+                }
+            });
+    public static final RegistryObject<Block> SMALL_VOID_VINE = registerBlock("small_void_vine",
+            () -> new CustomVineBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.VINE).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> SCARLET_FOREST_GRASS = registerBlock("scarlet_forest_grass",
+            () -> new ScarletGrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK)));
+    public static final RegistryObject<Block> SCARLET_FOREST_DIRT = registerBlock("scarlet_forest_dirt",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT)));
+
+    public static final RegistryObject<Block> INK_CAP = registerBlock("ink_cap",
+            () -> new FlowerBlock(SuspiciousStewEffects.EMPTY, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)));
+
+    public static final RegistryObject<Block> POTTED_INK_CAP = BLOCKS.register("potted_ink_cap",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, INK_CAP,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)));
+
+    public static final RegistryObject<Block> BROWN_TREE_MUSHROOM = registerBlock("brown_tree_mushroom",
+            () -> new TreeMushroom(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)){
+                public static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 11, 16, 16, 16);
+                public static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 5, 16, 16);
+                public static final VoxelShape SHAPE_WEST = Block.box(11, 0, 0, 16, 16, 16);
+                public static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 5);
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    Direction direction = pState.getValue(FACING);
+                    return switch (direction) {
+                        case NORTH -> SHAPE_NORTH;
+                        case EAST -> SHAPE_EAST;
+                        case WEST -> SHAPE_WEST;
+                        default -> SHAPE_SOUTH;
+                    };
+                }
+            });
+
+    public static final RegistryObject<Block> GLOWING_BROWN_MUSHROOM = registerBlock("glowing_brown_mushroom",
+            () -> new GlowingTreeMushroom(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).lightLevel(value -> 4)){
+                public static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 11, 16, 16, 16);
+                public static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 5, 16, 16);
+                public static final VoxelShape SHAPE_WEST = Block.box(11, 0, 0, 16, 16, 16);
+                public static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 5);
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    Direction direction = pState.getValue(FACING);
+                    return switch (direction) {
+                        case NORTH -> SHAPE_NORTH;
+                        case EAST -> SHAPE_EAST;
+                        case WEST -> SHAPE_WEST;
+                        default -> SHAPE_SOUTH;
+                    };
+                }
+            });
+
+    public static final RegistryObject<Block> GLOWING_DARK_BLUE_MUSHROOM = registerBlock("glowing_dark_blue_mushroom",
+            () -> new GlowingTreeMushroom(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).lightLevel(value -> 4)){
+                public static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 11, 16, 16, 16);
+                public static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 5, 16, 16);
+                public static final VoxelShape SHAPE_WEST = Block.box(11, 0, 0, 16, 16, 16);
+                public static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 5);
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    Direction direction = pState.getValue(FACING);
+                    return switch (direction) {
+                        case NORTH -> SHAPE_NORTH;
+                        case EAST -> SHAPE_EAST;
+                        case WEST -> SHAPE_WEST;
+                        default -> SHAPE_SOUTH;
+                    };
+                }
+            });
+
+    public static final RegistryObject<Block> GLOWING_RED_MUSHROOM = registerBlock("glowing_red_mushroom",
+            () -> new GlowingTreeMushroom(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).lightLevel(value -> 4)){
+                public static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 11, 16, 16, 16);
+                public static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 5, 16, 16);
+                public static final VoxelShape SHAPE_WEST = Block.box(11, 0, 0, 16, 16, 16);
+                public static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 5);
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    Direction direction = pState.getValue(FACING);
+                    return switch (direction) {
+                        case NORTH -> SHAPE_NORTH;
+                        case EAST -> SHAPE_EAST;
+                        case WEST -> SHAPE_WEST;
+                        default -> SHAPE_SOUTH;
+                    };
+                }
+            });
+
+    public static final RegistryObject<Block> GLOWING_WHITE_RED_MUSHROOM = registerBlock("glowing_white_red_mushroom",
+            () -> new GlowingTreeMushroom(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM).lightLevel(value -> 4)){
+                public static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 11, 16, 16, 16);
+                public static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 5, 16, 16);
+                public static final VoxelShape SHAPE_WEST = Block.box(11, 0, 0, 16, 16, 16);
+                public static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 5);
+                public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+                    Direction direction = pState.getValue(FACING);
+                    return switch (direction) {
+                        case NORTH -> SHAPE_NORTH;
+                        case EAST -> SHAPE_EAST;
+                        case WEST -> SHAPE_WEST;
+                        default -> SHAPE_SOUTH;
+                    };
+                }
+            });
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -395,12 +741,49 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static RegistryObject<Block> registerCrystalBlock(String name, float strength, int light) {
+    private static RegistryObject<Block> registerCrystalBlock(String name, float strength) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
-                new TintedGlassBlock(BlockBehaviour.Properties.of().strength(strength)
+                new CrystalBlock(BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
+                        .strength(1)
                         .noOcclusion()
-                        .lightLevel(value -> light)
+                        .lightLevel(value -> 6)
+                        .sound(SoundType.AMETHYST)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+    private static RegistryObject<Block> registerBabyClusterCrystalBlock(String name, float x, float y , float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new BabyCrystalClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .strength(1)
+                        .noOcclusion()
+                        .lightLevel(value -> 2)
+                        .sound(SoundType.AMETHYST)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+    private static RegistryObject<Block> registerVerySmallClusterCrystalBlock(String name, float x, float y , float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new VerySmallCrystalClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .strength(1)
+                        .noOcclusion()
+                        .lightLevel(value -> 3)
+                        .sound(SoundType.AMETHYST)));
+
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+    private static RegistryObject<Block> registerSmallClusterCrystalBlock(String name, float x, float y , float strength) {
+        RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
+                new SmallCrystalClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
+                        .requiresCorrectToolForDrops()
+                        .strength(1)
+                        .noOcclusion()
+                        .lightLevel(value -> 4)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
@@ -408,10 +791,11 @@ public class ModBlocks {
     }
     private static RegistryObject<Block> registerClusterCrystalBlock(String name, float x, float y , float strength) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
-                new AmethystClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
+                new CrystalClusterBlock(x,y,BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
+                        .strength(1)
                         .noOcclusion()
-                        .lightLevel(value -> 8)
+                        .lightLevel(value -> 5)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
@@ -420,10 +804,11 @@ public class ModBlocks {
 
     private static RegistryObject<Block> registerLargeClusterCrystalBlock(String name, float strength) {
         RegistryObject<Block> toReturn = BLOCKS.register(name, () ->
-                new LargeMagicCrystalBlock(BlockBehaviour.Properties.of().strength(strength)
+                new LargeCrystalBlock(BlockBehaviour.Properties.of().strength(strength)
                         .requiresCorrectToolForDrops()
+                        .strength(1)
                         .noOcclusion()
-                        .lightLevel(value -> 4)
+                        .lightLevel(value -> 6)
                         .sound(SoundType.AMETHYST)));
 
         registerBlockItem(name, toReturn);
