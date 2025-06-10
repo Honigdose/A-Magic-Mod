@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "waterlogged=false": {
+      "model": "abyssmagicmod:block/air_essence_bottle"
+    },
+    "waterlogged=true": {
+      "model": "abyssmagicmod:block/air_essence_bottle"
+    }
+  }
+}

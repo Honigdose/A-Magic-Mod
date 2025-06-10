@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -146,8 +147,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         crystalclusterBlock(ModBlocks.CELESTIAL_CRYSTAL);
         crystalclusterBlock(ModBlocks.AIR_CRYSTAL);
         crystalclusterBlock(ModBlocks.ARCANA_CRYSTAL);
-        crystalclusterBlock(ModBlocks.FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.WATER_CRYSTAL);
+        crystalclusterBlock(ModBlocks.FIRE_CRYSTAL);
         crystalclusterBlock(ModBlocks.NATURE_CRYSTAL);
 
         crystalclusterBlock(ModBlocks.BABY_DEMONIC_CRYSTAL);
@@ -231,6 +232,41 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(ModBlocks.BLT_WATER_HLEAVES_PLANT);
         blockWithItem(ModBlocks.BLIFE_TREE_WATER_RESIN);
 
+        simpleBlock(ModBlocks.WHITE_BLACK_FLOWER.get(),
+                models().cross(blockTexture(ModBlocks.WHITE_BLACK_FLOWER.get()).getPath(), blockTexture(ModBlocks.WHITE_BLACK_FLOWER.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_WHITE_BLACK_FLOWER.get(),
+                models().singleTexture("potted_white_black_flower", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.WHITE_BLACK_FLOWER.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.TALL_WHITE_BLACK_FLOWER.get(),
+                models().cross(blockTexture(ModBlocks.TALL_WHITE_BLACK_FLOWER.get()).getPath(), blockTexture(ModBlocks.TALL_WHITE_BLACK_FLOWER.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_TALL_WHITE_BLACK_FLOWER.get(),
+                models().singleTexture("potted_tall_white_black_flower", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.TALL_WHITE_BLACK_FLOWER.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.VOID_FLOWER.get(),
+                models().cross(blockTexture(ModBlocks.VOID_FLOWER.get()).getPath(), blockTexture(ModBlocks.VOID_FLOWER.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_VOID_FLOWER.get(),
+                models().singleTexture("potted_void_flower", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.VOID_FLOWER.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.WHITE_VOID_FLOWER.get(),
+                models().cross(blockTexture(ModBlocks.WHITE_VOID_FLOWER.get()).getPath(), blockTexture(ModBlocks.WHITE_VOID_FLOWER.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_WHITE_VOID_FLOWER.get(),
+                models().singleTexture("potted_white_void_flower", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.WHITE_VOID_FLOWER.get())).renderType("cutout"));
+
+        simpleBlock(ModBlocks.PURE_VOID_FLOWER.get(),
+                models().cross(blockTexture(ModBlocks.PURE_VOID_FLOWER.get()).getPath(), blockTexture(ModBlocks.PURE_VOID_FLOWER.get())).renderType("cutout"));
+        simpleBlock(ModBlocks.POTTED_PURE_VOID_FLOWER.get(),
+                models().singleTexture("potted_pure_void_flower", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.PURE_VOID_FLOWER.get())).renderType("cutout"));
+        blockWithItem(ModBlocks.SCARLET_FOREST_DIRT);
+        saplingBlock(ModBlocks.INK_CAP);
+        simpleBlock(ModBlocks.POTTED_INK_CAP.get(),
+                models().singleTexture("potted_ink_cap", ResourceLocation.parse("flower_pot_cross"), "plant",
+                        blockTexture(ModBlocks.INK_CAP.get())).renderType("cutout"));
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){
@@ -249,6 +285,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
+
+    private void tallPlantBlock(RegistryObject<Block> blockRegistryObject, ResourceLocation bottomTexture, ResourceLocation topTexture) {
+        getVariantBuilder(blockRegistryObject.get())
+                .partialState().with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER)
+                .modelForState().modelFile(models().cross(bottomTexture.getPath(), bottomTexture).renderType("cutout"))
+                .addModel();
+
+        getVariantBuilder(blockRegistryObject.get())
+                .partialState().with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER)
+                .modelForState().modelFile(models().cross(topTexture.getPath(), topTexture).renderType("cutout"))
+                .addModel();
+    }
+
+
+
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));

@@ -27,7 +27,7 @@ public class CuteCrystalParticle extends TextureSheetParticle {
         this.zd = 0;
         this.hasPhysics = false;
         this.gravity = 0.0f;
-        this.quadSize = 0.04F + RANDOM.nextFloat(0.09F);
+        this.quadSize = 0.04F + RANDOM.nextFloat(0.1F);
         this.lifetime = 200 + RANDOM.nextInt(40);
         this.alpha = 0.0f;
     }

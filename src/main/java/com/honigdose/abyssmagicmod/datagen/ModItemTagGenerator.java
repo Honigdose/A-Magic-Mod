@@ -7,12 +7,17 @@ import com.honigdose.abyssmagicmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Calendar;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagGenerator extends ItemTagsProvider {
@@ -38,6 +43,21 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.PLANKS)
                 .add((ModBlocks.BLIFE_TREE_PLANKS.get().asItem()))
                 .add((ModBlocks.SCARLET_TREE_PLANKS.get().asItem()));
+
+        this.tag(ItemTags.SAPLINGS)
+                .add((ModBlocks.SCARLET_TREE_SAPLING.get().asItem()))
+                .add((ModBlocks.LIFE_TREE_SAPLING.get().asItem()));
+
+        this.tag(ItemTags.LEAVES)
+                .add((ModBlocks.BLIFE_TREE_WATER_LEAVES.get().asItem()))
+                .add((ModBlocks.BLIFE_TREE_FIRE_LEAVES.get().asItem()))
+                .add((ModBlocks.SCARLET_TREE_LEAVES.get().asItem()));
+
+        this.tag(ModTags.Items.BOTTLES)
+                .add((ModBlocks.MAGIC_ROUND_BOTTLE.get().asItem()))
+                .add((ModBlocks.MAGIC_SQUARE_BOTTLE.get().asItem()))
+                .add((ModBlocks.MAGIC_TRIANGLE_BOTTLE.get().asItem()))
+                .add((Items.GLASS_BOTTLE.asItem()));
 
         this.tag(ModTags.Items.CRYSTALS)
                 .add(Item.byBlock(ModBlocks.WATER_CRYSTAL.get()))
@@ -116,5 +136,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(Item.byBlock(ModBlocks.LARGE_FIRE_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.FIRE_CRYSTAL_BLOCK.get()))
                 .add(ModItems.FIRE_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.FUEL)
+                .addTag(ItemTags.COALS)
+                .addTag(ItemTags.PLANKS)
+                .addTag(ItemTags.SAPLINGS)
+                .addTag(ItemTags.LOGS)
+                .addTag(ItemTags.LOGS_THAT_BURN);
+
     }
+
+
 }

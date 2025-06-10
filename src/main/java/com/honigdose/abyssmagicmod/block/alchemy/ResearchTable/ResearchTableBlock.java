@@ -67,8 +67,7 @@ public class ResearchTableBlock extends BaseEntityBlock {
         super(BlockBehaviour.Properties.of()
                 .strength(2.5F)
                 .sound(SoundType.WOOD)
-                .noOcclusion()
-                .lightLevel(value -> 5));
+                .noOcclusion());
         this.registerDefaultState(this.defaultBlockState()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(PART, ChestType.RIGHT));
@@ -104,9 +103,8 @@ public class ResearchTableBlock extends BaseEntityBlock {
 
     @Override
     public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-        // Wenn der benachbarte Block der gleiche Blocktyp ist, ignoriere das Rendering
         if (adjacentBlockState.getBlock() == this && state.getValue(PART) == ChestType.LEFT) {
-            return true; // Der benachbarte Block wird als transparent behandelt
+            return true;
         }
         return super.skipRendering(state, adjacentBlockState, side);
     }
@@ -203,6 +201,6 @@ public class ResearchTableBlock extends BaseEntityBlock {
         }
 
         return createTickerHelper(pBlockEntityType, ModBlockEntites.RESEARCH_TABLE_BE.get(),
-                (level, blockPos, blockState, crystallizerBlockEntity) -> crystallizerBlockEntity.tick(level, blockPos, blockState));
+                (level, blockPos, blockState, researchTableBlockEntity) -> researchTableBlockEntity.tick(level, blockPos, blockState));
     }
 }

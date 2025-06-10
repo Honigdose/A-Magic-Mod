@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "abyssmagicmod:item/nature_essence_bottle"
+	}
+}
