@@ -5,8 +5,6 @@ import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaFlyingGoal;
 import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaSeekLightSourceGoal;
 import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaSleepGoal;
 import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaWakeUpGoal;
-import com.honigdose.abyssmagicmod.light.DynamicLightSource;
-import com.honigdose.abyssmagicmod.light.IDynamicLightSource;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -41,7 +39,7 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 
 
-public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal, IDynamicLightSource {
+public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     private static final EntityDataAccessor<Integer> VARIANT =
@@ -62,7 +60,7 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal, I
         this.goalSelector.addGoal(5, new TemptGoal(this, 1.25, (p_332367_) -> {
             return p_332367_.is(Items.BROWN_MUSHROOM);
         }, false));
-        this.goalSelector.addGoal(6, new LumaSeekLightSourceGoal(this));
+        //this.goalSelector.addGoal(6, new LumaSeekLightSourceGoal(this));
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(8, new LumaFlyingGoal(this, 1.0));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 6.0F));
@@ -193,18 +191,6 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal, I
         }
     }
 
-    @Override
-    public Entity getAttachmentEntity() {
-        return this;
-    }
-
-    @Override
-    public int getLightLevel() {
-        if (this.isCurrentlyDay() || this.isSleepingLuma()) {
-            return 0;
-        }
-        return 4;
-    }
 
     public boolean isCurrentlyDay() {
         long time = this.level().getDayTime() % 24000L;
