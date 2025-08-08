@@ -226,7 +226,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.FIRERYTE_PICKAXE_STAGE1);
 
 
-
+        withExistingParent(ModItems.LUMA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
 

@@ -2,7 +2,7 @@ package com.honigdose.abyssmagicmod.block;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.alchemy.MortarAndPestleBlock;
-import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableBlock;
+import com.honigdose.abyssmagicmod.block.alchemy.researchtable.ResearchTableBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.ShelfDekoBlock;
 import com.honigdose.abyssmagicmod.block.alchemy.alchemy_circle.FireCircle;
 import com.honigdose.abyssmagicmod.block.alchemy.alchemy_circle.WaterCircle;
@@ -52,7 +52,6 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -257,7 +256,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> RESEARCH_TABLE_CRIMSON = registerBlock("research_table_crimson",
             () -> new ResearchTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
 
-    public static final RegistryObject<Block> ALCHEMY_BOOK = BLOCKS.register("alchemy_book",
+    public static final RegistryObject<Block> ALCHEMY_BOOK1 = BLOCKS.register("alchemy_book1",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
+    public static final RegistryObject<Block> ALCHEMY_BOOK2 = BLOCKS.register("alchemy_book2",
+            () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
+
+    public static final RegistryObject<Block> ALCHEMY_BOOK3 = BLOCKS.register("alchemy_book3",
             () -> new BookBlock(BlockBehaviour.Properties.of().instabreak().noOcclusion()));
 
     public static final RegistryObject<Block> BESTIARY_BOOK = BLOCKS.register("bestiary_book",
@@ -424,14 +429,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.2F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -451,14 +456,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.2F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -478,14 +483,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.05F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -505,14 +510,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.05F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -533,14 +538,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.2F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -558,14 +563,13 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.2F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
-
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -580,14 +584,14 @@ public class ModBlocks {
                     super.animateTick(state, level, pos, random);
 
                     if (random.nextFloat() < 0.2F) {
-                        double radius = 1.5; // Partikel erscheinen weiter entfernt vom Block
-                        double angle = random.nextDouble() * Math.PI * 2; // Zufälliger Winkel für gleichmäßige Verteilung
+                        double radius = 1.5;
+                        double angle = random.nextDouble() * Math.PI * 2;
 
                         double x = pos.getX() + 0.5 + Math.cos(angle) * (random.nextDouble() * radius);
                         double y = pos.getY() + 0.8 + (random.nextFloat() - 0.5) * 0.8;
                         double z = pos.getZ() + 0.5 + Math.sin(angle) * (random.nextDouble() * radius);
 
-                        double dx = (random.nextFloat() - 0.5); // Zufällige Bewegung
+                        double dx = (random.nextFloat() - 0.5);
                         double dy = (random.nextFloat() - 0.5);
                         double dz = (random.nextFloat() - 0.5);
 
@@ -695,6 +699,9 @@ public class ModBlocks {
                 }
             });
 
+
+    public static final RegistryObject<Block> LIGHT_AIR_BLOCK = registerBlock("light_air_block",
+            () -> new LightAirBlock(BlockBehaviour.Properties.of()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

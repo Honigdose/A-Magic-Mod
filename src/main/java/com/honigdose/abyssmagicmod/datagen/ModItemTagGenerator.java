@@ -123,6 +123,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ModTags.Items.WATER_CRYSTALS)
                 .add(Item.byBlock(ModBlocks.WATER_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.VERY_SMALL_WATER_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.BABY_WATER_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.SMALL_WATER_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.LARGE_WATER_CRYSTAL.get()))
@@ -135,6 +136,82 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(Item.byBlock(ModBlocks.SMALL_FIRE_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.LARGE_FIRE_CRYSTAL.get()))
                 .add(Item.byBlock(ModBlocks.FIRE_CRYSTAL_BLOCK.get()))
+                .add(ModItems.FIRE_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.CELESTIAL_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.CELESTIAL_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_CELESTIAL_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_CELESTIAL_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_CELESTIAL_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.CELESTIAL_CRYSTAL_BLOCK.get()))
+                .add(ModItems.CELESTIAL_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.AIR_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.AIR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_AIR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_AIR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_AIR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.AIR_CRYSTAL_BLOCK.get()))
+                .add(ModItems.AIR_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.NATURE_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.NATURE_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_NATURE_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_NATURE_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_NATURE_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.NATURE_CRYSTAL_BLOCK.get()))
+                .add(ModItems.NATURE_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.LUNAR_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.LUNAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_LUNAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_LUNAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_LUNAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LUNAR_CRYSTAL_BLOCK.get()))
+                .add(ModItems.LUNAR_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.SOLAR_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.SOLAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_SOLAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_SOLAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_SOLAR_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SOLAR_CRYSTAL_BLOCK.get()))
+                .add(ModItems.SOLAR_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.DEMONIC_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.DEMONIC_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_DEMONIC_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_DEMONIC_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_DEMONIC_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.DEMONIC_CRYSTAL_BLOCK.get()))
+                .add(ModItems.DEMONIC_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.VOID_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.VOID_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_VOID_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_VOID_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_VOID_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.VOID_CRYSTAL_BLOCK.get()))
+                .add(ModItems.VOID_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.ARCANA_CRYSTALS)
+                .add(Item.byBlock(ModBlocks.ARCANA_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.BABY_ARCANA_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.SMALL_ARCANA_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.LARGE_ARCANA_CRYSTAL.get()))
+                .add(Item.byBlock(ModBlocks.ARCANA_CRYSTAL_BLOCK.get()))
+                .add(ModItems.ARCANA_CRYSTAL_SHARD.get());
+
+        this.tag(ModTags.Items.CRYSTAL_SHARDS)
+                .add(ModItems.WATER_CRYSTAL_SHARD.get())
+                .add(ModItems.AIR_CRYSTAL_SHARD.get())
+                .add(ModItems.NATURE_CRYSTAL_SHARD.get())
+                .add(ModItems.SOLAR_CRYSTAL_SHARD.get())
+                .add(ModItems.LUNAR_CRYSTAL_SHARD.get())
+                .add(ModItems.CELESTIAL_CRYSTAL_SHARD.get())
+                .add(ModItems.DEMONIC_CRYSTAL_SHARD.get())
+                .add(ModItems.VOID_CRYSTAL_SHARD.get())
+                .add(ModItems.ARCANA_CRYSTAL_SHARD.get())
                 .add(ModItems.FIRE_CRYSTAL_SHARD.get());
 
         this.tag(ModTags.Items.FUEL)

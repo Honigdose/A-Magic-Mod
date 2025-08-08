@@ -2,16 +2,20 @@ package com.honigdose.abyssmagicmod.item;
 
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.item.books.AlchemyBook.AlchemyBook;
-import com.honigdose.abyssmagicmod.item.books.Bestiary.BestiaryBook;
+import com.honigdose.abyssmagicmod.data.ModDataComponentTypes;
+import com.honigdose.abyssmagicmod.entity.ModEntities;
+import com.honigdose.abyssmagicmod.item.books.alchemybooks.AlchemyBook;
+import com.honigdose.abyssmagicmod.item.books.alchemybooks.book1.AlchemyBook1;
+import com.honigdose.abyssmagicmod.item.books.bestiary.BestiaryBook;
 import com.honigdose.abyssmagicmod.item.custom.ChalkItem;
 import com.honigdose.abyssmagicmod.item.custom.InkBottleItem;
 import com.honigdose.abyssmagicmod.item.custom.MortarAndPestleItem;
 import com.honigdose.abyssmagicmod.item.custom.TestBook;
-import com.honigdose.abyssmagicmod.item.books.Botanica.BotanicaBook;
-import com.honigdose.abyssmagicmod.item.books.ForgeBook.ForgeBook;
+import com.honigdose.abyssmagicmod.item.books.botanica.BotanicaBook;
+import com.honigdose.abyssmagicmod.item.books.forgebook.ForgeBook;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 
 import net.minecraftforge.registries.DeferredRegister;
@@ -47,6 +51,10 @@ public class ModItems {
         });
     }
 
+    public static final RegistryObject<Item> LUMA_SPAWN_EGG = ITEMS.register("luma_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LUMA,0x664216, 0xdeab1f,
+            new Item.Properties()));
+
     public static final RegistryObject<Item> FIRE_CIRCLE_PAPER = registerItem("fire_circle_paper");
     public static final RegistryObject<Item> WATER_CIRCLE_PAPER = registerItem("water_circle_paper");
 
@@ -76,8 +84,14 @@ public class ModItems {
     public static final RegistryObject<Item> TEST_BOOK = ITEMS.register("test_book",
             () -> new TestBook(new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> ALCHEMY_BOOK_ITEM = ITEMS.register("alchemy_book",
-            () -> new AlchemyBook(ModBlocks.ALCHEMY_BOOK.get() ,new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ALCHEMY_BOOK1_ITEM = ITEMS.register("alchemy_book1",
+            () -> new AlchemyBook1(ALCHEMY_BOOK1.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> ALCHEMY_BOOK2_ITEM = ITEMS.register("alchemy_book2",
+            () -> new AlchemyBook(ALCHEMY_BOOK2.get() ,new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> ALCHEMY_BOOK3_ITEM = ITEMS.register("alchemy_book3",
+            () -> new AlchemyBook(ALCHEMY_BOOK3.get() ,new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> BESTIARY_BOOK_ITEM = ITEMS.register("bestiary_book",
             () -> new BestiaryBook(BESTIARY_BOOK.get() ,new Item.Properties().stacksTo(1)));
@@ -86,7 +100,26 @@ public class ModItems {
             () -> new ForgeBook(FORGE_BOOK.get() ,new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> BOTANICA_BOOK_ITEM = ITEMS.register("botanica_book",
-            () -> new BotanicaBook(BOTANICA_BOOK.get() ,new Item.Properties().stacksTo(1)));
+            () -> new BotanicaBook(
+                    BOTANICA_BOOK.get(),
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .component(
+                                    ModDataComponentTypes.UNLOCKED_PAGES.get(),
+                                    List.of(
+                                            "table_of_contents",
+                                            "introduction",
+                                            "tools",
+                                            "rarities",
+                                            "magic_info",
+                                            "biom_info",
+                                            "warnings",
+                                            "end"
+                                    )
+                            )
+            )
+    );
+
 
     public static final RegistryObject<Item> FIRE_ESSENCE_BOTTLE_ITEM = ITEMS.register("fire_essence_bottle",
             () -> new BlockItem(ModBlocks.FIRE_ESSENCE_BOTTLE.get() ,new Item.Properties().stacksTo(1)));

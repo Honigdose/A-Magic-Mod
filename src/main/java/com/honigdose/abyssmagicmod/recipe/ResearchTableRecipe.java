@@ -19,14 +19,12 @@ import net.minecraft.world.level.Level;
 
 public record ResearchTableRecipe(ResourceLocation id, Ingredient inputItem) implements Recipe<ResearchTableRecipeInput> {
 
-
     @Override
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
         list.add(inputItem);
         return list;
     }
-
 
     public ResourceLocation getId() {
         return this.id;
@@ -40,12 +38,9 @@ public record ResearchTableRecipe(ResourceLocation id, Ingredient inputItem) imp
         return inputItem.test(researchTableRecipeInput.getItem(0));
     }
 
-
-
     @Override
     public ItemStack assemble(ResearchTableRecipeInput researchTableRecipeInput, HolderLookup.Provider provider) {
         return ItemStack.EMPTY;
-
     }
 
     @Override
@@ -56,7 +51,6 @@ public record ResearchTableRecipe(ResourceLocation id, Ingredient inputItem) imp
     @Override
     public ItemStack getResultItem(HolderLookup.Provider provider) {
         return ItemStack.EMPTY;
-
     }
 
     @Override

@@ -1,6 +1,7 @@
 {
   "textures": [
-    "abyssmagicmod:essence_particle"
+    "abyssmagicmod:essence_bottle_particle",
+    "abyssmagicmod:small_essence_bottle_particle"
   ]
 }
 

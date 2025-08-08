@@ -8,6 +8,7 @@ import com.honigdose.abyssmagicmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -140,6 +141,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
     private void registerAlchemyRecipes(RecipeOutput recipeOutput){
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGIC_SQUARE_BOTTLE.get())
+                .pattern("ABA")
+                .pattern("ACA")
+                .pattern("AAA")
+                .define('A', ModTags.Items.CRYSTAL_SHARDS)
+                .define('B', ItemTags.PLANKS)
+                .define('C', Items.GOLD_INGOT)
+                .unlockedBy("has_magic_square_bottle", has(ModBlocks.MAGIC_SQUARE_BOTTLE.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGIC_TRIANGLE_BOTTLE.get())
+                .pattern(" B ")
+                .pattern("ACA")
+                .pattern("AAA")
+                .define('A', ModTags.Items.CRYSTAL_SHARDS)
+                .define('B', ItemTags.PLANKS)
+                .define('C', Items.GOLD_INGOT)
+                .unlockedBy("has_magic_triangle_bottle", has(ModBlocks.MAGIC_TRIANGLE_BOTTLE.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MAGIC_ROUND_BOTTLE.get())
+                .pattern(" B ")
+                .pattern("ACA")
+                .pattern(" A ")
+                .define('A', ModTags.Items.CRYSTAL_SHARDS)
+                .define('B', ItemTags.PLANKS)
+                .define('C', Items.GOLD_INGOT)
+                .unlockedBy("has_magic_round_bottle", has(ModBlocks.MAGIC_ROUND_BOTTLE.get())).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.INK_BOTTLE.get())
                 .pattern(" B ")

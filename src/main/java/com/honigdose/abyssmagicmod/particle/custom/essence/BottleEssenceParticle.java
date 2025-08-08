@@ -9,50 +9,61 @@ import java.util.Random;
 
 public class BottleEssenceParticle extends TextureSheetParticle {
     private static final Random RANDOM = new Random();
+
     private final int startHex;
     private final int endHex;
-    private final float initialSize;
-    private final float finalSize;
-
+    private final float moveAmplitude;
+    private final float moveSpeed;
+    private float timeX;
+    private float timeY;
 
     protected BottleEssenceParticle(ClientLevel level, double x, double y, double z,
                               SpriteSet pSprites, double dx, double dy, double dz,
                               int startHex, int endHex) {
         super(level, x, y, z, dx, dy, dz);
 
+        this.setSprite(pSprites.get(this.random.nextInt(4), 4));
+
         this.startHex = startHex;
         this.endHex = endHex;
-        this.initialSize = 0.2F;
-        this.finalSize = this.initialSize / 10.0f;
-        this.quadSize = this.initialSize;
+        this.timeX = RANDOM.nextFloat() * (float) Math.PI * 2;
+        this.timeY = RANDOM.nextFloat() * (float) Math.PI * 2;
 
-        this.setSpriteFromAge(pSprites);
         this.xd = 0;
         this.yd = 0;
         this.zd = 0;
         this.hasPhysics = false;
         this.gravity = 0.0f;
-        this.lifetime = 20;
+        this.quadSize = 0.05F + RANDOM.nextFloat(0.02F);
+        this.lifetime = 140 + RANDOM.nextInt(40);
         this.alpha = 0.0f;
+
+        this.moveAmplitude = 0.0015f + RANDOM.nextFloat() * 0.0015f;
+        this.moveSpeed = 0.0025f + RANDOM.nextFloat() * 0.0025f;
     }
 
     @Override
     public void tick() {
-        float t = (float) this.age / (float) this.lifetime;
-
-        this.yd = 0.005f + (0.02f - 0.005f) * t;
-
         super.tick();
+        this.timeX += this.moveSpeed;
+        this.timeY += this.moveSpeed * 0.8f;
 
-        float fadeInDuration = 0.1f * this.lifetime;
+        this.x += Math.sin(this.timeX) * this.moveAmplitude;
+        this.y += Math.sin(this.timeY) * this.moveAmplitude;
+
+        float fadeInDuration = 0.2f * this.lifetime;
+        float fadeOutDuration = 0.8f * this.lifetime;
+        float maxAlpha = 0.6f;
+
         if (this.age < fadeInDuration) {
-            this.alpha = (float) this.age / fadeInDuration;
+            this.alpha = ((float) this.age / fadeInDuration) * maxAlpha;
+        } else if (this.age > fadeOutDuration) {
+            this.alpha = maxAlpha - ((float) (this.age - fadeOutDuration) / (this.lifetime - fadeOutDuration)) * maxAlpha;
         } else {
-            this.alpha = 1.0f;
+            this.alpha = maxAlpha;
         }
 
-        this.quadSize = initialSize * (1 - t) + finalSize * t;
-
+        float t = (float) this.age / (float) this.lifetime;
 
         float startR = ((startHex >> 16) & 0xFF) / 255f;
         float startG = ((startHex >> 8) & 0xFF) / 255f;
@@ -67,13 +78,15 @@ public class BottleEssenceParticle extends TextureSheetParticle {
         this.bCol = startB * (1 - t) + endB * t;
     }
 
-
-
-    public ParticleRenderType getRenderType() {
-        return EssenceRenderType.getInstance();
+    @Override
+    protected int getLightColor(float partialTick) {
+        return 0xF000F0;
     }
 
-
+    @Override
+    public ParticleRenderType getRenderType() {
+        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet sprite;
@@ -82,14 +95,17 @@ public class BottleEssenceParticle extends TextureSheetParticle {
             this.sprite = pSprites;
         }
 
-        @Override
-        public Particle createParticle(SimpleParticleType type, ClientLevel level,
+        public Particle createParticle(SimpleParticleType type,
+                                       ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
-            int startHex = 0xFF0000; // Beispiel: Rot als Startfarbe
-            int endHex = 0x0000FF;   // Beispiel: Blau als Endfarbe
-            return new BottleEssenceParticle(level, x, y, z, this.sprite, dx, dy, dz, startHex, endHex);
+
+            int startHex = (int) dx;
+            int endHex   = (int) dy;
+            return new BottleEssenceParticle(level, x, y, z, this.sprite, 0, 0, 0, startHex, endHex
+            );
         }
+
     }
 
 }

@@ -20,6 +20,8 @@ public class NatureEssenceEntityBlock extends BlockEntity{
     private static int changeTimer = 0;
 
     public static void tick(Level level, BlockPos pos, BlockState state) {
+        int startHex = 0x75ffb1;
+        int endHex = 0x5729e3;
         if (level.isClientSide) {
             RandomSource random = level.getRandom();
             double time = level.getGameTime() * 0.15;
@@ -54,7 +56,8 @@ public class NatureEssenceEntityBlock extends BlockEntity{
             double y = pos.getY() + 0.4;
             double z = pos.getZ() + 0.5 + movementZ;
 
-            level.addParticle(ModParticles.NATURE_ESSENCE_PARTICLE.get(), x, y, z, 0.0, 0.0, 0.0);
+            level.addParticle(ModParticles.ESSENCE_PARTICLE.get(), x, y, z, (double) startHex, (double) endHex, 0.0);
+
         }
     }
 

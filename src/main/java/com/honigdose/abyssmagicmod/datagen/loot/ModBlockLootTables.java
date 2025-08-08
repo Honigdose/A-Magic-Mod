@@ -29,7 +29,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        dropSelf(ModBlocks.ALCHEMY_BOOK.get());
+        dropSelf(ModBlocks.ALCHEMY_BOOK1.get());
+        dropSelf(ModBlocks.ALCHEMY_BOOK2.get());
+        dropSelf(ModBlocks.ALCHEMY_BOOK3.get());
         dropSelf(ModBlocks.BESTIARY_BOOK.get());
         dropSelf(ModBlocks.FORGE_BOOK.get());
         dropSelf(ModBlocks.BOTANICA_BOOK.get());

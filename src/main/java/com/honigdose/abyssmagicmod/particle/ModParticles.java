@@ -28,33 +28,12 @@ public class ModParticles {
             .register("essence_particle", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> FIRE_ESSENCE_PARTICLE = PARTICLES
             .register("fire_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> AIR_ESSENCE_PARTICLE = PARTICLES
-            .register("air_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> NATURE_ESSENCE_PARTICLE = PARTICLES
-            .register("nature_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> WATER_ESSENCE_PARTICLE = PARTICLES
-            .register("water_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> SOLAR_ESSENCE_PARTICLE = PARTICLES
-            .register("solar_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> LUNAR_ESSENCE_PARTICLE = PARTICLES
-            .register("lunar_essence_particle", () -> new SimpleParticleType(true));
 
     public static final RegistryObject<SimpleParticleType> BOTTLE_ESSENCE_PARTICLE = PARTICLES
             .register("bottle_essence_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> FIRE_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("fire_essence_bottle_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> WATER_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("water_essence_bottle_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> NATURE_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("nature_essence_bottle_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> LUNAR_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("lunar_essence_bottle_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> SOLAR_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("solar_essence_bottle_particle", () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> AIR_ESSENCE_BOTTLE_PARTICLE = PARTICLES
-            .register("air_essence_bottle_particle", () -> new SimpleParticleType(true));
 
-
+    public static final RegistryObject<SimpleParticleType> LUMA_PARTICLE = PARTICLES
+            .register("luma_particle", () -> new SimpleParticleType(true));
 
     public static final RegistryObject<SimpleParticleType> CUTE_CRYSTAL_PARTICLE = PARTICLES
             .register("cute_crystal_particle", () -> new SimpleParticleType(true));

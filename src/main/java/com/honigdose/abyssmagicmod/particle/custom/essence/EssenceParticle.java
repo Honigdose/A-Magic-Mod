@@ -21,10 +21,9 @@ public class EssenceParticle extends TextureSheetParticle {
                                   SpriteSet pSprites, double dx, double dy, double dz,
                                   int startHex, int endHex) {
         super(level, x, y, z, dx, dy, dz);
-
         this.startHex = startHex;
         this.endHex = endHex;
-        this.initialSize = 0.15F;
+        this.initialSize = 0.3F;
         this.finalSize = this.initialSize / 10.0f;
         this.quadSize = this.initialSize;
 
@@ -73,6 +72,11 @@ public class EssenceParticle extends TextureSheetParticle {
         return EssenceRenderType.getInstance();
     }
 
+    @Override
+    protected int getLightColor(float pPartialTick) {
+        return 15728880;
+    }
+
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet sprite;
@@ -85,8 +89,8 @@ public class EssenceParticle extends TextureSheetParticle {
         public Particle createParticle(SimpleParticleType type, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {
-            int startHex = 0xFF0000; // Beispiel: Rot als Startfarbe
-            int endHex = 0x0000FF;   // Beispiel: Blau als Endfarbe
+            int startHex = (int) dx;
+            int endHex   = (int) dy;
             return new EssenceParticle(level, x, y, z, this.sprite, dx, dy, dz, startHex, endHex);
         }
     }

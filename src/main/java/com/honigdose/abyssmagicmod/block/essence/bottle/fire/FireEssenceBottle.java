@@ -93,6 +93,8 @@ public class FireEssenceBottle extends BaseEntityBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        int startHex = 0x68144c;
+        int endHex   = 0xff8c76;
         if (random.nextFloat() < 0.2f) {
             double offsetFactor = 0.4;
             double xOffset = (random.nextDouble() - 0.5) * offsetFactor;
@@ -102,8 +104,7 @@ public class FireEssenceBottle extends BaseEntityBlock {
             double yPos = pos.getY() + 0.5 + yOffset;
             double zPos = pos.getZ() + 0.5 + zOffset;
 
-            level.addParticle(ModParticles.FIRE_ESSENCE_BOTTLE_PARTICLE.get(), xPos, yPos, zPos, 0.0, 0.0, 0.0);
-
+            level.addParticle(ModParticles.BOTTLE_ESSENCE_PARTICLE.get(), xPos, yPos, zPos, (double) startHex, (double) endHex, 0.0);
         }
     }
 

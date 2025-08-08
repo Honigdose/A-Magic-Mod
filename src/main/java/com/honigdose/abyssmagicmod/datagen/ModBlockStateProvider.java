@@ -25,6 +25,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        simpleBlock(ModBlocks.LIGHT_AIR_BLOCK.get(), models().getExistingFile(ResourceLocation.parse("block/air")));
+
         //Ore
         blockWithItem(ModBlocks.ABYSSSTEEL_ORE);
         blockWithItem(ModBlocks.SYLPHTHYL_ORE);

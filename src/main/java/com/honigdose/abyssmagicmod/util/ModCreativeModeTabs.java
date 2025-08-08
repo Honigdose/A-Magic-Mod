@@ -22,6 +22,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.abyssmagicmod.abyssmagic_items"))
                     .displayItems((itemDisplayParameters, output) -> {
 
+                        output.accept(ModItems.LUMA_SPAWN_EGG.get());
+
                         // ORE/INGOTS/RAW ORE
                         output.accept(ModItems.ASTRATHYL.get());
                         output.accept(ModItems.RAW_ASTRATHYL.get());
@@ -334,7 +336,7 @@ public class ModCreativeModeTabs {
 
 
     public static final RegistryObject<CreativeModeTab> ABYSSMAGIC_ALCHEMY_TAB = CREATIVE_MODE_TABS.register("abyssmagicmod_alchemy_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ALCHEMY_BOOK.get())).withTabsBefore(ABYSSMAGIC_ITEMS_TAB.getId())
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ALCHEMY_BOOK1.get())).withTabsBefore(ABYSSMAGIC_ITEMS_TAB.getId())
                     .title(Component.translatable("creativetab.abyssmagicmod.alchemy_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
 
@@ -353,7 +355,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RESEARCH_TABLE_BLIFE_TREE.get());
 
 
-                        output.accept(ModBlocks.ALCHEMY_BOOK.get());
+                        output.accept(ModBlocks.ALCHEMY_BOOK1.get());
+                        output.accept(ModBlocks.ALCHEMY_BOOK2.get());
+                        output.accept(ModBlocks.ALCHEMY_BOOK3.get());
 
                         output.accept(ModBlocks.BESTIARY_BOOK.get());
                         output.accept(ModBlocks.FORGE_BOOK.get());

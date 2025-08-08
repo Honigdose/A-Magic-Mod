@@ -3,7 +3,7 @@ package com.honigdose.abyssmagicmod.block.entity;
 import com.honigdose.abyssmagicmod.AbyssMagicMod;
 
 import com.honigdose.abyssmagicmod.block.ModBlocks;
-import com.honigdose.abyssmagicmod.block.alchemy.ResearchTable.ResearchTableBlockEntity;
+import com.honigdose.abyssmagicmod.block.alchemy.researchtable.ResearchTableBlockEntity;
 import com.honigdose.abyssmagicmod.block.essence.block.air.AirEssenceEntityBlock;
 import com.honigdose.abyssmagicmod.block.essence.block.fire.FireEssenceEntityBlock;
 import com.honigdose.abyssmagicmod.block.essence.block.lunar.LunarEssenceEntityBlock;

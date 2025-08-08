@@ -20,6 +20,8 @@ public class WaterEssenceEntityBlock extends BlockEntity{
     private static int changeTimer = 0;
 
     public static void tick(Level level, BlockPos pos, BlockState state) {
+        int startHex = 0x30c4ff;
+        int endHex = 0x0a0073;
         if (level.isClientSide) {
             RandomSource random = level.getRandom();
             double time = level.getGameTime() * 0.15;
@@ -54,7 +56,8 @@ public class WaterEssenceEntityBlock extends BlockEntity{
             double y = pos.getY() + 0.4;
             double z = pos.getZ() + 0.5 + movementZ;
 
-            level.addParticle(ModParticles.WATER_ESSENCE_PARTICLE.get(), x, y, z, 0.0, 0.0, 0.0);
+            level.addParticle(ModParticles.ESSENCE_PARTICLE.get(), x, y, z, (double) startHex, (double) endHex, 0.0);
+
         }
     }
 

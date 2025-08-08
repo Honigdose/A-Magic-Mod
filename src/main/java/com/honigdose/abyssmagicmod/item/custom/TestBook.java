@@ -1,7 +1,7 @@
 package com.honigdose.abyssmagicmod.item.custom;
 
 
-import com.honigdose.abyssmagicmod.screen.custom.TestBookScreen;
+import com.honigdose.abyssmagicmod.block.entity.screen.custom.TestBookScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
