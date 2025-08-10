@@ -1,21 +1,21 @@
 package com.honigdose.abyssmagicmod.entity.custom.luma;
 
 import com.honigdose.abyssmagicmod.entity.ModEntities;
-import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaFlyingGoal;
-import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaSeekLightSourceGoal;
-import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaSleepGoal;
-import com.honigdose.abyssmagicmod.entity.custom.luma.goals.LumaWakeUpGoal;
+import com.honigdose.abyssmagicmod.entity.custom.luma.goals.*;
 import com.honigdose.abyssmagicmod.particle.ModParticles;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -31,6 +31,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -41,6 +43,10 @@ import software.bernie.geckolib.animation.AnimationState;
 
 public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+
+    private int fleeTicks = 0;
+    private LivingEntity lastAttacker = null;
+    private static final int DEFAULT_FLEE_TICKS = 200;
 
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(LumaEntity.class, EntityDataSerializers.INT);
@@ -53,6 +59,7 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new LumaFleeGoal(this, 1.8));
 
         this.goalSelector.addGoal(2, new LumaWakeUpGoal(this));
         this.goalSelector.addGoal(3, new LumaSleepGoal(this));
@@ -60,7 +67,7 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
         this.goalSelector.addGoal(5, new TemptGoal(this, 1.25, (p_332367_) -> {
             return p_332367_.is(Items.BROWN_MUSHROOM);
         }, false));
-        //this.goalSelector.addGoal(6, new LumaSeekLightSourceGoal(this));
+        this.goalSelector.addGoal(6, new LumaSeekLightSourceGoal(this));
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(8, new LumaFlyingGoal(this, 1.0));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 6.0F));
@@ -127,6 +134,24 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
         this.entityData.set(VARIANT, variant.getId() & 255);
     }
 
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        if (this.isSleepingLuma()) {
+            this.setSleepingLuma(false);
+        }
+        if (!this.level().isClientSide) {
+            this.setFleeTicks(DEFAULT_FLEE_TICKS);
+
+            if (source.getEntity() instanceof LivingEntity attacker) {
+                this.setLastAttacker(attacker);
+            } else {
+                this.setLastAttacker(null);
+            }
+            this.setTarget(null);
+        }
+        return super.hurt(source, amount);
+    }
+
 
     public boolean isSleepingLuma() {
         return this.entityData.get(IS_SLEEPING);
@@ -134,6 +159,27 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
 
     public void setSleepingLuma(boolean sleeping) {
         this.entityData.set(IS_SLEEPING, sleeping);
+    }
+
+    public int getFleeTicks() {
+        return this.fleeTicks;
+    }
+    public void setFleeTicks(int ticks) {
+        this.fleeTicks = ticks;
+    }
+    public LivingEntity getLastAttacker() {
+        return this.lastAttacker;
+    }
+    public void setLastAttacker(LivingEntity attacker) {
+        this.lastAttacker = attacker;
+    }
+
+    @Override
+    public boolean isPushable() {
+        if (this.isSleepingLuma()) {
+            return false;
+        }
+        return super.isPushable();
     }
 
     @Override
@@ -146,18 +192,14 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
             state.getController().setAnimation(RawAnimation.begin().then("animation.luma.sleep", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-
-        if (this.isCurrentlyDay()) {
+        if (this.isCurrentlyDay()){
             state.getController().setAnimation(RawAnimation.begin().then("animation.luma.sleep_flying", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-
         if (state.isMoving()) {
             state.getController().setAnimation(RawAnimation.begin().then("animation.luma.fly", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
-
-
         state.getController().setAnimation(RawAnimation.begin().then("animation.luma.fly", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
@@ -172,29 +214,25 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
         return this.tickCount;
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-        this.setNoGravity(true);
-
-        if (!level().isClientSide) return;
-        if (this.isCurrentlyDay() || this.isSleepingLuma()) return;
-
-        if (this.random.nextFloat() < 0.1f) {
-            int variantId = this.getVariant().getId();
-
-            level().addParticle(ModParticles.LUMA_PARTICLE.get(),  // Nur ein Partikeltyp für alle Varianten
-                    getX() + (random.nextDouble() - 0.5) * 0.3,
-                    getY() + (random.nextDouble() - 0.5) * 0.3,
-                    getZ() + (random.nextDouble() - 0.5) * 0.3,
-                    variantId, 0, 0); // dx = Variant-ID, dy/dz ungenutzt
-        }
-    }
-
-
     public boolean isCurrentlyDay() {
         long time = this.level().getDayTime() % 24000L;
         return time >= 0 && time < 12000;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.fleeTicks > 0) {
+            this.fleeTicks--;
+        }
+        if (this.random.nextFloat() < 0.1f) {
+            int variantId = this.getVariant().getId();
+            level().addParticle(ModParticles.LUMA_PARTICLE.get(),
+                    getX() + (random.nextDouble() - 0.5) * 0.3,
+                    getY() + (random.nextDouble() - 0.5) * 0.3,
+                    getZ() + (random.nextDouble() - 0.5) * 0.3,
+                    variantId, 0, 0);
+        }
     }
 
     @Override
@@ -228,11 +266,32 @@ public class LumaEntity extends Animal implements GeoAnimatable, FlyingAnimal{
         pCompound.putInt("Variant", this.getTypeVariant());
     }
 
-    @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty,
                                         MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
-        LumaVariant variant = Util.getRandom(LumaVariant.values(), this.random);
-        this.setVariant(variant);
+
+        Holder<Biome> biomeHolder = pLevel.getBiome(this.blockPosition());
+
+        if (biomeHolder.is(Biomes.DESERT) ) {
+            this.setVariant(LumaVariant.SOLAR);
+        } else if (biomeHolder.is(Biomes.SNOWY_PLAINS)) {
+            this.setVariant(LumaVariant.LUNAR);
+        } else if (biomeHolder.is(Biomes.MEADOW)) {
+            this.setVariant(LumaVariant.AIR);
+        } else if (biomeHolder.is(Biomes.SAVANNA)) {
+            this.setVariant(LumaVariant.FIRE);
+        } else if (biomeHolder.is(Biomes.SWAMP)) {
+            this.setVariant(LumaVariant.NATURE);
+        } else if (biomeHolder.is(Biomes.OCEAN)) {
+            this.setVariant(LumaVariant.WATER);
+        } else if (biomeHolder.is(Biomes.CRIMSON_FOREST) || biomeHolder.is(Biomes.WARPED_FOREST)) {
+            this.setVariant(LumaVariant.DEMONIC);
+        } else if (biomeHolder.is(Biomes.CHERRY_GROVE)) {
+            this.setVariant(LumaVariant.CELESTIAL);
+        } else {
+            this.setVariant(LumaVariant.BASE);
+        }
+
+
         return super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
     }
 

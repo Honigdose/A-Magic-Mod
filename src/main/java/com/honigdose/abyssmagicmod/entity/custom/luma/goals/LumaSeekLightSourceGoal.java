@@ -30,10 +30,9 @@ public class LumaSeekLightSourceGoal extends Goal {
     @Override
     public boolean canUse() {
 
-        if (!luma.level().isNight()) {
+        if (!luma.level().isDay()) {
             return false;
         }
-
 
         lightCenter = findBrightestLightSource(luma.blockPosition());
 

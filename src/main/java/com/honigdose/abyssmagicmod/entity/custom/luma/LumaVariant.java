@@ -13,7 +13,7 @@ public enum LumaVariant {
     AIR(5, new Color(60, 255, 196)),
     DEMONIC(6, new Color(221, 22, 22)),
     CELESTIAL(7, new Color(247, 159, 255)),
-    BASE(7, new Color(255, 255, 255));
+    BASE(8, new Color(255, 255, 255));
 
     private static final LumaVariant[] BY_ID = Arrays.stream(values())
             .sorted(Comparator.comparingInt(LumaVariant::getId))
@@ -25,6 +25,7 @@ public enum LumaVariant {
     LumaVariant(int id, Color color) {
         this.id = id;
         this.color = color;
+
     }
 
     public int getId() {
